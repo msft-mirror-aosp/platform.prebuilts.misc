@@ -58,3 +58,8 @@ java_import {
     jars: ["asm-tree-6.0.jar"],
 }
 
+java_import {
+    name: "asm-util-6.0",
+    host_supported: true,
+    jars: ["asm-util-6.0.jar"],
+}
