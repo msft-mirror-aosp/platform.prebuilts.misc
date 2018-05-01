@@ -105,7 +105,7 @@ my_srcs_jars := \
 # The jars needed to run the tests.
 my_jars := \
     $(my_robolectric_jars) \
-    prebuilts/sdk/$(LOCAL_SDK_VERSION)/android.jar \
+    $(call resolve-prebuilt-sdk-jar-path,$(LOCAL_SDK_VERSION)) \
     $(call java-lib-files,junitxml) \
     $(my_srcs_jars)
 
