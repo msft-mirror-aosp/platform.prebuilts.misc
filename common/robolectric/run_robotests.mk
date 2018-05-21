@@ -190,7 +190,7 @@ my_srcs_jars := \
         $(call intermediates-dir-for,APPS,$(lib),,COMMON)/classes-pre-proguard.jar)
 # The jars needed to run the tests.
 my_jars := $(my_robolectric_jars) \
-    prebuilts/sdk/$(LOCAL_SDK_VERSION)/android.jar \
+    $(call resolve-prebuilt-sdk-jar-path,$(LOCAL_SDK_VERSION)) \
     $(my_srcs_jars)
 
 
