@@ -34,9 +34,11 @@ $(my_target_output): \
     PRIVATE_TARGET_RETVAL := $(my_target_retval)
 $(my_target_output): \
     PRIVATE_TIMEOUT := $(my_timeout)
+$(my_target_output): \
+    .KATI_IMPLICIT_OUTPUTS := $(my_target_retval)
 # Runs the Robolectric tests and saves the output and return value.
 # Robolectric < 3.5.1 only supports OpenJDK 8. http://b/70286093
-$(my_target_output) $(my_target_retval): \
+$(my_target_output): \
     $(my_jars)
 	$(hide) echo "host Robolectric: $(PRIVATE_MODULE) ($(dir $@))"
 	$(hide) \
