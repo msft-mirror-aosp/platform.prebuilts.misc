@@ -12,7 +12,10 @@ my_target_output := $(basename $(my_target))-output.txt
 my_target_retval := $(basename $(my_target))-retval.txt
 
 # We should always re-run the tests, even if nothing has changed.
-.PHONY: $(my_target_output) $(my_target_retval)
+# So until the build system has a dedicated "no cache" option, claim
+# to write a file that is never produced.
+my_target_nocache := $(basename $(my_target))-nocache
+
 # Private variables.
 $(my_target_output): \
     PRIVATE_MODULE := $(LOCAL_MODULE)
@@ -33,14 +36,17 @@ $(my_target_output): \
 $(my_target_output): \
     PRIVATE_TARGET_RETVAL := $(my_target_retval)
 $(my_target_output): \
+    PRIVATE_TARGET_NOCACHE := $(my_target_nocache)
+$(my_target_output): \
     PRIVATE_TIMEOUT := $(my_timeout)
 $(my_target_output): \
-    .KATI_IMPLICIT_OUTPUTS := $(my_target_retval)
+    .KATI_IMPLICIT_OUTPUTS := $(my_target_retval) $(my_target_nocache)
 # Runs the Robolectric tests and saves the output and return value.
 # Robolectric < 3.5.1 only supports OpenJDK 8. http://b/70286093
 $(my_target_output): \
     $(my_jars)
 	$(hide) echo "host Robolectric: $(PRIVATE_MODULE) ($(dir $@))"
+	$(hide) rm -f $(PRIVATE_TARGET_NOCACHE)
 	$(hide) \
 	  PRIVATE_INTERMEDIATES="$(dir $@)" \
 	  PRIVATE_JARS="$(PRIVATE_JARS)" \
@@ -59,8 +65,6 @@ $(my_target_output): \
 	    wrap \
 	    $(PRIVATE_ROBOLECTRIC_SCRIPT_PATH)/robotest.sh
 
-# This does not actually generate a file.
-.PHONY: $(my_target)
 # Private variables.
 $(my_target): \
     PRIVATE_MODULE := $(LOCAL_MODULE)
@@ -86,6 +90,7 @@ $(my_target): $(my_target_output)
 	  if [ "$(strip $(PRIVATE_FAILURE_FATAL))" = true ]; then \
 	    exit "$$result"; \
 	  fi
+	$(hide) touch $@
 
 # Add the output of the tests to the dist list, so that we will include it even
 # if the tests fail.
@@ -95,3 +100,4 @@ $(call dist-for-goals, $(my_target), \
 # Clean up local variables.
 my_target_output :=
 my_target_retval :=
+my_target_nocache :=
