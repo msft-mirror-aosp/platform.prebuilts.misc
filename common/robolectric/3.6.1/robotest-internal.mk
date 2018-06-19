@@ -27,6 +27,7 @@ $(my_target_output): PRIVATE_ROBOLECTRIC_SCRIPT_PATH := $(my_robolectric_script_
 $(my_target_output): PRIVATE_TARGET_MESSAGE := $(my_target_message)
 $(my_target_output): PRIVATE_TARGET_OUTPUT := $(my_target_output)
 $(my_target_output): PRIVATE_TARGET_RETVAL := $(my_target_retval)
+$(my_target_output): PRIVATE_TARGET_NOCACHE := $(my_target_nocache)
 $(my_target_output): PRIVATE_TIMEOUT := $(my_timeout)
 $(my_target_output): PRIVATE_JAVA_PATH := $(if $(my_use_java8),$(ANDROID_JAVA8_HOME)/bin:,)
 $(my_target_output): PRIVATE_XML_OUTPUT_FILE := $(my_target_xml)
@@ -37,7 +38,7 @@ $(my_target_output): $(my_jars)
 	# Run `touch` to always create the output XML file, so the build doesn't break even if the
 	# runner failed to create the XML output
 	$(hide) touch "$(PRIVATE_XML_OUTPUT_FILE)"
-	$(hide) rm -f $(PRIVATE_TARGET_NOCACHE)
+	$(hide) rm -f "$(PRIVATE_TARGET_NOCACHE)"
 	$(hide) \
 	  PRIVATE_INTERMEDIATES="$(dir $@)" \
 	  PRIVATE_JARS="$(PRIVATE_JARS)" \
