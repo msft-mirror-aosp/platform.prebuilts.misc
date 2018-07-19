@@ -13,6 +13,6 @@
 // limitations under the License.
 
 java_import_host {
-    name: "platformprotos-prebuilt",
+    name: "platformprotos",
     jars: ["platformprotos-prebuilt.jar"],
 }
