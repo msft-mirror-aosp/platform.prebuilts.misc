@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// for Android JUnit runner and rules
+// for Android JUnit runner, monitor and rules
 java_library_static {
     name: "android-support-test",
     sdk_version: "15",
@@ -23,6 +23,7 @@ java_library_static {
         "hamcrest",
         "hamcrest-library",
         "android-support-annotations",
+        "android-support-test-monitor-nodep",
     ],
 }
 
@@ -32,6 +33,7 @@ java_library_static {
     static_libs: [
         "android-support-test-rules-nodep",
         "android-support-test-runner-nodep",
+        "android-support-test-monitor-nodep",
     ],
 }
 
@@ -47,6 +49,12 @@ java_import {
     sdk_version: "15",
 }
 
+java_import {
+    name: "android-support-test-monitor-nodep",
+    jars: ["monitor/monitor_release_no_deps.jar"],
+    sdk_version: "15",
+}
+
 // for espresso-core
 java_library_static {
     name: "espresso-core",
@@ -56,6 +64,7 @@ java_library_static {
         "espresso-idling-resource-nodep",
         "android-support-test-rules-nodep",
         "android-support-test-runner-nodep",
+        "android-support-test-monitor-nodep",
         "junit",
         "hamcrest",
         "hamcrest-library",
