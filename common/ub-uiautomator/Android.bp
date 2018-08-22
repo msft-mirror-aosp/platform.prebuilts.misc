@@ -17,3 +17,9 @@ java_import {
     jars: ["ub-uiautomator.jar"],
     sdk_version: "18",
 }
+
+java_import {
+    name: "androidx.test.uiautomator_uiautomator",
+    jars: ["uiautomator-2.2.0-alpha4.jar"],
+    sdk_version: "18",
+}
