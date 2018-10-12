@@ -82,9 +82,8 @@ include \$(BUILD_STATIC_JAVA_LIBRARY)
 
 ############################
 # Defining the target names for the static prebuilt .JARs.
-include \$(CLEAR_VARS)
 
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \\
+prebuilts := \\
     platform-robolectric-${roboVersion}-annotations:lib/annotations-${roboVersion}.jar \\
     platform-robolectric-${roboVersion}-asm:lib/asm-6.0.jar \\
     platform-robolectric-${roboVersion}-junit:lib/junit-${roboVersion}.jar \\
@@ -98,7 +97,22 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \\
     platform-robolectric-${roboVersion}-snapshot:lib/robolectric-${roboVersion}.jar \\
     platform-robolectric-${roboVersion}-utils:lib/utils-${roboVersion}.jar
 
-include \$(BUILD_MULTI_PREBUILT)
+define define-prebuilt
+  \$(eval tw := \$(subst :, ,\$(strip \$(1)))) \\
+  \$(eval include \$(CLEAR_VARS)) \\
+  \$(eval LOCAL_MODULE := \$(word 1,\$(tw))) \\
+  \$(eval LOCAL_MODULE_TAGS := optional) \\
+  \$(eval LOCAL_MODULE_CLASS := JAVA_LIBRARIES) \\
+  \$(eval LOCAL_SRC_FILES := \$(word 2,\$(tw))) \\
+  \$(eval LOCAL_UNINSTALLABLE_MODULE := true) \\
+  \$(eval LOCAL_SDK_VERSION := current) \\
+  \$(eval include \$(BUILD_PREBUILT))
+endef
+
+\$(foreach p,\$(prebuilts),\\
+  \$(call define-prebuilt,\$(p)))
+
+prebuilts :=
 EOF
 
 set +e
