@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.1.0-beta02"
-rulesVersion="1.1.0-beta02"
-espressoVersion="3.1.0-beta02"
-coreVersion="1.0.0-beta02"
-extJUnitVersion="1.0.0-beta02"
-extTruthVersion="1.0.0-beta02"
+runnerVersion="1.1.0"
+rulesVersion="1.1.0"
+espressoVersion="3.1.0"
+coreVersion="1.0.0"
+extJUnitVersion="1.0.0"
+extTruthVersion="1.0.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
@@ -79,7 +79,7 @@ def getManifestPath(mavenArtifactName):
     manifestPath = manifestPath.replace(searchPattern, mavenToBpPatternMap[searchPattern])
   return "manifests/%s" % manifestPath
 
-prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/androidx-test")
+prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
 chdir(prebuiltDir)
 
 cmd("rm -rf androidx/test")
