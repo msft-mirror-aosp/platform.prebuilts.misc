@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.1.0"
-rulesVersion="1.1.0"
-espressoVersion="3.1.0"
-coreVersion="1.0.0"
-extJUnitVersion="1.0.0"
-extTruthVersion="1.0.0"
+runnerVersion="1.1.1-alpha01"
+rulesVersion="1.1.1-alpha01"
+espressoVersion="3.1.1-alpha01"
+coreVersion="1.1.0-alpha01"
+extJUnitVersion="1.1.0-alpha01"
+extTruthVersion="1.1.0-alpha01"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
@@ -111,6 +111,8 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite org.hamcrest:hamcrest-integration=hamcrest " +
     "-rewrite javax.inject:javax.inject=jsr330 " +
     "-rewrite com.google.android.material:material=com.google.android.material_material " +
+    "-rewrite androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout " +
+    "-rewrite androidx.viewpager:viewpager=androidx.viewpager_viewpager " +
     "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
