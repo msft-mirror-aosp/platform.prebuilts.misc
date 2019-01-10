@@ -13,11 +13,6 @@
 // limitations under the License.
 
 java_import_host {
-    name: "guava-18.0-prebuilt",
-    jars: ["guava-18.0.jar"],
-}
-
-java_import_host {
     name: "guava-21.0",
     jars: ["guava-21.0.jar"],
 }
