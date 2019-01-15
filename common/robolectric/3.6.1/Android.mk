@@ -29,8 +29,8 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 # Defining the target names for the static prebuilt .JARs.
 
 prebuilts := \
-    platform-robolectric-3.6.1-asm:lib/asm-6.0.jar \
     platform-robolectric-3.6.1-annotations:lib/annotations-3.6.1.jar \
+    platform-robolectric-3.6.1-asm:lib/asm-6.0.jar \
     platform-robolectric-3.6.1-junit:lib/junit-3.6.1.jar \
     platform-robolectric-3.6.1-resources:lib/resources-3.6.1.jar \
     platform-robolectric-3.6.1-sandbox:lib/sandbox-3.6.1.jar \
