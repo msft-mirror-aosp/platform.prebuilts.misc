@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.1.1"
-rulesVersion="1.1.1"
-espressoVersion="3.1.1"
-coreVersion="1.1.0"
-extJUnitVersion="1.1.0"
-extTruthVersion="1.1.0"
+runnerVersion="1.1.2-alpha01"
+rulesVersion="1.1.2-alpha01"
+espressoVersion="3.1.2-alpha01"
+coreVersion="1.1.1-alpha01"
+extJUnitVersion="1.1.1-alpha01"
+extTruthVersion="1.1.1-alpha01"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
