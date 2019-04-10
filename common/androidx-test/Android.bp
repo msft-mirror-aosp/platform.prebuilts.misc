@@ -208,6 +208,30 @@ android_library {
 }
 
 android_library_import {
+    name: "androidx.test.janktesthelper-nodeps",
+    aars: ["androidx/test/janktesthelper/janktesthelper/1.0.1/janktesthelper-1.0.1.aar"],
+    sdk_version: "current",
+    // min_sdk_version: "23",
+    static_libs: [
+        "androidx.test.runner",
+        "androidx.test.rules",
+    ],
+}
+
+android_library {
+    name: "androidx.test.janktesthelper",
+    sdk_version: "current",
+    // min_sdk_version: "23",
+    manifest: "manifests/androidx.test.janktesthelper/AndroidManifest.xml",
+    static_libs: [
+        "androidx.test.janktesthelper-nodeps",
+        "androidx.test.runner",
+        "androidx.test.rules",
+    ],
+    java_version: "1.7",
+}
+
+android_library_import {
     name: "androidx.test.monitor-nodeps",
     aars: ["androidx/test/monitor/1.1.1/monitor-1.1.1.aar"],
     sdk_version: "current",
@@ -274,3 +298,24 @@ android_library {
     ],
     java_version: "1.7",
 }
+
+android_library_import {
+    name: "androidx.test.uiautomator-nodeps",
+    aars: ["androidx/test/uiautomator/uiautomator/2.2.0/uiautomator-2.2.0.aar"],
+    sdk_version: "current",
+    // min_sdk_version: "18",
+    static_libs: [
+    ],
+}
+
+android_library {
+    name: "androidx.test.uiautomator",
+    sdk_version: "current",
+    // min_sdk_version: "18",
+    manifest: "manifests/androidx.test.uiautomator/AndroidManifest.xml",
+    static_libs: [
+        "androidx.test.uiautomator-nodeps",
+    ],
+    java_version: "1.7",
+}
+
