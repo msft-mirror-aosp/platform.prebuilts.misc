@@ -24,11 +24,15 @@ espressoVersion="3.1.2-alpha01"
 coreVersion="1.1.1-alpha01"
 extJUnitVersion="1.1.1-alpha01"
 extTruthVersion="1.1.1-alpha01"
+jankTestHelperVersion="1.0.1"
+uiAutomatorVersion="2.2.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
+    "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
+    "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     }
 
 def cmd(args):
@@ -97,6 +101,8 @@ downloadArtifact("androidx.test", "rules", rulesVersion)
 downloadArtifact("androidx.test", "runner", runnerVersion)
 downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
 downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
+downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
+downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
