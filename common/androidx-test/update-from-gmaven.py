@@ -35,6 +35,11 @@ mavenToBpPatternMap = {
     "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     }
 
+extraLibs = {
+    "androidx.test.rules" : "android.test.base.stubs",
+    "androidx.test.uiautomator" : "android.test.base.stubs",
+    }
+
 def cmd(args):
    print(args)
    out = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -107,6 +112,8 @@ downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
   atxRewriteStr += "-rewrite %s=%s " % (name, mavenToBpPatternMap[name])
+for name in extraLibs:
+  atxRewriteStr += "-extra-libs %s=%s " % (name, extraLibs[name])
 
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
