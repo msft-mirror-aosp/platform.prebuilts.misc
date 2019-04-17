@@ -7,6 +7,8 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.lifecycle_lifecycle-common",
         "androidx.test.monitor",
     ],
 }
@@ -31,6 +33,13 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "com.google.android.material_material",
+        "androidx.recyclerview_recyclerview",
+        "androidx.core_core",
+        "androidx.drawerlayout_drawerlayout",
+        "androidx.viewpager_viewpager",
+        "androidx.legacy_legacy-support-core-utils",
+        "accessibility-test-framework",
         "androidx.test.espresso.core",
         "androidx.test.espresso.idling-resource",
     ],
@@ -62,6 +71,11 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "javawriter",
+        "jsr330",
+        "hamcrest-library",
+        "hamcrest",
+        "jsr305",
         "androidx.test.runner",
         "androidx.test.espresso.idling-resource",
     ],
@@ -137,6 +151,8 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
+        "tagsoup",
         "androidx.test.espresso.core",
     ],
 }
@@ -161,6 +177,8 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "junit",
+        "androidx.annotation_annotation",
         "androidx.test.core",
         "androidx.test.monitor",
     ],
@@ -187,6 +205,9 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "guava",
+        "truth-prebuilt",
+        "androidx.annotation_annotation",
         "androidx.test.core",
     ],
 }
@@ -236,6 +257,7 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
     ],
 }
 
@@ -285,6 +307,9 @@ android_library_import {
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
+        "junit",
+        "kxml2-android",
         "androidx.test.monitor",
     ],
 }
