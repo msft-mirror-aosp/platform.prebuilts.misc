@@ -36,8 +36,8 @@ mavenToBpPatternMap = {
     }
 
 extraLibs = {
-    "androidx.test.rules" : "android.test.base.stubs",
-    "androidx.test.uiautomator" : "android.test.base.stubs",
+    "androidx.test.rules" : "android.test.base",
+    "androidx.test.uiautomator" : "android.test.base",
     }
 
 def cmd(args):
