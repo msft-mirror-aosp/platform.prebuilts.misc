@@ -1,4 +1,8 @@
-commons-compress-prebuilt.jar in this prebuilt directory was copied from
-    platform/prebuilts/devtools/tools/lib/sdklib.jar
+The object in this prebuilt directory can be built from
+	platform/tools/base
 
-From version 59a50b4d2a46c699ee76cb5a1b9adb5f86aa7ad6 of the platform/prebuilts/devtools project.
+From the commit c1be01f376010b0c80e4bb10184afaedb988f876
+
+Jar sdklib-prebuilt.jar is obtained from
+sdklib-26.5.0-dev.jar in sdk-repo-linux-tools-5430316.zip
+of target sdk_tools_linux git_studio-master-dev@5430316.
