@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.1.2-alpha01"
-rulesVersion="1.1.2-alpha01"
-espressoVersion="3.1.2-alpha01"
-coreVersion="1.1.1-alpha01"
-extJUnitVersion="1.1.1-alpha01"
-extTruthVersion="1.1.1-alpha01"
+runnerVersion="1.2.0-beta01"
+rulesVersion="1.2.0-beta01"
+espressoVersion="3.2.0-beta01"
+coreVersion="1.2.0-beta01"
+extJUnitVersion="1.1.1-beta01"
+extTruthVersion="1.2.0-beta01"
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
@@ -130,4 +130,5 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
     "-sdk-version current " +
+    "-static-deps " +
     ". > Android.bp")
