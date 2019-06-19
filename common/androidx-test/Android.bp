@@ -3,7 +3,7 @@
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.2.0/core-1.2.0.aar"],
+    aars: ["androidx/test/core/1.2.1-alpha01/core-1.2.1-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -29,7 +29,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.2.0/espresso-contrib-3.2.0.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.3.0-alpha01/espresso-contrib-3.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -67,7 +67,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.2.0/espresso-core-3.2.0.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.3.0-alpha01/espresso-core-3.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -101,7 +101,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.2.0/espresso-idling-resource-3.2.0.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.3.0-alpha01/espresso-idling-resource-3.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -121,7 +121,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.2.0/espresso-intents-3.2.0.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.3.0-alpha01/espresso-intents-3.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -147,7 +147,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.2.0/espresso-web-3.2.0.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.3.0-alpha01/espresso-web-3.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -173,7 +173,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.junit-nodeps",
-    aars: ["androidx/test/ext/junit/1.1.1/junit-1.1.1.aar"],
+    aars: ["androidx/test/ext/junit/1.1.2-alpha01/junit-1.1.2-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -201,7 +201,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.truth-nodeps",
-    aars: ["androidx/test/ext/truth/1.2.0/truth-1.2.0.aar"],
+    aars: ["androidx/test/ext/truth/1.3.0-alpha01/truth-1.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -253,7 +253,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.2.0/monitor-1.2.0.aar"],
+    aars: ["androidx/test/monitor/1.3.0-alpha01/monitor-1.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -275,7 +275,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.rules-nodeps",
-    aars: ["androidx/test/rules/1.2.0/rules-1.2.0.aar"],
+    aars: ["androidx/test/rules/1.3.0-alpha01/rules-1.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
@@ -303,7 +303,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.runner-nodeps",
-    aars: ["androidx/test/runner/1.2.0/runner-1.2.0.aar"],
+    aars: ["androidx/test/runner/1.3.0-alpha01/runner-1.3.0-alpha01.aar"],
     sdk_version: "current",
     min_sdk_version: "14",
     static_libs: [
