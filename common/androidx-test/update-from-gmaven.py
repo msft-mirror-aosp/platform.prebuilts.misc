@@ -24,11 +24,15 @@ espressoVersion="3.1.1"
 coreVersion="1.1.0"
 extJUnitVersion="1.1.0"
 extTruthVersion="1.1.0"
+jankTestHelperVersion="1.0.1"
+uiAutomatorVersion="2.2.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
+    "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
+    "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     }
 
 def cmd(args):
@@ -97,12 +101,14 @@ downloadArtifact("androidx.test", "rules", rulesVersion)
 downloadArtifact("androidx.test", "runner", runnerVersion)
 downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
 downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
+downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
+downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
   atxRewriteStr += "-rewrite %s=%s " % (name, mavenToBpPatternMap[name])
 
-cmd("pom2mk " + atxRewriteStr +
+cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
     "-rewrite com.google.truth:truth=truth-prebuilt " +
     "-rewrite net.sf.kxml:kxml2=kxml2-android " +
@@ -117,4 +123,4 @@ cmd("pom2mk " + atxRewriteStr +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
     "-sdk-version current " +
-    ". > Android.mk")
+    ". > Android.bp")
