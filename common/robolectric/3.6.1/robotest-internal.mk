@@ -29,7 +29,8 @@ $(my_target_output): PRIVATE_TARGET_OUTPUT := $(my_target_output)
 $(my_target_output): PRIVATE_TARGET_RETVAL := $(my_target_retval)
 $(my_target_output): PRIVATE_TARGET_NOCACHE := $(my_target_nocache)
 $(my_target_output): PRIVATE_TIMEOUT := $(my_timeout)
-$(my_target_output): PRIVATE_JAVA_PATH := $(if $(my_use_java8),$(ANDROID_JAVA8_HOME)/bin:,)
+# Pin java binary to 8 or 9, the highest robolectric 3.6.1 and ASM 6.0 support:
+$(my_target_output): PRIVATE_JAVA_PATH := $(if $(my_use_java8),$(ANDROID_JAVA8_HOME)/bin:,$(ANDROID_JAVA9_HOME)/bin:)
 $(my_target_output): PRIVATE_XML_OUTPUT_FILE := $(my_target_xml)
 $(my_target_output): .KATI_IMPLICIT_OUTPUTS := $(my_target_xml) $(my_target_retval) $(my_target_nocache)
 # Runs the Robolectric tests and saves the output and return value.
