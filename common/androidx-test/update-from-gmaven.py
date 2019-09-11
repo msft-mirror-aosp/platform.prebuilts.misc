@@ -64,7 +64,7 @@ def getAndroidRoot():
       sys.exit(-1)
 
 def downloadArtifact(groupId, artifactId, version):
-   """Downloads an aar and pom from google maven"""
+   """Downloads an aar, sources.jar and pom from google maven"""
    groupPath = groupId.replace('.', '/')
    artifactDirPath = os.path.join(groupPath, artifactId, version)
    artifactPath = os.path.join(artifactDirPath, "%s-%s" % (artifactId, version))
@@ -79,6 +79,9 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
+ 
+   # download sources.jar
+   cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
 
 def getManifestPath(mavenArtifactName):
