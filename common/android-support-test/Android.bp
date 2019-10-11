@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// DEPRECATED! Use androidx-test libraries instead
+
 // for Android JUnit runner, monitor and rules
 java_library_static {
     name: "android-support-test",
