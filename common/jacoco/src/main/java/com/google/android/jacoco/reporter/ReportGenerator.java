@@ -40,12 +40,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.JarFile;
+import java.util.stream.Collectors;
 
 public class ReportGenerator {
     private static final String OPT_CLASSPATH = "classpath";
     private static final String OPT_REPORT_NAME = "name";
     private static final String OPT_EXEC_FILE = "exec-file";
     private static final String OPT_SOURCES = "srcs";
+    private static final String OPT_SRCJARS = "srcjars";
     private static final String OPT_REPORT_DIR = "report-dir";
     private static final int TAB_WIDTH = 4;
 
@@ -65,6 +68,9 @@ public class ReportGenerator {
             MultiSourceFileLocator sourceFileLocator = new MultiSourceFileLocator(TAB_WIDTH);
             mConfig.mSourceDirs.stream().filter(File::isDirectory)
                     .map(sourceDir -> new DirectorySourceFileLocator(sourceDir, null, TAB_WIDTH))
+                    .forEach(sourceFileLocator::add);
+            mConfig.mSrcJars.stream()
+                    .map(srcJar -> new JarSourceFileLocator(srcJar, null, TAB_WIDTH))
                     .forEach(sourceFileLocator::add);
             reportVisitor.visitBundle(createBundle(execFileLoader.getExecutionDataStore()),
                     sourceFileLocator);
@@ -87,7 +93,9 @@ public class ReportGenerator {
             private boolean weHaveSourceFor(String asmClassName) {
                 String fileName = asmClassName.replaceFirst("\\$.*", "") + ".java";
                 return mConfig.mSourceDirs.stream().map(parent -> new File(parent, fileName))
-                        .anyMatch(File::exists);
+                        .anyMatch(File::exists) ||
+                        mConfig.mSrcJars.stream().anyMatch(srcJar -> srcJar.stream().anyMatch(
+                                it -> it.getName().endsWith(fileName)));
             }
         };
 
@@ -108,14 +116,16 @@ public class ReportGenerator {
         final String mReportName;
         final List<File> mClasspath;
         final List<File> mSourceDirs;
+        final List<JarFile> mSrcJars;
         final File mReportDir;
         final File mExecFileDir;
 
         Config(String reportName, List<File> classpath, List<File> sourceDirs,
-                File reportDir, File execFileDir) {
+                List<JarFile> srcJars, File reportDir, File execFileDir) {
             mReportName = reportName;
             mClasspath = classpath;
             mSourceDirs = sourceDirs;
+            mSrcJars = srcJars;
             mReportDir = reportDir;
             mExecFileDir = execFileDir;
         }
@@ -130,6 +140,22 @@ public class ReportGenerator {
                     "WARN: Classpath entry [%s] does not exist or is not a directory");
             List<File> sources = parse(commandLine.getOptionValue(OPT_SOURCES),
                     "WARN: Source entry [%s] does not exist or is not a directory");
+            List<File> srcJars = parse(commandLine.getOptionValue(OPT_SRCJARS),
+                    "WARN: srcjars entry [%s] does not exist");
+
+            ensure(!sources.isEmpty() || !srcJars.isEmpty(),
+                    "--%s or --%s argument is required", OPT_SOURCES, OPT_SRCJARS);
+
+            List<JarFile> srcJarFiles = srcJars.stream().filter(File::exists)
+                    .map(srcJar -> {
+                        try {
+                            return new JarFile(srcJar);
+                        } catch (IOException e) {
+                            System.out.printf("WARN: Failed to open srcjars file [%s]", srcJar);
+                            return null;
+                        }
+                    }).filter(jarFile -> jarFile != null).collect(Collectors.toList());
+
             File execFileDir = new File(commandLine.getOptionValue(OPT_EXEC_FILE));
             ensure(execFileDir.exists() && execFileDir.canRead() && execFileDir.isFile(),
                     "execFile: [%s] does not exist or could not be read.", execFileDir);
@@ -139,7 +165,7 @@ public class ReportGenerator {
                     "Unable to create report dir [%s]", reportDir);
 
             return new Config(commandLine.getOptionValue(OPT_REPORT_NAME), classpaths, sources,
-                    reportDir, execFileDir);
+                    srcJarFiles, reportDir, execFileDir);
         }
 
         IMultiReportOutput getHtmlReportOutput() {
@@ -156,12 +182,14 @@ public class ReportGenerator {
 
     private static List<File> parse(String value, String warningMessage) {
         List<File> files = new ArrayList<>(0);
-        for (String classpath : value.split(System.getProperty("path.separator"))) {
-            File file = new File(classpath);
-            if (file.exists()) {
-                files.add(file);
-            } else {
-                System.out.println(String.format(warningMessage, classpath));
+        if (value != null) {
+            for (String classpath : value.split(System.getProperty("path.separator"))) {
+                File file = new File(classpath);
+                if (file.exists()) {
+                    files.add(file);
+                } else {
+                    System.out.println(String.format(warningMessage, classpath));
+                }
             }
         }
         return files;
@@ -174,11 +202,16 @@ public class ReportGenerator {
                 "Generates jacoco reports in XML and HTML format.", options, "", true);
     }
 
-    private static void addOption(Options options, String longName, String description) {
+    private static void addOption(Options options, String longName, String description,
+            boolean required) {
         Option option = new Option(null, longName, true, description);
         option.setArgs(1);
-        option.setRequired(true);
+        option.setRequired(required);
         options.addOption(option);
+    }
+
+    private static void addOption(Options options, String longName, String description) {
+        addOption(options, longName, description, true);
     }
 
     public static void main(String[] args) {
@@ -189,7 +222,8 @@ public class ReportGenerator {
             addOption(options, OPT_EXEC_FILE, "File generated by jacoco during testing");
             addOption(options, OPT_REPORT_NAME, "Name of the project tested");
             addOption(options, OPT_REPORT_DIR, "Directory into which reports will be generated");
-            addOption(options, OPT_SOURCES, "List of source directories");
+            addOption(options, OPT_SOURCES, "List of source directories", false);
+            addOption(options, OPT_SRCJARS, "List of jars containing source files", false);
             CommandLine commandLine = new PosixParser().parse(options, args);
             new ReportGenerator(Config.from(commandLine))
                     .execute();
