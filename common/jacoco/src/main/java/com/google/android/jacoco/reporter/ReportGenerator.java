@@ -55,23 +55,19 @@ public class ReportGenerator {
         mConfig = config;
     }
 
-    private void execute() {
+    private void execute() throws IOException {
         ExecFileLoader execFileLoader = new ExecFileLoader();
-        try {
-            execFileLoader.load(mConfig.mExecFileDir);
-            IReportVisitor reportVisitor = new MultiReportVisitor(getVisitors());
-            reportVisitor.visitInfo(execFileLoader.getSessionInfoStore().getInfos(),
-                    execFileLoader.getExecutionDataStore().getContents());
-            MultiSourceFileLocator sourceFileLocator = new MultiSourceFileLocator(TAB_WIDTH);
-            mConfig.mSourceDirs.stream().filter(File::isDirectory)
-                    .map(sourceDir -> new DirectorySourceFileLocator(sourceDir, null, TAB_WIDTH))
-                    .forEach(sourceFileLocator::add);
-            reportVisitor.visitBundle(createBundle(execFileLoader.getExecutionDataStore()),
-                    sourceFileLocator);
-            reportVisitor.visitEnd();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        execFileLoader.load(mConfig.mExecFileDir);
+        IReportVisitor reportVisitor = new MultiReportVisitor(getVisitors());
+        reportVisitor.visitInfo(execFileLoader.getSessionInfoStore().getInfos(),
+                execFileLoader.getExecutionDataStore().getContents());
+        MultiSourceFileLocator sourceFileLocator = new MultiSourceFileLocator(TAB_WIDTH);
+        mConfig.mSourceDirs.stream().filter(File::isDirectory)
+                .map(sourceDir -> new DirectorySourceFileLocator(sourceDir, null, TAB_WIDTH))
+                .forEach(sourceFileLocator::add);
+        reportVisitor.visitBundle(createBundle(execFileLoader.getExecutionDataStore()),
+                sourceFileLocator);
+        reportVisitor.visitEnd();
     }
 
     private IBundleCoverage createBundle(ExecutionDataStore dataStore) throws IOException {
@@ -97,7 +93,7 @@ public class ReportGenerator {
         return coverageBuilder.getBundle(mConfig.mReportName);
     }
 
-    private List<IReportVisitor> getVisitors() throws Exception {
+    private List<IReportVisitor> getVisitors() throws IOException {
         List<IReportVisitor> visitors = new ArrayList<>();
         visitors.add(new XMLFormatter().createVisitor(mConfig.getXmlOutputStream()));
         visitors.add(new HTMLFormatter().createVisitor(mConfig.getHtmlReportOutput()));
@@ -195,6 +191,9 @@ public class ReportGenerator {
                     .execute();
         } catch (ParseException e) {
             printHelp(e, options);
+            System.exit(1);
+        } catch (IOException e) {
+            e.printStackTrace();
             System.exit(1);
         }
     }
