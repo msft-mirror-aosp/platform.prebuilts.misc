@@ -31,6 +31,7 @@ def androidSdkVersions = [
         '8.0.0_r4-robolectric-0',
         '8.0.0_r4-robolectric-r1',
         '8.1.0-robolectric-r4458339',
+        'Q-robolectric-5415296',
 ]
 
 def buildDir = System.getProperty("user.dir")
