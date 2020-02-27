@@ -67,9 +67,8 @@ java_import {
 java_defaults {
     name: "asm-7.0-defaults",
     apex_available: [
+        "//apex_available:anyapex",
         "//apex_available:platform",
-        "com.android.art.release",
-        "com.android.art.debug",
     ],
 }
 

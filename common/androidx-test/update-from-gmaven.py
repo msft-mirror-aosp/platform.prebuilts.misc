@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.3.0-alpha01"
-rulesVersion="1.3.0-alpha01"
-espressoVersion="3.3.0-alpha01"
-coreVersion="1.2.1-alpha01"
-extJUnitVersion="1.1.2-alpha01"
-extTruthVersion="1.3.0-alpha01"
+runnerVersion="1.3.0-alpha04"
+rulesVersion=runnerVersion
+espressoVersion="3.3.0-alpha04"
+coreVersion=runnerVersion
+extJUnitVersion="1.1.2-alpha04"
+extTruthVersion=runnerVersion
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
