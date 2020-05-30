@@ -18,3 +18,8 @@ java_import_host {
         "atf_classes.jar",
     ],
 }
+
+java_library_host {
+    name: "atf-prebuilt",
+    static_libs: ["atf-prebuilt-jars"],
+}
