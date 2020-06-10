@@ -18,12 +18,12 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.2.0-beta01"
-rulesVersion="1.2.0-beta01"
-espressoVersion="3.2.0-beta01"
-coreVersion="1.2.0-beta01"
-extJUnitVersion="1.1.1-beta01"
-extTruthVersion="1.2.0-beta01"
+runnerVersion="1.3.0-beta02"
+rulesVersion=runnerVersion
+espressoVersion="3.3.0-beta02"
+coreVersion=runnerVersion
+extJUnitVersion="1.1.2-beta02"
+extTruthVersion=runnerVersion
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
@@ -64,7 +64,7 @@ def getAndroidRoot():
       sys.exit(-1)
 
 def downloadArtifact(groupId, artifactId, version):
-   """Downloads an aar and pom from google maven"""
+   """Downloads an aar, sources.jar and pom from google maven"""
    groupPath = groupId.replace('.', '/')
    artifactDirPath = os.path.join(groupPath, artifactId, version)
    artifactPath = os.path.join(artifactDirPath, "%s-%s" % (artifactId, version))
@@ -79,6 +79,9 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
+ 
+   # download sources.jar
+   cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
 
 def getManifestPath(mavenArtifactName):
