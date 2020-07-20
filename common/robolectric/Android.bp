@@ -12,3 +12,9 @@ java_import {
     name: "platform-robolectric-android-all-stubs",
     jars: ["android-all/android-all-stubs.jar"],
 }
+
+android_robolectric_runtimes {
+    name: "robolectric-android-all-prebuilts",
+    jars: ["android-all/*.jar"],
+    lib: "robolectric_android-all-stub",
+}
