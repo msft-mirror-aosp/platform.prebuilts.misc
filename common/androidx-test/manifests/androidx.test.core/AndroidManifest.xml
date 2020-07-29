@@ -14,35 +14,35 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
 -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-     package="androidx.test.core">
+    package="androidx.test.core" >
 
-    <uses-sdk android:minSdkVersion="14"
-         android:targetSdkVersion="28"/>
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="28" />
 
-    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application>
-        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
-             android:theme="@android:style/Theme"
-             android:exported="true">
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+            android:theme="@android:style/Theme" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
-             android:theme="@android:style/Theme"
-             android:exported="true">
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+            android:theme="@android:style/Theme" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
-             android:theme="@android:style/Theme.Dialog"
-             android:exported="true">
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+            android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
     </application>
