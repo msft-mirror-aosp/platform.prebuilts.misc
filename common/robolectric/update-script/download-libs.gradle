@@ -12,12 +12,11 @@ def shadowArtifacts = [
         "org.robolectric:shadows-supportv4:${robolectricVersion}",
 ]
 
-def buildDir = System.getProperty("user.dir")
-
 apply plugin: 'java'
 
 repositories {
     mavenCentral()
+    google()
 }
 
 configurations {
@@ -29,18 +28,27 @@ configurations {
 dependencies {
     compile("org.robolectric:robolectric:${robolectricVersion}") {
         // we don't need these MavenDependencyResolver in a hermetic build
-        exclude group: 'org.apache.maven', module: 'maven-ant-tasks'
-        exclude group: 'org.apache.ant', module: 'ant'
+        exclude group: 'org.apache.maven', module: ''
+        exclude group: 'org.apache.ant', module: ''
     }
 
-    compile('com.ximpleware:vtd-xml:2.11')
+    compile('com.ximpleware:vtd-xml:2.11') { force = true }
     // Force ASM dependency to be 6.0 for JDK9 support
-    compile('org.ow2.asm:asm:6.0')
-    compile('org.ow2.asm:asm-commons:6.0')
+    compile('org.ow2.asm:asm:6.0') { force = true }
+    compile('org.ow2.asm:asm-commons:6.0') { force = true }
+    compile('org.ow2.asm:asm-util:6.0') { force = true }
 
     shadowArtifacts.forEach { shadowArtifact ->
-        compile shadowArtifact
-        sandbox shadowArtifact
+        compile ("${shadowArtifact}")  {
+            // we don't need these MavenDependencyResolver in a hermetic build
+            exclude group: 'org.apache.maven', module: ''
+            exclude group: 'org.apache.ant', module: ''
+        }
+        sandbox ("${shadowArtifact}")  {
+            // we don't need these MavenDependencyResolver in a hermetic build
+            exclude group: 'org.apache.maven', module: ''
+            exclude group: 'org.apache.ant', module: ''
+        }
     }
 
     def shadowArtifactsSet = shadowArtifacts.collect {it.toString()}  toSet()
