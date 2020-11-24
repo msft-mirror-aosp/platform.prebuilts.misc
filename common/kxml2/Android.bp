@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-java_import_host {
+java_import {
     name: "kxml2-2.3.0",
     jars: ["kxml2-2.3.0.jar"],
     installable: true,
+    host_supported: true,
 }
 
 java_import {
