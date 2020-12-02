@@ -3311,15 +3311,6 @@
       "100": "QUALITY_HIGH_ACCURACY"
     }
   },
-  "android.location.timezone.LocationTimeZoneEvent.EventType": {
-    "flag": false,
-    "values": {
-      "0": "EVENT_TYPE_UNKNOWN",
-      "1": "EVENT_TYPE_PERMANENT_FAILURE",
-      "2": "EVENT_TYPE_SUCCESS",
-      "3": "EVENT_TYPE_UNCERTAIN"
-    }
-  },
   "android.media.AudioAttributes.AttributeContentType": {
     "flag": false,
     "values": {
@@ -9612,7 +9603,8 @@
       "8": "ERROR_REQUEST_TOO_LARGE",
       "10": "ERROR_REQUEST_TIMEOUT",
       "11": "ERROR_INSUFFICIENT_MEMORY",
-      "12": "ERROR_LOST_NETWORK"
+      "12": "ERROR_LOST_NETWORK",
+      "13": "ERROR_SERVER_UNAVAILABLE"
     }
   },
   "android.telephony.ims.RcsUceAdapter.PublishState": {
@@ -10273,6 +10265,28 @@
       "11": "VSYNC_TIMESTAMP"
     }
   },
+  "android.view.Gravity.GravityFlags": {
+    "flag": true,
+    "values": {
+      "119": "FILL",
+      "7": "FILL_HORIZONTAL",
+      "112": "FILL_VERTICAL",
+      "8388611": "START",
+      "8388613": "END",
+      "3": "LEFT",
+      "5": "RIGHT",
+      "48": "TOP",
+      "80": "BOTTOM",
+      "17": "CENTER",
+      "1": "CENTER_HORIZONTAL",
+      "16": "CENTER_VERTICAL",
+      "16777216": "DISPLAY_CLIP_HORIZONTAL",
+      "268435456": "DISPLAY_CLIP_VERTICAL",
+      "8": "CLIP_HORIZONTAL",
+      "128": "CLIP_VERTICAL",
+      "0": "NO_GRAVITY"
+    }
+  },
   "android.view.InputDevice.InputSourceClass": {
     "flag": true,
     "values": {
@@ -10700,6 +10714,14 @@
       "0": "BEHAVIOR_SHOW_BARS_BY_TOUCH",
       "1": "BEHAVIOR_SHOW_BARS_BY_SWIPE",
       "2": "BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE"
+    }
+  },
+  "android.view.WindowManager.DisplayImePolicy": {
+    "flag": false,
+    "values": {
+      "0": "DISPLAY_IME_POLICY_LOCAL",
+      "1": "DISPLAY_IME_POLICY_FALLBACK_DISPLAY",
+      "2": "DISPLAY_IME_POLICY_HIDE"
     }
   },
   "android.view.WindowManager.LayoutParams.Flags": {
@@ -11591,7 +11613,7 @@
     }
   },
   "com.android.internal.compat.ChangeReporter.Source": {
-    "flag": true,
+    "flag": false,
     "values": {
       "0": "SOURCE_UNKNOWN_SOURCE",
       "1": "SOURCE_APP_PROCESS",
@@ -11599,7 +11621,7 @@
     }
   },
   "com.android.internal.compat.ChangeReporter.State": {
-    "flag": true,
+    "flag": false,
     "values": {
       "0": "STATE_UNKNOWN_STATE",
       "1": "STATE_ENABLED",
@@ -11715,6 +11737,15 @@
       "1": "POWER_LOW",
       "2": "POWER_MEDIUM",
       "3": "POWER_HIGH"
+    }
+  },
+  "com.android.internal.location.timezone.LocationTimeZoneEvent.EventType": {
+    "flag": false,
+    "values": {
+      "0": "EVENT_TYPE_UNKNOWN",
+      "1": "EVENT_TYPE_PERMANENT_FAILURE",
+      "2": "EVENT_TYPE_SUCCESS",
+      "3": "EVENT_TYPE_UNCERTAIN"
     }
   },
   "com.android.internal.policy.TaskResizingAlgorithm.CtrlType": {
