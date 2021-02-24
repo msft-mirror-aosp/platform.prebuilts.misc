@@ -1,4 +1,5 @@
-// Copyright (C) 2008 The Android Open Source Project
+//
+// Copyright (C) 2021 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
 // limitations under the License.
 
 package {
-    default_applicable_licenses: ["prebuilts_misc_common_jython_license"],
+    default_applicable_licenses: ["prebuilts_misc_license"],
 }
 
 // Added automatically by a large-scale-change that took the approach of
@@ -29,30 +30,20 @@ package {
 // For unused files, consider creating a 'fileGroup' with "//visibility:private"
 // to attach the license to, and including a comment whether the files may be
 // used in the current project.
-//
-// large-scale-change included anything that looked like it might be a license
-// text as a license_text. e.g. LICENSE, NOTICE, COPYING etc.
-//
-// Please consider removing redundant or irrelevant files from 'license_text:'.
 // See: http://go/android-license-faq
 license {
-    name: "prebuilts_misc_common_jython_license",
+    name: "prebuilts_misc_license",
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
         "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-EPL",
         "SPDX-license-identifier-GPL",
+        "SPDX-license-identifier-GPL-2.0",
+        "SPDX-license-identifier-LGPL",
         "SPDX-license-identifier-MIT",
         "SPDX-license-identifier-PSF-2.0",
+        "legacy_restricted",
     ],
-    license_text: [
-        "LICENSE",
-        "LICENSE_Apache.txt",
-        "LICENSE_CPython.txt",
-    ],
-}
-
-java_import_host {
-    name: "jython",
-    jars: ["jython.jar"],
+    // large-scale-change unable to identify any license_text files
 }
