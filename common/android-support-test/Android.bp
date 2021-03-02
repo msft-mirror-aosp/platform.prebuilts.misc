@@ -19,7 +19,7 @@
 // usages in Android.mk that cannot be eliminated quit yet. See b/172831930
 package {
     default_visibility: [
-        "//visibility:private"
+        "//visibility:private",
     ],
 }
 
