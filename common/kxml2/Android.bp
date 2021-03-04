@@ -12,6 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+package {
+    default_applicable_licenses: ["prebuilts_misc_common_kxml2_license"],
+}
+
+// Added automatically by a large-scale-change
+// See: http://go/android-license-faq
+license {
+    name: "prebuilts_misc_common_kxml2_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-MIT",
+    ],
+    license_text: [
+        "license.txt",
+    ],
+}
+
 java_import {
     name: "kxml2-2.3.0",
     jars: ["kxml2-2.3.0.jar"],
