@@ -37,7 +37,7 @@
 ### Used for running tests.
 
 # Where to find Robolectric.
-my_robolectric_script_path := $(call my-dir)
+my_robolectric_script_path := $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
 # Explicitly define the jars and their classpath ordering.
 include $(my_robolectric_script_path)/classpath_jars.mk
 my_robolectric_jars := \
@@ -106,7 +106,7 @@ my_srcs_jars := \
 # The jars needed to run the tests.
 my_jars := \
     $(my_robolectric_jars) \
-    $(call resolve-prebuilt-sdk-jar-path,$(LOCAL_SDK_VERSION)) \
+    $(call resolve-prebuilt-sdk-jar-path,$(if $(LOCAL_SDK_VERSION),$(LOCAL_SDK_VERSION),current)) \
     $(call java-lib-files,junitxml) \
     $(my_srcs_jars)
 
