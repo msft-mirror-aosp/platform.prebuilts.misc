@@ -2,10 +2,11 @@ my_robolectric_runtime_deps := \
     lib/animal-sniffer-annotations-1.17.jar \
     lib/annotation-1.1.0.jar \
     lib/annotations-4.5.1.jar \
-    lib/asm-6.0.jar \
-    lib/asm-commons-6.0.jar \
-    lib/asm-tree-6.0.jar \
-    lib/asm-util-6.0.jar \
+    lib/asm-9.0.jar \
+    lib/asm-analysis-9.0.jar \
+    lib/asm-commons-9.0.jar \
+    lib/asm-tree-9.0.jar \
+    lib/asm-util-9.0.jar \
     lib/auto-value-annotations-1.6.2.jar \
     lib/bcprov-jdk15on-1.65.jar \
     lib/checker-qual-2.5.2.jar \
@@ -37,5 +38,4 @@ my_robolectric_runtime_deps := \
     lib/shadows-supportv4-4.5.1.jar \
     lib/sqlite4java-1.0.392.jar \
     lib/utils-4.5.1.jar \
-    lib/utils-reflector-4.5.1.jar \
-    lib/vtd-xml-2.11.jar 
+    lib/utils-reflector-4.5.1.jar 
