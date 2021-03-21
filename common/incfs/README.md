@@ -1,9 +1,9 @@
 The object in this prebuilt directory can be built from
 	platform/tools/base
 
-Jar is obtained from studio_linux@7192265[] - git_studio-master-dev
+Jar is obtained from studio_linux@7190098[] - git_studio-master-dev
 
-Note: Before dropping the ddmlib-prebuilt.jar, please run
+Note: Before dropping the libincfs-prebuilt.jar, please run
 the following command to strip the jar manifest file,
 which causes hidden dependency on jars in the Class-Path.
-$ zip -d ddmlib-prebuilt.jar META-INF/MANIFEST.MF
+$ zip -d libincfs-prebuilt.jar META-INF/MANIFEST.MF
