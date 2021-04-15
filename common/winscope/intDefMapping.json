@@ -4143,7 +4143,6 @@
     }
   },
   "android.media.MicrophoneInfo.MicrophoneDirectionality": {
-    "flag": true,
     "values": {
       "0": "DIRECTIONALITY_UNKNOWN",
       "1": "DIRECTIONALITY_OMNI",
@@ -4154,7 +4153,6 @@
     }
   },
   "android.media.MicrophoneInfo.MicrophoneLocation": {
-    "flag": true,
     "values": {
       "0": "LOCATION_UNKNOWN",
       "1": "LOCATION_MAINBODY",
