@@ -12,9 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-java_import {
+java_import_host {
     name: "atf-prebuilt-jars",
-    host_supported: true,
     jars: [
         "atf_classes.jar",
     ],
