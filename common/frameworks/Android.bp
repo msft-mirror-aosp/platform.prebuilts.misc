@@ -20,3 +20,8 @@ java_import_host {
     name: "platformprotos",
     jars: ["platformprotos-prebuilt.jar"],
 }
+
+java_import_host {
+    name: "platformtestprotos",
+    jars: ["platformtestprotos-prebuilt.jar"],
+}
