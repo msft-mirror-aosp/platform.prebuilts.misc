@@ -18,12 +18,13 @@ import os
 import subprocess
 import sys
 
-runnerVersion="1.3.0-beta02"
+runnerVersion="1.3.1-alpha03"
 rulesVersion=runnerVersion
-espressoVersion="3.3.0-beta02"
+espressoVersion="3.4.0-alpha03"
 coreVersion=runnerVersion
-extJUnitVersion="1.1.2-beta02"
+extJUnitVersion="1.1.3-alpha03"
 extTruthVersion=runnerVersion
+servicesVersion=runnerVersion
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
@@ -33,6 +34,7 @@ mavenToBpPatternMap = {
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
     "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
+    "androidx.test.services:storage":"androidx.test.services.storage",
     }
 
 extraLibs = {
@@ -111,6 +113,7 @@ downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
 downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
 downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
+downloadArtifact("androidx.test.services", "storage", servicesVersion)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
