@@ -21,8 +21,9 @@ package {
     default_applicable_licenses: ["prebuilts_misc_license"],
 }
 
-java_import_host {
+java_import {
     name: "atf-prebuilt-jars",
+    host_supported: true,
     jars: [
         "atf_classes.jar",
     ],
