@@ -15,7 +15,7 @@
   ~ limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="androidx.test" >
+    package="androidx.test.rules" >
 
     <uses-sdk
         android:minSdkVersion="14"
