@@ -12,8 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-java_import_host {
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "prebuilts_misc_license"
+    // to get the below license kinds:
+    //   legacy_restricted
+    default_applicable_licenses: ["prebuilts_misc_license"],
+}
+
+java_import {
     name: "atf-prebuilt-jars",
+    host_supported: true,
     jars: [
         "atf_classes.jar",
     ],
