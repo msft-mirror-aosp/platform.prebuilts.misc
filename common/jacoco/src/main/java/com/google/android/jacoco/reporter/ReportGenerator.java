@@ -81,14 +81,13 @@ public class ReportGenerator {
         Analyzer analyzer = new Analyzer(dataStore, coverageBuilder) {
             @Override
             public void analyzeClass(ClassReader reader) {
-                if (weHaveSourceFor(reader.getClassName(), "java")
-                        || weHaveSourceFor(reader.getClassName(), "kt")) {
+                if (weHaveSourceFor(reader.getClassName())) {
                     super.analyzeClass(reader);
                 }
             }
 
-            private boolean weHaveSourceFor(String asmClassName, String fileExtension) {
-                String fileName = asmClassName.replaceFirst("\\$.*", "") + "." + fileExtension;
+            private boolean weHaveSourceFor(String asmClassName) {
+                String fileName = asmClassName.replaceFirst("\\$.*", "") + ".java";
                 return mConfig.mSourceDirs.stream().map(parent -> new File(parent, fileName))
                         .anyMatch(File::exists) ||
                         mConfig.mSrcJars.stream().anyMatch(srcJar -> srcJar.stream().anyMatch(
