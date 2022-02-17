@@ -59,7 +59,7 @@ java_import {
     sdk_version: "current",
     jars: [
         "lib/annotations-${roboVersion}.jar",
-        "lib/asm-6.0.jar",
+        "lib/asm-9.0.jar",
         "lib/junit-${roboVersion}.jar",
         "lib/resources-${roboVersion}.jar",
         "lib/sandbox-${roboVersion}.jar",
