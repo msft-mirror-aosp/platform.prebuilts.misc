@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test.espresso</groupId>
   <artifactId>espresso-intents</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0-alpha04</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -27,19 +27,25 @@
     <dependency>
       <groupId>androidx.test.espresso</groupId>
       <artifactId>espresso-core</artifactId>
-      <version>3.4.0</version>
+      <version>3.5.0-alpha04</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
       <artifactId>core</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.1-alpha04</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
       <artifactId>rules</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.1-alpha04</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>androidx.test</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
