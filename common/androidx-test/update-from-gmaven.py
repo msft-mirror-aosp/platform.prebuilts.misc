@@ -20,13 +20,13 @@ import sys
 
 annotationVersion="1.0.0"
 monitorVersion="1.6.0-alpha01"
-runnerVersion="1.4.0"
-rulesVersion=runnerVersion
+runnerVersion="1.5.0-alpha01"
+rulesVersion="1.4.1-alpha01"
 espressoVersion="3.5.0-alpha04"
-coreVersion=runnerVersion
-extJUnitVersion="1.1.3"
-extTruthVersion=runnerVersion
-servicesVersion=runnerVersion
+coreVersion="1.4.1-alpha04"
+extJUnitVersion="1.1.4-alpha04"
+extTruthVersion="1.5.0-alpha04"
+servicesVersion="1.4.2-alpha01"
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 tracingVersion="1.0.0"
@@ -40,6 +40,8 @@ mavenToBpPatternMap = {
     "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     "androidx.test.services:storage":"androidx.test.services.storage",
     "androidx.tracing:tracing":"androidx.tracing",
+    "androidx.concurrent:concurrent-futures":"androidx.concurrent_concurrent-futures",
+    "com.google.guava:listenablefuture":"guava-listenablefuture-prebuilt-jar",
     }
 
 extraLibs = {
