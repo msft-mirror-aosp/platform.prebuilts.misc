@@ -5,7 +5,7 @@
 # Usage:
 #   a. Initialize android environment eg . build/envsetup.sh; lunch <target>
 #   b. Update the version numbers in this file
-#   c. ./prebuilts/misc/common/androidx-test/update-from-gmaven.py
+#   c. ./prebuilts/misc/androidx-test/update-from-gmaven.py
 #
 # The script will then:
 #   1. Remove the previous artifacts
@@ -18,28 +18,23 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.0"
-monitorVersion="1.6.0-alpha01"
 runnerVersion="1.4.0"
 rulesVersion=runnerVersion
-espressoVersion="3.5.0-alpha04"
+espressoVersion="3.4.0"
 coreVersion=runnerVersion
 extJUnitVersion="1.1.3"
 extTruthVersion=runnerVersion
 servicesVersion=runnerVersion
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
-tracingVersion="1.0.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
     "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     "androidx.test.services:storage":"androidx.test.services.storage",
-    "androidx.tracing:tracing":"androidx.tracing",
     }
 
 extraLibs = {
@@ -86,7 +81,7 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
-
+ 
    # download sources.jar
    cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
@@ -104,7 +99,6 @@ chdir(prebuiltDir)
 cmd("rm -rf androidx/test")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-contrib", espressoVersion)
@@ -112,7 +106,7 @@ downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoV
 downloadArtifact("androidx.test.espresso", "espresso-intents", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-web", espressoVersion)
-downloadArtifact("androidx.test", "monitor", monitorVersion)
+downloadArtifact("androidx.test", "monitor", runnerVersion)
 downloadArtifact("androidx.test", "rules", rulesVersion)
 downloadArtifact("androidx.test", "runner", runnerVersion)
 downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
@@ -120,7 +114,6 @@ downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
 downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
 downloadArtifact("androidx.test.services", "storage", servicesVersion)
-downloadArtifact("androidx.tracing", "tracing", tracingVersion)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
