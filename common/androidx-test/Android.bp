@@ -1,36 +1,8 @@
 // Automatically generated with:
-// pom2bp -rewrite 'androidx.test:=androidx.test.' -rewrite 'androidx.test.annotation:annotation=androidx.test.annotation' -rewrite 'androidx.test.ext:=androidx.test.ext.' -rewrite 'androidx.test.espresso:espresso-=androidx.test.espresso.' -rewrite 'androidx.test.janktesthelper:janktesthelper=androidx.test.janktesthelper' -rewrite 'androidx.test.uiautomator:uiautomator=androidx.test.uiautomator' -rewrite 'androidx.test.services:storage=androidx.test.services.storage' -rewrite 'androidx.tracing:tracing=androidx.tracing' -extra-libs androidx.test.rules=android.test.base -extra-libs androidx.test.uiautomator=android.test.base -rewrite 'com.google.truth:truth=truth-prebuilt' -rewrite 'net.sf.kxml:kxml2=kxml2-android' -rewrite 'androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'org.hamcrest:hamcrest-integration=hamcrest' -rewrite 'javax.inject:javax.inject=jsr330' -rewrite 'com.google.android.material:material=com.google.android.material_material' -rewrite 'androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout' -rewrite 'androidx.viewpager:viewpager=androidx.viewpager_viewpager' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils' -sdk-version current -static-deps .
+// pom2bp -rewrite 'androidx.test:=androidx.test.' -rewrite 'androidx.test.ext:=androidx.test.ext.' -rewrite 'androidx.test.espresso:espresso-=androidx.test.espresso.' -rewrite 'androidx.test.janktesthelper:janktesthelper=androidx.test.janktesthelper' -rewrite 'androidx.test.uiautomator:uiautomator=androidx.test.uiautomator' -rewrite 'androidx.test.services:storage=androidx.test.services.storage' -extra-libs androidx.test.rules=android.test.base -extra-libs androidx.test.uiautomator=android.test.base -rewrite 'com.google.truth:truth=truth-prebuilt' -rewrite 'net.sf.kxml:kxml2=kxml2-android' -rewrite 'androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'org.hamcrest:hamcrest-integration=hamcrest' -rewrite 'javax.inject:javax.inject=jsr330' -rewrite 'com.google.android.material:material=com.google.android.material_material' -rewrite 'androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout' -rewrite 'androidx.viewpager:viewpager=androidx.viewpager_viewpager' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils' -sdk-version current -static-deps .
 
-android_library_import {
-    name: "androidx.test.annotation-nodeps",
-    aars: ["androidx/test/annotation/1.0.0/annotation-1.0.0.aar"],
-    sdk_version: "current",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    min_sdk_version: "14",
-    static_libs: [
-        "androidx.annotation_annotation",
-        "androidx.annotation_annotation-experimental",
-    ],
-}
-
-android_library {
-    name: "androidx.test.annotation",
-    sdk_version: "current",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    min_sdk_version: "14",
-    manifest: "manifests/androidx.test.annotation/AndroidManifest.xml",
-    static_libs: [
-        "androidx.test.annotation-nodeps",
-        "androidx.annotation_annotation",
-        "androidx.annotation_annotation-experimental",
-    ],
-    java_version: "1.7",
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
 android_library_import {
@@ -69,7 +41,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.5.0-alpha04/espresso-contrib-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.4.0/espresso-contrib-3.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -79,9 +51,9 @@ android_library_import {
     static_libs: [
         "com.google.android.material_material",
         "androidx.recyclerview_recyclerview",
+        "androidx.core_core",
         "androidx.drawerlayout_drawerlayout",
         "androidx.viewpager_viewpager",
-        "androidx.core_core",
         "androidx.legacy_legacy-support-core-utils",
         "accessibility-test-framework",
         "androidx.test.espresso.core",
@@ -102,9 +74,9 @@ android_library {
         "androidx.test.espresso.contrib-nodeps",
         "com.google.android.material_material",
         "androidx.recyclerview_recyclerview",
+        "androidx.core_core",
         "androidx.drawerlayout_drawerlayout",
         "androidx.viewpager_viewpager",
-        "androidx.core_core",
         "androidx.legacy_legacy-support-core-utils",
         "accessibility-test-framework",
         "androidx.test.espresso.core",
@@ -115,7 +87,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.5.0-alpha04/espresso-core-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.4.0/espresso-core-3.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -123,17 +95,13 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
-        "androidx.annotation_annotation",
         "javawriter",
         "jsr330",
         "hamcrest-library",
         "hamcrest",
         "jsr305",
-        "kotlin-stdlib",
-        "androidx.test.core",
         "androidx.test.runner",
         "androidx.test.espresso.idling-resource",
-        "androidx.test.annotation",
     ],
 }
 
@@ -148,24 +116,20 @@ android_library {
     manifest: "manifests/androidx.test.espresso.core/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.core-nodeps",
-        "androidx.annotation_annotation",
         "javawriter",
         "jsr330",
         "hamcrest-library",
         "hamcrest",
         "jsr305",
-        "kotlin-stdlib",
-        "androidx.test.core",
         "androidx.test.runner",
         "androidx.test.espresso.idling-resource",
-        "androidx.test.annotation",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.5.0-alpha04/espresso-idling-resource-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.4.0/espresso-idling-resource-3.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -193,7 +157,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.5.0-alpha04/espresso-intents-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.4.0/espresso-intents-3.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -204,7 +168,6 @@ android_library_import {
         "androidx.test.espresso.core",
         "androidx.test.core",
         "androidx.test.rules",
-        "androidx.test.annotation",
     ],
 }
 
@@ -222,14 +185,13 @@ android_library {
         "androidx.test.espresso.core",
         "androidx.test.core",
         "androidx.test.rules",
-        "androidx.test.annotation",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.5.0-alpha04/espresso-web-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.4.0/espresso-web-3.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -367,7 +329,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.6.0-alpha01/monitor-1.6.0-alpha01.aar"],
+    aars: ["androidx/test/monitor/1.4.0/monitor-1.4.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -376,8 +338,6 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.annotation_annotation",
-        "androidx.test.annotation",
-        "androidx.tracing",
     ],
 }
 
@@ -393,8 +353,6 @@ android_library {
     static_libs: [
         "androidx.test.monitor-nodeps",
         "androidx.annotation_annotation",
-        "androidx.test.annotation",
-        "androidx.tracing",
     ],
     java_version: "1.7",
 }
@@ -533,36 +491,6 @@ android_library {
     ],
     libs: [
         "android.test.base",
-    ],
-    java_version: "1.7",
-}
-
-android_library_import {
-    name: "androidx.tracing-nodeps",
-    aars: ["androidx/tracing/tracing/1.0.0/tracing-1.0.0.aar"],
-    sdk_version: "current",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    min_sdk_version: "14",
-    static_libs: [
-        "androidx.annotation_annotation",
-    ],
-}
-
-android_library {
-    name: "androidx.tracing",
-    sdk_version: "current",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    min_sdk_version: "14",
-    manifest: "manifests/androidx.tracing/AndroidManifest.xml",
-    static_libs: [
-        "androidx.tracing-nodeps",
-        "androidx.annotation_annotation",
     ],
     java_version: "1.7",
 }
