@@ -82,7 +82,7 @@ java_import {
 }
 
 java_defaults {
-    name: "asm-9.2-defaults",
+    name: "asm-7.0-defaults",
     apex_available: [
         "//apex_available:anyapex",
         "//apex_available:platform",
@@ -90,36 +90,36 @@ java_defaults {
 }
 
 java_import {
-    name: "asm-9.2",
+    name: "asm-7.0",
     host_supported: true,
-    jars: ["asm-9.2.jar"],
-    defaults: ["asm-9.2-defaults"],
+    jars: ["asm-7.0.jar"],
+    defaults: ["asm-7.0-defaults"],
 }
 
 java_import {
-    name: "asm-analysis-9.2",
+    name: "asm-analysis-7.0",
     host_supported: true,
-    jars: ["asm-analysis-9.2.jar"],
-    defaults: ["asm-9.2-defaults"],
+    jars: ["asm-analysis-7.0.jar"],
+    defaults: ["asm-7.0-defaults"],
 }
 
 java_import {
-    name: "asm-commons-9.2",
+    name: "asm-commons-7.0",
     host_supported: true,
-    jars: ["asm-commons-9.2.jar"],
-    defaults: ["asm-9.2-defaults"],
+    jars: ["asm-commons-7.0.jar"],
+    defaults: ["asm-7.0-defaults"],
 }
 
 java_import {
-    name: "asm-tree-9.2",
+    name: "asm-tree-7.0",
     host_supported: true,
-    jars: ["asm-tree-9.2.jar"],
-    defaults: ["asm-9.2-defaults"],
+    jars: ["asm-tree-7.0.jar"],
+    defaults: ["asm-7.0-defaults"],
 }
 
 java_import {
-    name: "asm-util-9.2",
+    name: "asm-util-7.0",
     host_supported: true,
-    jars: ["asm-util-9.2.jar"],
-    defaults: ["asm-9.2-defaults"],
+    jars: ["asm-util-7.0.jar"],
+    defaults: ["asm-7.0-defaults"],
 }
