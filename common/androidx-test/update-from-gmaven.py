@@ -18,29 +18,23 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.0"
-monitorVersion="1.6.0-alpha01"
-runnerVersion="1.5.0-alpha01"
-rulesVersion="1.4.1-alpha01"
-espressoVersion="3.5.0-alpha04"
-coreVersion="1.4.1-alpha04"
-extJUnitVersion="1.1.4-alpha04"
-extTruthVersion="1.5.0-alpha04"
-servicesVersion="1.4.2-alpha01"
+runnerVersion="1.3.1-alpha03"
+rulesVersion=runnerVersion
+espressoVersion="3.4.0-alpha03"
+coreVersion=runnerVersion
+extJUnitVersion="1.1.3-alpha03"
+extTruthVersion=runnerVersion
+servicesVersion=runnerVersion
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
     "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     "androidx.test.services:storage":"androidx.test.services.storage",
-    "androidx.tracing:tracing":"androidx.tracing_tracing",
-    "androidx.concurrent:concurrent-futures":"androidx.concurrent_concurrent-futures",
-    "com.google.guava:listenablefuture":"guava-listenablefuture-prebuilt-jar",
     }
 
 extraLibs = {
@@ -105,7 +99,6 @@ chdir(prebuiltDir)
 cmd("rm -rf androidx/test")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-contrib", espressoVersion)
@@ -113,7 +106,7 @@ downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoV
 downloadArtifact("androidx.test.espresso", "espresso-intents", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-web", espressoVersion)
-downloadArtifact("androidx.test", "monitor", monitorVersion)
+downloadArtifact("androidx.test", "monitor", runnerVersion)
 downloadArtifact("androidx.test", "rules", rulesVersion)
 downloadArtifact("androidx.test", "runner", runnerVersion)
 downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)

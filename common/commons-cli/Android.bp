@@ -35,9 +35,7 @@ license {
     ],
 }
 
-java_import {
+java_import_host {
     name: "commons-cli-1.2",
-    host_supported: true,
-    sdk_version: "core_current",
     jars: ["commons-cli-1.2.jar"],
 }
