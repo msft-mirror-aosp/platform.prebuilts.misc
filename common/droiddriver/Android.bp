@@ -13,23 +13,6 @@
 // limitations under the License.
 
 //#################################
-package {
-    default_applicable_licenses: ["prebuilts_misc_common_droiddriver_license"],
-}
-
-// Added automatically by a large-scale-change
-// See: http://go/android-license-faq
-license {
-    name: "prebuilts_misc_common_droiddriver_license",
-    visibility: [":__subpackages__"],
-    license_kinds: [
-        "SPDX-license-identifier-Apache-2.0",
-    ],
-    license_text: [
-        "NOTICE",
-    ],
-}
-
 java_import {
     name: "droiddriver-0.9-prebuilt",
     jars: ["droiddriver-0.9.jar"],

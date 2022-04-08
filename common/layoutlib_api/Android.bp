@@ -1,7 +1,3 @@
-package {
-    default_applicable_licenses: ["Android-Apache-2.0"],
-}
-
 java_import_host {
     name: "layoutlib_api-prebuilt",
     jars: ["layoutlib_api-prebuilt.jar"],

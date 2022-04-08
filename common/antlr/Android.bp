@@ -12,23 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package {
-    default_applicable_licenses: ["prebuilts_misc_common_antlr_license"],
-}
-
-// Added automatically by a large-scale-change
-// See: http://go/android-license-faq
-license {
-    name: "prebuilts_misc_common_antlr_license",
-    visibility: [":__subpackages__"],
-    license_kinds: [
-        "SPDX-license-identifier-BSD",
-    ],
-    license_text: [
-        "LICENSE",
-    ],
-}
-
 java_import_host {
     name: "antlr",
     jars: ["antlr-3.4-complete.jar"],

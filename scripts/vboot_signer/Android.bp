@@ -14,10 +14,6 @@
 // limitations under the License.
 //
 
-package {
-    default_applicable_licenses: ["Android-Apache-2.0"],
-}
-
 sh_binary_host {
     name: "vboot_signer",
     src: "vboot_signer.sh",

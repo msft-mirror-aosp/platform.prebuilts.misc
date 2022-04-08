@@ -1,14 +1,14 @@
-package {
-    // See: http://go/android-license-faq
-    // A large-scale-change added 'default_applicable_licenses' to import
-    // all of the 'license_kinds' from "prebuilts_misc_license"
-    // to get the below license kinds:
-    //   legacy_restricted
-    default_applicable_licenses: ["prebuilts_misc_license"],
-}
+// platform-robolectric-android-all-stubs is a stubbed out android-all JAR. This is used in place of
+// the SDK stubs JAR for apps that can use hidden APIs like Settings.
+// To use this, add this to libs / LOCAL_STATIC_JAVA_LIBRARIES of your test library.
 
-android_robolectric_runtimes {
-    name: "robolectric-android-all-prebuilts",
-    jars: ["android-all/*.jar"],
-    lib: "robolectric-host-android_all",
+// This jar is generated from the command
+//   java -jar \
+//     $ANDROID_HOST_OUT/framework/mkstubs.jar \
+//     $OUT/../../common/obj/JAVA_LIBRARIES/robolectric_android-all_intermediates/classes.jar \
+//     android-all-stubs.jar '+*'
+
+java_import {
+    name: "platform-robolectric-android-all-stubs",
+    jars: ["android-all/android-all-stubs.jar"],
 }

@@ -32,6 +32,12 @@ dependencies {
         exclude group: 'org.apache.ant', module: ''
     }
 
+    compile('com.ximpleware:vtd-xml:2.11') { force = true }
+    // Force ASM dependency to be 6.0 for JDK9 support
+    compile('org.ow2.asm:asm:6.0') { force = true }
+    compile('org.ow2.asm:asm-commons:6.0') { force = true }
+    compile('org.ow2.asm:asm-util:6.0') { force = true }
+
     shadowArtifacts.forEach { shadowArtifact ->
         compile ("${shadowArtifact}")  {
             // we don't need these MavenDependencyResolver in a hermetic build
