@@ -12,6 +12,9 @@ my_target_xml := $(intermediates)/$(my_filename_stem)-output.xml
 my_target_output := $(intermediates)/$(my_filename_stem)-output.txt
 my_target_retval := $(intermediates)/$(my_filename_stem)-retval.txt
 
+ALL_TARGETS.$(my_target_output).META_LIC:=$(module_license_metadata)
+ALL_TARGETS.$(my_target_xml).META_LIC:=$(module_license_metadata)
+
 # We should always re-run the tests, even if nothing has changed.
 # So until the build system has a dedicated "no cache" option, claim
 # to write a file that is never produced.
