@@ -27,7 +27,6 @@
         <package android:name="com.google.android.apps.common.testing.services" />
     </queries>
 
-    <!-- support for androidx.test.orchestrator clearPackageData -->
-    <application android:forceQueryable="true" />
+    <application />
 
 </manifest>
