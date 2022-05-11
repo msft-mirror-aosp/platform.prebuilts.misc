@@ -15,11 +15,11 @@ java_library_host {
     srcs: ["src/main/java/**/*.java"],
 
     static_libs: [
-        "asm-analysis-7.0",
-        "asm-commons-7.0",
-        "asm-7.0",
-        "asm-tree-7.0",
-        "asm-util-7.0",
+        "asm-analysis-9.2",
+        "asm-commons-9.2",
+        "asm-9.2",
+        "asm-tree-9.2",
+        "asm-util-9.2",
         "jvm-jacoco-report",
         "commons-cli-1.2",
     ],

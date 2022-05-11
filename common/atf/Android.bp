@@ -21,14 +21,15 @@ package {
     default_applicable_licenses: ["prebuilts_misc_license"],
 }
 
-java_import_host {
-    name: "atf-prebuilt-jars",
+java_import {
+    name: "atf-prebuilt-jars-371374941",
+    host_supported: true,
     jars: [
-        "atf_classes.jar",
+        "atf_classes_371374941.jar",
     ],
 }
 
 java_library_host {
-    name: "atf-prebuilt",
-    static_libs: ["atf-prebuilt-jars"],
+    name: "atf-prebuilt-371374941",
+    static_libs: ["atf-prebuilt-jars-371374941"],
 }
