@@ -1,0 +1,12 @@
+load("@bazel_tools//tools/python:toolchain.bzl", "py_runtime_pair")
+
+package(default_visibility = ["//visibility:public"])
+
+sh_binary(
+    name = "yasm",
+    srcs = select({
+        "//build/bazel/platforms/os:darwin": ["darwin-x86/yasm/yasm"],
+        "//build/bazel/platforms/os:linux": ["linux-x86/yasm/yasm"],
+        "//conditions:default": None,
+    }),
+)
