@@ -5,9 +5,10 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+
 android_library_import {
     name: "androidx.test.annotation-nodeps",
-    aars: ["androidx/test/annotation/1.0.0/annotation-1.0.0.aar"],
+    aars: ["androidx/test/annotation/1.0.1-alpha01/annotation-1.0.1-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -39,7 +40,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.4.1-alpha04/core-1.4.1-alpha04.aar"],
+    aars: ["androidx/test/core/1.5.0-alpha02/core-1.5.0-alpha02.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -83,7 +84,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.5.0-alpha04/espresso-contrib-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.5.0-alpha07/espresso-contrib-3.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -129,7 +130,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.5.0-alpha04/espresso-core-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.5.0-alpha07/espresso-core-3.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -179,7 +180,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.5.0-alpha04/espresso-idling-resource-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.5.0-alpha07/espresso-idling-resource-3.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -207,7 +208,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.5.0-alpha04/espresso-intents-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.5.0-alpha07/espresso-intents-3.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -243,7 +244,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.5.0-alpha04/espresso-web-3.5.0-alpha04.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.5.0-alpha07/espresso-web-3.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -277,7 +278,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.junit-nodeps",
-    aars: ["androidx/test/ext/junit/1.1.4-alpha04/junit-1.1.4-alpha04.aar"],
+    aars: ["androidx/test/ext/junit/1.1.4-alpha07/junit-1.1.4-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -313,7 +314,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.truth-nodeps",
-    aars: ["androidx/test/ext/truth/1.5.0-alpha04/truth-1.5.0-alpha04.aar"],
+    aars: ["androidx/test/ext/truth/1.5.0-alpha07/truth-1.5.0-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -381,7 +382,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.6.0-alpha01/monitor-1.6.0-alpha01.aar"],
+    aars: ["androidx/test/monitor/1.6.0-alpha05/monitor-1.6.0-alpha05.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -415,7 +416,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.rules-nodeps",
-    aars: ["androidx/test/rules/1.4.1-alpha01/rules-1.4.1-alpha01.aar"],
+    aars: ["androidx/test/rules/1.4.1-alpha07/rules-1.4.1-alpha07.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -424,6 +425,7 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.test.runner",
+        "androidx.test.annotation",
     ],
     libs: [
         "android.test.base",
@@ -442,6 +444,7 @@ android_library {
     static_libs: [
         "androidx.test.rules-nodeps",
         "androidx.test.runner",
+        "androidx.test.annotation",
     ],
     libs: [
         "android.test.base",
@@ -451,7 +454,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.runner-nodeps",
-    aars: ["androidx/test/runner/1.5.0-alpha01/runner-1.5.0-alpha01.aar"],
+    aars: ["androidx/test/runner/1.5.0-alpha04/runner-1.5.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -491,7 +494,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.services.storage-nodeps",
-    aars: ["androidx/test/services/storage/1.4.2-alpha01/storage-1.4.2-alpha01.aar"],
+    aars: ["androidx/test/services/storage/1.4.2-alpha04/storage-1.4.2-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
