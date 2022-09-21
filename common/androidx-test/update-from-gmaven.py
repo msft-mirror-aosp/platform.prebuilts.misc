@@ -107,6 +107,7 @@ cmd("rm -rf manifests")
 
 downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
+downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-contrib", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
