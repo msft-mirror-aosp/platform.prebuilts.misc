@@ -4,6 +4,6 @@ package {
 
 java_import_host {
     name: "ddmlib-prebuilt",
-    jars: ["ddmlib-prebuilt.jar"],
+    jars: ["ddmlib-prebuilt.jar", "annotations-prebuilt.jar"],
     installable: true,
 }
