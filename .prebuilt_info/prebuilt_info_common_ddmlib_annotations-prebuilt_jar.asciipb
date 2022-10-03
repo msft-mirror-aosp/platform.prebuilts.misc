@@ -2,9 +2,9 @@ drops {
   android_build_drop {
     build_id: "9131923"
     target: "studio-linux"
-    source_file: "artifacts/ddmlib.jar"
+    source_file: "artifacts/annotations.jar"
   }
-  dest_file: "common/ddmlib/ddmlib-prebuilt.jar"
+  dest_file: "common/ddmlib/annotations-prebuilt.jar"
   version: ""
   version_group: ""
   git_project: "platform/prebuilts/misc"
