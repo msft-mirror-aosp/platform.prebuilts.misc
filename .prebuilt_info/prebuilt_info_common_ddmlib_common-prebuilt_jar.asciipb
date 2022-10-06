@@ -1,6 +1,6 @@
 drops {
   android_build_drop {
-    build_id: "9131923"
+    build_id: "9140310"
     target: "studio-linux"
     source_file: "artifacts/tools.common.jar"
   }
