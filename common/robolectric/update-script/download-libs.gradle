@@ -26,14 +26,14 @@ configurations {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    compile("org.robolectric:robolectric:${robolectricVersion}") {
+    implementation("org.robolectric:robolectric:${robolectricVersion}") {
         // we don't need these MavenDependencyResolver in a hermetic build
         exclude group: 'org.apache.maven', module: ''
         exclude group: 'org.apache.ant', module: ''
     }
 
     shadowArtifacts.forEach { shadowArtifact ->
-        compile ("${shadowArtifact}")  {
+        implementation ("${shadowArtifact}")  {
             // we don't need these MavenDependencyResolver in a hermetic build
             exclude group: 'org.apache.maven', module: ''
             exclude group: 'org.apache.ant', module: ''
@@ -46,7 +46,7 @@ dependencies {
     }
 
     def shadowArtifactsSet = shadowArtifacts.collect {it.toString()}  toSet()
-    configurations.runtime.resolvedConfiguration.resolvedArtifacts.each { ResolvedArtifact ra ->
+    configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.each { ResolvedArtifact ra ->
         ModuleVersionIdentifier id = ra.moduleVersion.id
         // download only core sources. relax restriction if required
         if ("org.robolectric".equals(id.group) && !shadowArtifactsSet.contains(id.toString())) {
@@ -59,7 +59,7 @@ dependencies {
 
 
 task copyLibs(type: Copy) {
-    from configurations.compile
+    from configurations.runtimeClasspath
     from configurations.roboSources
     into "$buildDir/lib"
 
