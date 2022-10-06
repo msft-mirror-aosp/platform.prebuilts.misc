@@ -49,27 +49,27 @@ COPY_FROM_OLD_VERSION=(
     "wrapper_test.sh"
 )
 
+JARS=$(ls -1 lib/*.jar | sed 's/^.*$/        "&",/')
+
 for file in "${COPY_FROM_OLD_VERSION[@]}"; do
     cp -n ../"$oldVersion"/$file ./$file
 done
 
 cat <<EOF > Android.bp
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
 java_import {
     name: "platform-robolectric-${roboVersion}-prebuilt",
     sdk_version: "current",
     jars: [
-        "lib/annotations-${roboVersion}.jar",
-        "lib/asm-6.0.jar",
-        "lib/junit-${roboVersion}.jar",
-        "lib/resources-${roboVersion}.jar",
-        "lib/sandbox-${roboVersion}.jar",
-        "lib/shadowapi-${roboVersion}.jar",
-        "lib/shadows-framework-${roboVersion}.jar",
-        "lib/shadows-httpclient-${roboVersion}.jar",
-        "lib/shadows-multidex-${roboVersion}.jar",
-        "lib/shadows-supportv4-${roboVersion}.jar",
-        "lib/robolectric-${roboVersion}.jar",
-        "lib/utils-${roboVersion}.jar",
+${JARS}
+    ],
+    exclude_files: [
+        "META-INF/*.SF",
+        "META-INF/*.DSA",
+        "META-INF/*.RSA",
     ],
 }
 
