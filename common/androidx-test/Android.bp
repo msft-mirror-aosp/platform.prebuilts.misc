@@ -82,6 +82,38 @@ android_library {
 }
 
 android_library_import {
+    name: "androidx.test.espresso.accessibility-nodeps",
+    aars: ["androidx/test/espresso/espresso-accessibility/3.5.0-alpha07/espresso-accessibility-3.5.0-alpha07.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "14",
+    static_libs: [
+        "accessibility-test-framework",
+        "androidx.test.espresso.core",
+    ],
+}
+
+android_library {
+    name: "androidx.test.espresso.accessibility",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "14",
+    manifest: "manifests/androidx.test.espresso.accessibility/AndroidManifest.xml",
+    static_libs: [
+        "androidx.test.espresso.accessibility-nodeps",
+        "accessibility-test-framework",
+        "androidx.test.espresso.core",
+    ],
+    java_version: "1.7",
+}
+
+android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
     aars: ["androidx/test/espresso/espresso-contrib/3.5.0-alpha04/espresso-contrib-3.5.0-alpha04.aar"],
     sdk_version: "current",
