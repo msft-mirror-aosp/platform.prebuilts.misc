@@ -18,15 +18,15 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.1-alpha01"
-monitorVersion="1.6.0-alpha05"
-runnerVersion="1.5.0-alpha04"
-rulesVersion="1.4.1-alpha07"
-espressoVersion="3.5.0-alpha07"
-coreVersion="1.5.0-alpha02"
-extJUnitVersion="1.1.4-alpha07"
-extTruthVersion="1.5.0-alpha07"
-servicesVersion="1.4.2-alpha04"
+annotationVersion="1.0.1-beta01"
+monitorVersion="1.6.0-beta01"
+runnerVersion="1.5.0-beta01"
+rulesVersion="1.4.1-beta01"
+espressoVersion="3.5.0-beta01"
+coreVersion="1.5.0-beta01"
+extJUnitVersion="1.1.4-beta01"
+extTruthVersion="1.5.0-beta01"
+servicesVersion="1.4.2-beta01"
 jankTestHelperVersion="1.0.1"
 uiAutomatorVersion="2.2.0"
 
