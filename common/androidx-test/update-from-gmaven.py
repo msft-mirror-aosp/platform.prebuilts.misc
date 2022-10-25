@@ -28,7 +28,6 @@ extJUnitVersion="1.1.4-beta01"
 extTruthVersion="1.5.0-beta01"
 servicesVersion="1.4.2-beta01"
 jankTestHelperVersion="1.0.1"
-uiAutomatorVersion="2.2.0"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
@@ -36,7 +35,6 @@ mavenToBpPatternMap = {
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
-    "androidx.test.uiautomator:uiautomator":"androidx.test.uiautomator",
     "androidx.test.services:storage":"androidx.test.services.storage",
     "androidx.test.services:test-services":"androidx.test.services.test-services",
     "androidx.tracing:tracing":"androidx.tracing_tracing",
@@ -46,7 +44,6 @@ mavenToBpPatternMap = {
 
 extraLibs = {
     "androidx.test.rules" : "android.test.base",
-    "androidx.test.uiautomator" : "android.test.base",
     }
 
 def cmd(args):
@@ -130,7 +127,6 @@ downloadArtifact("androidx.test", "runner", runnerVersion)
 downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
 downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
-downloadArtifact("androidx.test.uiautomator", "uiautomator", uiAutomatorVersion)
 downloadArtifact("androidx.test.services", "storage", servicesVersion)
 downloadApk("androidx.test.services", "test-services", servicesVersion)
 
