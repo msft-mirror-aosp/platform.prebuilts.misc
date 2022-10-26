@@ -3,10 +3,10 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>androidx.test.espresso</groupId>
-  <artifactId>espresso-web</artifactId>
-  <version>3.5.0-beta02</version>
-  <packaging>aar</packaging>
+  <groupId>androidx.test.services</groupId>
+  <artifactId>test-services</artifactId>
+  <version>1.4.2-rc01</version>
+  <packaging>apk</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
   <url>https://developer.android.com/testing</url>
@@ -24,23 +24,6 @@
     </developer>
   </developers>
   <dependencies>
-    <dependency>
-      <groupId>androidx.test.espresso</groupId>
-      <artifactId>espresso-core</artifactId>
-      <version>3.5.0-beta02</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>androidx.annotation</groupId>
-      <artifactId>annotation</artifactId>
-      <version>1.2.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.ccil.cowan.tagsoup</groupId>
-      <artifactId>tagsoup</artifactId>
-      <version>1.2.1</version>
-      <scope>compile</scope>
-    </dependency>
+
   </dependencies>
 </project>
