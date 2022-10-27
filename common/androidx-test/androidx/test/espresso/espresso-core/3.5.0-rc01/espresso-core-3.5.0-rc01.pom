@@ -3,9 +3,9 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>androidx.test</groupId>
-  <artifactId>core</artifactId>
-  <version>1.5.0-beta01</version>
+  <groupId>androidx.test.espresso</groupId>
+  <artifactId>espresso-core</artifactId>
+  <version>3.5.0-rc01</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -32,32 +32,50 @@
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
-      <artifactId>monitor</artifactId>
-      <version>1.6.0-beta01</version>
+      <artifactId>core</artifactId>
+      <version>1.5.0-rc01</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.test.services</groupId>
-      <artifactId>storage</artifactId>
-      <version>1.4.2-beta01</version>
+      <groupId>androidx.test</groupId>
+      <artifactId>runner</artifactId>
+      <version>1.5.0-rc01</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.lifecycle</groupId>
-      <artifactId>lifecycle-common</artifactId>
-      <version>2.3.1</version>
+      <groupId>androidx.test.espresso</groupId>
+      <artifactId>espresso-idling-resource</artifactId>
+      <version>3.5.0-rc01</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.tracing</groupId>
-      <artifactId>tracing</artifactId>
-      <version>1.0.0</version>
+      <groupId>com.squareup</groupId>
+      <artifactId>javawriter</artifactId>
+      <version>2.1.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>listenablefuture</artifactId>
-      <version>1.0</version>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>1.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-integration</artifactId>
+      <version>1.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>2.0.2</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -67,9 +85,9 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.concurrent</groupId>
-      <artifactId>concurrent-futures</artifactId>
-      <version>1.1.0</version>
+      <groupId>androidx.test</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.0.1-rc01</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
