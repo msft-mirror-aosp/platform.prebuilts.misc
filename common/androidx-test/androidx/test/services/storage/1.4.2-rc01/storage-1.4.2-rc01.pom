@@ -3,9 +3,9 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>androidx.test</groupId>
-  <artifactId>monitor</artifactId>
-  <version>1.6.0-beta01</version>
+  <groupId>androidx.test.services</groupId>
+  <artifactId>storage</artifactId>
+  <version>1.4.2-rc01</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -32,14 +32,20 @@
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
-      <artifactId>annotation</artifactId>
-      <version>1.0.1-beta01</version>
+      <artifactId>monitor</artifactId>
+      <version>[1.6.0-rc01]</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.tracing</groupId>
-      <artifactId>tracing</artifactId>
-      <version>1.0.0</version>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>2.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>androidx.test</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.0.1-rc01</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

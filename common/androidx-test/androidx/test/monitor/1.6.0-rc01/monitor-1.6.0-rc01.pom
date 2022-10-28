@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test</groupId>
-  <artifactId>annotation</artifactId>
-  <version>1.0.1-beta01</version>
+  <artifactId>monitor</artifactId>
+  <version>1.6.0-rc01</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -31,9 +31,15 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.annotation</groupId>
-      <artifactId>annotation-experimental</artifactId>
-      <version>1.1.0</version>
+      <groupId>androidx.test</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.0.1-rc01</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>androidx.tracing</groupId>
+      <artifactId>tracing</artifactId>
+      <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
