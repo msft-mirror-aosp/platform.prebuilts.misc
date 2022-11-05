@@ -30,7 +30,6 @@ license {
         "SPDX-license-identifier-PSF-2.0",
     ],
     license_text: [
-        "common/icu4j/license.txt",
         "common/jacoco/lib/NOTICE.txt",
         "darwin-x86/yasm/COPYING",
         "darwin-x86_64/sdl2/include/SDL2/NOTICE",
