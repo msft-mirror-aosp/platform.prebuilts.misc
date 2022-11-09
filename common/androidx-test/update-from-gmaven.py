@@ -18,15 +18,15 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.1-rc01"
-monitorVersion="1.6.0-rc01"
-runnerVersion="1.5.0-rc01"
-rulesVersion="1.5.0-rc01"
-espressoVersion="3.5.0-rc01"
-coreVersion="1.5.0-rc01"
-extJUnitVersion="1.1.4-rc01"
-extTruthVersion="1.5.0-rc01"
-servicesVersion="1.4.2-rc01"
+annotationVersion="1.0.1"
+monitorVersion="1.6.0"
+runnerVersion="1.5.0"
+rulesVersion="1.5.0"
+espressoVersion="3.5.0"
+coreVersion="1.5.0"
+extJUnitVersion="1.1.4"
+extTruthVersion="1.5.0"
+servicesVersion="1.4.2"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
