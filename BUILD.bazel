@@ -7,6 +7,10 @@ sh_binary(
     srcs = select({
         "//build/bazel/platforms/os:darwin": ["darwin-x86/yasm/yasm"],
         "//build/bazel/platforms/os:linux": ["linux-x86/yasm/yasm"],
-        "//conditions:default": None,
+    }),
+    target_compatible_with = select({
+        "//build/bazel/platforms/os:darwin": [],
+        "//build/bazel/platforms/os:linux": [],
+        "//conditions:default": ["@platforms//:incompatible"],
     }),
 )
