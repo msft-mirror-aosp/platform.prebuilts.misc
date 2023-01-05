@@ -3,9 +3,9 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>androidx.test.ext</groupId>
-  <artifactId>junit</artifactId>
-  <version>1.1.4</version>
+  <groupId>androidx.test.espresso</groupId>
+  <artifactId>espresso-intents</artifactId>
+  <version>3.5.1</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -25,9 +25,9 @@
   </developers>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <groupId>androidx.test.espresso</groupId>
+      <artifactId>espresso-core</artifactId>
+      <version>3.5.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -38,14 +38,20 @@
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
-      <artifactId>monitor</artifactId>
-      <version>1.6.0</version>
+      <artifactId>rules</artifactId>
+      <version>1.5.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>androidx.annotation</groupId>
+      <groupId>androidx.test</groupId>
       <artifactId>annotation</artifactId>
-      <version>1.2.0</version>
+      <version>1.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
+      <version>1.7.10</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
