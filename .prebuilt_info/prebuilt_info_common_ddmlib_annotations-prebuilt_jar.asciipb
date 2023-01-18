@@ -1,6 +1,6 @@
 drops {
   android_build_drop {
-    build_id: "9452240"
+    build_id: "9500536"
     target: "studio-linux"
     source_file: "artifacts/annotations.jar"
   }
