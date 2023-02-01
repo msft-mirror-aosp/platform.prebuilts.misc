@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
-# Helper script for updating androidx.test prebuilts from maven
+# Helper script for updating androidx.media3 prebuilts from maven
 #
 # Usage:
-#   a. Initialize android environment eg . build/envsetup.sh; lunch <target>
-#   b. Update the version numbers in this file
-#   c. ./prebuilts/misc/androidx-test/update-from-gmaven.py
+#   a. Initialize android environment: $ . ./build/envsetup.sh; lunch <target>
+#   b. Build pom2bp (needed by this script): $ m pom2bp
+#       * If this fails with 'fatal error: thread exhaustion'
+#         (and then an *enormous* thread dump), retry the command.
+#   b. Update the version numbers in this file (and ensure any new modules are added below)
+#   c. $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
 #
 # The script will then:
 #   1. Remove the previous artifacts
@@ -13,37 +16,21 @@
 #      path
 #   3. Extract the AndroidManifest from the aars into the manifests folder
 #   4. Run pom2bp to generate the Android.bp
+#
+# The visibility restrictions in Android.bp must be manually restored.
+#
+# Manual verification steps:
+#   1. Build the imported modules, e.g.
+#      $ m androidx.media3.media3-common androidx.media3.media3-session
 
 import os
 import subprocess
 import sys
 
-annotationVersion="1.0.1"
-monitorVersion="1.6.1"
-runnerVersion="1.5.2"
-rulesVersion="1.5.0"
-espressoVersion="3.5.1"
-coreVersion="1.5.0"
-extJUnitVersion="1.1.5"
-extTruthVersion="1.5.0"
-servicesVersion="1.4.2"
-jankTestHelperVersion="1.0.1"
+media3Version="1.0.0-beta03"
 
 mavenToBpPatternMap = {
-    "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
-    "androidx.test.ext:": "androidx.test.ext.",
-    "androidx.test.espresso:espresso-":"androidx.test.espresso.",
-    "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
-    "androidx.test.services:storage":"androidx.test.services.storage",
-    "androidx.test.services:test-services":"androidx.test.services.test-services",
-    "androidx.tracing:tracing":"androidx.tracing_tracing",
-    "androidx.concurrent:concurrent-futures":"androidx.concurrent_concurrent-futures",
-    "com.google.guava:listenablefuture":"guava-listenablefuture-prebuilt-jar",
-    }
-
-extraLibs = {
-    "androidx.test.rules" : "android.test.base",
+    "androidx.media3:" : "androidx.media3.",
     }
 
 def cmd(args):
@@ -85,7 +72,7 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
- 
+
    # download sources.jar
    cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
@@ -107,51 +94,26 @@ def getManifestPath(mavenArtifactName):
     manifestPath = manifestPath.replace(searchPattern, mavenToBpPatternMap[searchPattern])
   return "manifests/%s" % manifestPath
 
-prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
+prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-media3")
 chdir(prebuiltDir)
 
-cmd("rm -rf androidx/test")
+cmd("rm -rf androidx/media3")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
-downloadArtifact("androidx.test", "core", coreVersion)
-downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-contrib", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-intents", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
-downloadArtifact("androidx.test.espresso", "espresso-web", espressoVersion)
-downloadArtifact("androidx.test", "monitor", monitorVersion)
-downloadArtifact("androidx.test", "rules", rulesVersion)
-downloadArtifact("androidx.test", "runner", runnerVersion)
-downloadArtifact("androidx.test.ext", "junit", extJUnitVersion)
-downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
-downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
-downloadArtifact("androidx.test.services", "storage", servicesVersion)
-downloadApk("androidx.test.services", "test-services", servicesVersion)
-
+downloadArtifact("androidx.media3", "media3-common", media3Version)
+downloadArtifact("androidx.media3", "media3-session", media3Version)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
   atxRewriteStr += "-rewrite %s=%s " % (name, mavenToBpPatternMap[name])
-for name in extraLibs:
-  atxRewriteStr += "-extra-libs %s=%s " % (name, extraLibs[name])
 
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
-    "-rewrite com.google.truth:truth=truth-prebuilt " +
-    "-rewrite net.sf.kxml:kxml2=kxml2-android " +
-    "-rewrite androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common " +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
-    "-rewrite org.hamcrest:hamcrest-integration=hamcrest " +
-    "-rewrite javax.inject:javax.inject=jsr330 " +
-    "-rewrite com.google.android.material:material=com.google.android.material_material " +
-    "-rewrite androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout " +
-    "-rewrite androidx.viewpager:viewpager=androidx.viewpager_viewpager " +
-    "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
-    "-rewrite androidx.core:core=androidx.core_core " +
-    "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
+    "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
+    "-rewrite androidx.collection:collection=androidx.collection_collection " +
+    "-rewrite androidx.media:media=androidx.media_media " +
+    "-rewrite com.google.guava:guava=guava " +
     "-sdk-version current " +
     "-static-deps " +
     "-prepend prepend-license.txt " +
