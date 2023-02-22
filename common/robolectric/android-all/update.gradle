@@ -39,20 +39,6 @@ def androidSdkVersions = [
         '13-robolectric-9030017',
 ]
 
-def androidInstrumentedSdkVersions = [
-        '6.0.1_r3-robolectric-r1-i4',
-        '7.0.0_r1-robolectric-r1-i4',
-        '7.1.0_r7-robolectric-r1-i4',
-        '8.0.0_r4-robolectric-r1-i4',
-        '8.1.0-robolectric-4611349-i4',
-        '9-robolectric-4913185-2-i4',
-        '10-robolectric-5803371-i4',
-        '11-robolectric-6757853-i4',
-        '12-robolectric-7732740-i4',
-        '12.1-robolectric-8229987-i4',
-        '13-robolectric-9030017-i4',
-]
-
 def buildDir = System.getProperty("user.dir")
 
 apply plugin: 'java'
@@ -71,12 +57,6 @@ androidSdkVersions.forEach { version ->
     allSdkConfigurations << configurations.create(version)
     dependencies.add(version, "org.robolectric:android-all:${version}")
     dependencies.add('sandbox', "org.robolectric:android-all:${version}")
-}
-
-androidInstrumentedSdkVersions.forEach { version ->
-    allSdkConfigurations << configurations.create(version)
-    dependencies.add(version, "org.robolectric:android-all-instrumented:${version}")
-    dependencies.add('sandbox', "org.robolectric:android-all-instrumented:${version}")
 }
 
 task copySdks(type: Copy) {
