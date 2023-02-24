@@ -19,12 +19,12 @@ import subprocess
 import sys
 
 annotationVersion="1.0.1"
-monitorVersion="1.6.0"
-runnerVersion="1.5.0"
+monitorVersion="1.6.1"
+runnerVersion="1.5.2"
 rulesVersion="1.5.0"
-espressoVersion="3.5.0"
+espressoVersion="3.5.1"
 coreVersion="1.5.0"
-extJUnitVersion="1.1.4"
+extJUnitVersion="1.1.5"
 extTruthVersion="1.5.0"
 servicesVersion="1.4.2"
 jankTestHelperVersion="1.0.1"
