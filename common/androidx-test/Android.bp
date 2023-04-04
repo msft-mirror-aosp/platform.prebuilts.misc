@@ -1,14 +1,14 @@
 // This is a generated file. Do not modify directly.
 // Automatically generated with:
-// pom2bp -rewrite 'androidx.test:=androidx.test.' -rewrite 'androidx.test.annotation:annotation=androidx.test.annotation' -rewrite 'androidx.test.ext:=androidx.test.ext.' -rewrite 'androidx.test.espresso:espresso-=androidx.test.espresso.' -rewrite 'androidx.test.janktesthelper:janktesthelper=androidx.test.janktesthelper' -rewrite 'androidx.test.services:storage=androidx.test.services.storage' -rewrite 'androidx.test.services:test-services=androidx.test.services.test-services' -rewrite 'androidx.tracing:tracing=androidx.tracing_tracing' -rewrite 'androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures' -rewrite 'com.google.guava:listenablefuture=guava-listenablefuture-prebuilt-jar' -extra-libs androidx.test.rules=android.test.base -rewrite 'com.google.truth:truth=truth-prebuilt' -rewrite 'net.sf.kxml:kxml2=kxml2-android' -rewrite 'androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'org.hamcrest:hamcrest-integration=hamcrest' -rewrite 'javax.inject:javax.inject=jsr330' -rewrite 'com.google.android.material:material=com.google.android.material_material' -rewrite 'androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout' -rewrite 'androidx.viewpager:viewpager=androidx.viewpager_viewpager' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils' -sdk-version current -static-deps -prepend prepend-license.txt .
+// pom2bp -rewrite 'androidx.test:=androidx.test.' -rewrite 'androidx.test.annotation:annotation=androidx.test.annotation' -rewrite 'androidx.test.ext:=androidx.test.ext.' -rewrite 'androidx.test.espresso:espresso-=androidx.test.espresso.' -rewrite 'androidx.test.janktesthelper:janktesthelper=androidx.test.janktesthelper' -rewrite 'androidx.test.services:storage=androidx.test.services.storage' -rewrite 'androidx.test.services:test-services=androidx.test.services.test-services' -rewrite 'androidx.tracing:tracing=androidx.tracing_tracing' -rewrite 'androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures' -rewrite 'com.google.guava:listenablefuture=guava-listenablefuture-prebuilt-jar' -extra-libs androidx.test.rules=android.test.base -rewrite 'com.google.truth:truth=truth-prebuilt' -rewrite 'net.sf.kxml:kxml2=kxml2-android' -rewrite 'androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'org.hamcrest:hamcrest-integration=hamcrest' -rewrite 'org.hamcrest:hamcrest-core=hamcrest' -rewrite 'javax.inject:javax.inject=jsr330' -rewrite 'com.google.android.material:material=com.google.android.material_material' -rewrite 'androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout' -rewrite 'androidx.viewpager:viewpager=androidx.viewpager_viewpager' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils' -rewrite 'androidx.appcompat:appcompat=androidx.appcompat_appcompat' -sdk-version current -static-deps -prepend prepend-license.txt .
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
 filegroup {
     name: "test-services.apk",
-    srcs: ["androidx/test/services/test-services/1.4.2/test-services-1.4.2.apk"],
-    path: "androidx/test/services/test-services/1.4.2",
+    srcs: ["androidx/test/services/test-services/1.5.0-alpha01/test-services-1.5.0-alpha01.apk"],
+    path: "androidx/test/services/test-services/1.5.0-alpha01",
     visibility: [
         "//tools/tradefederation/core:__pkg__",
     ],
@@ -16,7 +16,7 @@ filegroup {
 
 android_library_import {
     name: "androidx.test.annotation-nodeps",
-    aars: ["androidx/test/annotation/1.0.1/annotation-1.0.1.aar"],
+    aars: ["androidx/test/annotation/1.1.0-alpha01/annotation-1.1.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -24,8 +24,8 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.annotation_annotation-experimental",
+        "androidx.annotation_annotation",
     ],
 }
 
@@ -40,15 +40,15 @@ android_library {
     manifest: "manifests/androidx.test.annotation/AndroidManifest.xml",
     static_libs: [
         "androidx.test.annotation-nodeps",
-        "androidx.annotation_annotation",
         "androidx.annotation_annotation-experimental",
+        "androidx.annotation_annotation",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.5.0/core-1.5.0.aar"],
+    aars: ["androidx/test/core/1.6.0-alpha01/core-1.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -57,13 +57,14 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.annotation_annotation",
+        "androidx.concurrent_concurrent-futures",
         "androidx.lifecycle_lifecycle-common",
         "androidx.tracing_tracing",
         "guava-listenablefuture-prebuilt-jar",
         "kotlin-stdlib",
-        "androidx.concurrent_concurrent-futures",
-        "androidx.test.monitor",
         "androidx.test.services.storage",
+        "androidx.test.annotation",
+        "androidx.test.monitor",
     ],
 }
 
@@ -79,13 +80,14 @@ android_library {
     static_libs: [
         "androidx.test.core-nodeps",
         "androidx.annotation_annotation",
+        "androidx.concurrent_concurrent-futures",
         "androidx.lifecycle_lifecycle-common",
         "androidx.tracing_tracing",
         "guava-listenablefuture-prebuilt-jar",
         "kotlin-stdlib",
-        "androidx.concurrent_concurrent-futures",
-        "androidx.test.monitor",
         "androidx.test.services.storage",
+        "androidx.test.annotation",
+        "androidx.test.monitor",
     ],
     java_version: "1.7",
 }
@@ -124,7 +126,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.5.1/espresso-contrib-3.5.1.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.6.0-alpha01/espresso-contrib-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -132,15 +134,17 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
-        "com.google.android.material_material",
-        "androidx.recyclerview_recyclerview",
-        "androidx.drawerlayout_drawerlayout",
-        "androidx.viewpager_viewpager",
+        "androidx.appcompat_appcompat",
         "androidx.core_core",
-        "androidx.legacy_legacy-support-core-utils",
+        "androidx.drawerlayout_drawerlayout",
+        "androidx.recyclerview_recyclerview",
+        "androidx.viewpager_viewpager",
         "accessibility-test-framework",
+        "com.google.android.material_material",
+        "hamcrest",
+        "hamcrest-library",
         "androidx.test.espresso.core",
-        "androidx.test.espresso.idling-resource",
+        "androidx.test.monitor",
     ],
 }
 
@@ -155,22 +159,24 @@ android_library {
     manifest: "manifests/androidx.test.espresso.contrib/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.contrib-nodeps",
-        "com.google.android.material_material",
-        "androidx.recyclerview_recyclerview",
-        "androidx.drawerlayout_drawerlayout",
-        "androidx.viewpager_viewpager",
+        "androidx.appcompat_appcompat",
         "androidx.core_core",
-        "androidx.legacy_legacy-support-core-utils",
+        "androidx.drawerlayout_drawerlayout",
+        "androidx.recyclerview_recyclerview",
+        "androidx.viewpager_viewpager",
         "accessibility-test-framework",
+        "com.google.android.material_material",
+        "hamcrest",
+        "hamcrest-library",
         "androidx.test.espresso.core",
-        "androidx.test.espresso.idling-resource",
+        "androidx.test.monitor",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.5.1/espresso-core-3.5.1.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.6.0-alpha01/espresso-core-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -179,16 +185,21 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.annotation_annotation",
-        "javawriter",
-        "jsr330",
-        "hamcrest-library",
-        "hamcrest",
+        "androidx.concurrent_concurrent-futures",
         "jsr305",
+        "error_prone_annotations",
+        "guava-listenablefuture-prebuilt-jar",
+        "jsr330",
+        "junit",
+        "hamcrest",
+        "hamcrest-library",
         "kotlin-stdlib",
-        "androidx.test.core",
-        "androidx.test.runner",
         "androidx.test.espresso.idling-resource",
+        "androidx.test.services.storage",
         "androidx.test.annotation",
+        "androidx.test.core",
+        "androidx.test.monitor",
+        "androidx.test.runner",
     ],
 }
 
@@ -204,23 +215,28 @@ android_library {
     static_libs: [
         "androidx.test.espresso.core-nodeps",
         "androidx.annotation_annotation",
-        "javawriter",
-        "jsr330",
-        "hamcrest-library",
-        "hamcrest",
+        "androidx.concurrent_concurrent-futures",
         "jsr305",
+        "error_prone_annotations",
+        "guava-listenablefuture-prebuilt-jar",
+        "jsr330",
+        "junit",
+        "hamcrest",
+        "hamcrest-library",
         "kotlin-stdlib",
-        "androidx.test.core",
-        "androidx.test.runner",
         "androidx.test.espresso.idling-resource",
+        "androidx.test.services.storage",
         "androidx.test.annotation",
+        "androidx.test.core",
+        "androidx.test.monitor",
+        "androidx.test.runner",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.5.1/espresso-idling-resource-3.5.1.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.6.0-alpha01/espresso-idling-resource-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -248,7 +264,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.5.1/espresso-intents-3.5.1.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.6.0-alpha01/espresso-intents-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -256,11 +272,17 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
+        "error_prone_annotations",
+        "junit",
+        "hamcrest",
+        "hamcrest-library",
         "kotlin-stdlib",
         "androidx.test.espresso.core",
+        "androidx.test.annotation",
         "androidx.test.core",
         "androidx.test.rules",
-        "androidx.test.annotation",
+        "androidx.test.runner",
     ],
 }
 
@@ -275,18 +297,24 @@ android_library {
     manifest: "manifests/androidx.test.espresso.intents/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.intents-nodeps",
+        "androidx.annotation_annotation",
+        "error_prone_annotations",
+        "junit",
+        "hamcrest",
+        "hamcrest-library",
         "kotlin-stdlib",
         "androidx.test.espresso.core",
+        "androidx.test.annotation",
         "androidx.test.core",
         "androidx.test.rules",
-        "androidx.test.annotation",
+        "androidx.test.runner",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.5.1/espresso-web-3.5.1.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.6.0-alpha01/espresso-web-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -295,8 +323,17 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.annotation_annotation",
+        "androidx.concurrent_concurrent-futures",
+        "jsr305",
+        "error_prone_annotations",
+        "guava-listenablefuture-prebuilt-jar",
         "tagsoup",
+        "hamcrest",
+        "hamcrest-library",
+        "kotlin-stdlib",
         "androidx.test.espresso.core",
+        "androidx.test.monitor",
+        "androidx.test.runner",
     ],
 }
 
@@ -312,15 +349,24 @@ android_library {
     static_libs: [
         "androidx.test.espresso.web-nodeps",
         "androidx.annotation_annotation",
+        "androidx.concurrent_concurrent-futures",
+        "jsr305",
+        "error_prone_annotations",
+        "guava-listenablefuture-prebuilt-jar",
         "tagsoup",
+        "hamcrest",
+        "hamcrest-library",
+        "kotlin-stdlib",
         "androidx.test.espresso.core",
+        "androidx.test.monitor",
+        "androidx.test.runner",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.ext.junit-nodeps",
-    aars: ["androidx/test/ext/junit/1.1.5/junit-1.1.5.aar"],
+    aars: ["androidx/test/ext/junit/1.2.0-alpha01/junit-1.2.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -328,8 +374,9 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
-        "junit",
         "androidx.annotation_annotation",
+        "junit",
+        "androidx.test.services.storage",
         "androidx.test.core",
         "androidx.test.monitor",
     ],
@@ -346,8 +393,9 @@ android_library {
     manifest: "manifests/androidx.test.ext.junit/AndroidManifest.xml",
     static_libs: [
         "androidx.test.ext.junit-nodeps",
-        "junit",
         "androidx.annotation_annotation",
+        "junit",
+        "androidx.test.services.storage",
         "androidx.test.core",
         "androidx.test.monitor",
     ],
@@ -356,7 +404,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.truth-nodeps",
-    aars: ["androidx/test/ext/truth/1.5.0/truth-1.5.0.aar"],
+    aars: ["androidx/test/ext/truth/1.6.0-alpha01/truth-1.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -364,11 +412,11 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
+        "androidx.annotation_annotation",
         "guava",
         "truth-prebuilt",
-        "androidx.annotation_annotation",
-        "androidx.test.core",
         "androidx.test.annotation",
+        "androidx.test.core",
     ],
 }
 
@@ -383,11 +431,11 @@ android_library {
     manifest: "manifests/androidx.test.ext.truth/AndroidManifest.xml",
     static_libs: [
         "androidx.test.ext.truth-nodeps",
+        "androidx.annotation_annotation",
         "guava",
         "truth-prebuilt",
-        "androidx.annotation_annotation",
-        "androidx.test.core",
         "androidx.test.annotation",
+        "androidx.test.core",
     ],
     java_version: "1.7",
 }
@@ -426,7 +474,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.6.1/monitor-1.6.1.aar"],
+    aars: ["androidx/test/monitor/1.7.0-alpha01/monitor-1.7.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -436,6 +484,7 @@ android_library_import {
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
+        "kotlin-stdlib",
         "androidx.test.annotation",
     ],
 }
@@ -453,6 +502,7 @@ android_library {
         "androidx.test.monitor-nodeps",
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
+        "kotlin-stdlib",
         "androidx.test.annotation",
     ],
     java_version: "1.7",
@@ -460,7 +510,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.rules-nodeps",
-    aars: ["androidx/test/rules/1.5.0/rules-1.5.0.aar"],
+    aars: ["androidx/test/rules/1.6.0-alpha01/rules-1.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -468,8 +518,10 @@ android_library_import {
     ],
     min_sdk_version: "14",
     static_libs: [
-        "androidx.test.runner",
+        "androidx.annotation_annotation",
+        "junit",
         "androidx.test.annotation",
+        "androidx.test.runner",
     ],
     libs: [
         "android.test.base",
@@ -487,8 +539,10 @@ android_library {
     manifest: "manifests/androidx.test.rules/AndroidManifest.xml",
     static_libs: [
         "androidx.test.rules-nodeps",
-        "androidx.test.runner",
+        "androidx.annotation_annotation",
+        "junit",
         "androidx.test.annotation",
+        "androidx.test.runner",
     ],
     libs: [
         "android.test.base",
@@ -498,7 +552,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.runner-nodeps",
-    aars: ["androidx/test/runner/1.5.3-alpha01/runner-1.5.3-alpha01.aar"],
+    aars: ["androidx/test/runner/1.6.0-alpha01/runner-1.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -509,9 +563,9 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
         "junit",
+        "androidx.test.services.storage",
         "androidx.test.annotation",
         "androidx.test.monitor",
-        "androidx.test.services.storage",
     ],
 }
 
@@ -529,16 +583,16 @@ android_library {
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
         "junit",
+        "androidx.test.services.storage",
         "androidx.test.annotation",
         "androidx.test.monitor",
-        "androidx.test.services.storage",
     ],
     java_version: "1.7",
 }
 
 android_library_import {
     name: "androidx.test.services.storage-nodeps",
-    aars: ["androidx/test/services/storage/1.4.2/storage-1.4.2.aar"],
+    aars: ["androidx/test/services/storage/1.5.0-alpha01/storage-1.5.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -547,9 +601,8 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "androidx.annotation_annotation",
-        "jsr305",
-        "androidx.test.monitor",
         "androidx.test.annotation",
+        "androidx.test.monitor",
     ],
 }
 
@@ -565,16 +618,15 @@ android_library {
     static_libs: [
         "androidx.test.services.storage-nodeps",
         "androidx.annotation_annotation",
-        "jsr305",
-        "androidx.test.monitor",
         "androidx.test.annotation",
+        "androidx.test.monitor",
     ],
     java_version: "1.7",
 }
 
 android_app_import {
     name: "androidx.test.services.test-services",
-    apk: "androidx/test/services/test-services/1.4.2/test-services-1.4.2.apk",
+    apk: "androidx/test/services/test-services/1.5.0-alpha01/test-services-1.5.0-alpha01.apk",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
