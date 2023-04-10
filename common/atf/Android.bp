@@ -33,3 +33,16 @@ java_library_host {
     name: "atf-prebuilt-371374941",
     static_libs: ["atf-prebuilt-jars-371374941"],
 }
+
+java_import {
+    name: "atf-prebuilt-jars-502584086",
+    host_supported: true,
+    jars: [
+        "atf_classes_502584086.jar",
+    ],
+}
+
+java_library_host {
+    name: "atf-prebuilt-502584086",
+    static_libs: ["atf-prebuilt-jars-502584086"],
+}
