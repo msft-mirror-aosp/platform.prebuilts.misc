@@ -1,6 +1,6 @@
 drops {
   android_build_drop {
-    build_id: "10011630"
+    build_id: "9659474"
     target: "studio-linux"
     source_file: "artifacts/ddmlib.jar"
   }
@@ -10,6 +10,4 @@ drops {
   git_project: "platform/prebuilts/misc"
   git_branch: "master"
   transform: TRANSFORM_NONE
-  transform_options {
-  }
 }
