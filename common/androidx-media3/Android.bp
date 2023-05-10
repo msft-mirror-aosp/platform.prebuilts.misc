@@ -5,6 +5,8 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+library_visibility = ["//visibility:private"]
+
 android_library_import {
     name: "androidx.media3.media3-common-nodeps",
     aars: ["androidx/media3/media3-common/1.0.1/media3-common-1.0.1.aar"],
@@ -38,7 +40,7 @@ android_library {
         "androidx.annotation_annotation-experimental",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -72,7 +74,7 @@ android_library {
         "androidx.media3.media3-common",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -108,7 +110,7 @@ android_library {
         "androidx.media3.media3-database",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -142,7 +144,7 @@ android_library {
         "androidx.media3.media3-common",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -186,7 +188,7 @@ android_library {
         "androidx.core_core",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -222,7 +224,7 @@ android_library {
         "androidx.media3.media3-decoder",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
 
 android_library_import {
@@ -258,5 +260,5 @@ android_library {
         "androidx.media_media",
     ],
     java_version: "1.7",
-    visibility: ["//visibility:private"]
+    visibility: library_visibility
 }
