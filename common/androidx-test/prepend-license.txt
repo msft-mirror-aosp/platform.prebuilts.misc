@@ -4,9 +4,8 @@ package {
 
 filegroup {
     name: "test-services.apk",
-    srcs:
-    ["androidx/test/services/test-services/1.5.0-alpha01/test-services-1.5.0-alpha01.apk",],
-    path: "androidx/test/services/test-services/1.5.0-alpha01",
+    srcs: ["androidx/test/services/test-services/1.4.2/test-services-1.4.2.apk",],
+    path: "androidx/test/services/test-services/1.4.2",
     visibility: [
         "//tools/tradefederation/core:__pkg__",
     ],
