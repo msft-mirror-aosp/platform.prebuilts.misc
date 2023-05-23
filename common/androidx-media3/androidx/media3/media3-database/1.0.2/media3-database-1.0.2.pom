@@ -7,11 +7,11 @@
   <!-- do_not_remove: published-with-gradle-metadata -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.media3</groupId>
-  <artifactId>media3-datasource</artifactId>
-  <version>1.0.1</version>
+  <artifactId>media3-database</artifactId>
+  <version>1.0.2</version>
   <packaging>aar</packaging>
-  <name>Media3 DataSource module</name>
-  <description>Media3 DataSource module</description>
+  <name>Media3 database module</name>
+  <description>Media3 database module</description>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -32,14 +32,7 @@
     <dependency>
       <groupId>androidx.media3</groupId>
       <artifactId>media3-common</artifactId>
-      <version>1.0.1</version>
-      <scope>runtime</scope>
-      <type>aar</type>
-    </dependency>
-    <dependency>
-      <groupId>androidx.media3</groupId>
-      <artifactId>media3-database</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
       <scope>runtime</scope>
       <type>aar</type>
     </dependency>
