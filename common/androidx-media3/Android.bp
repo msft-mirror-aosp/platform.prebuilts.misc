@@ -150,6 +150,40 @@ android_library {
 }
 
 android_library_import {
+    name: "androidx.media3.media3-effect-nodeps",
+    aars: ["androidx/media3/media3-effect/1.0.2/media3-effect-1.0.2.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "18",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-common",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-effect",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "18",
+    manifest: "manifests/androidx.media3.media3-effect/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-effect-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-common",
+    ],
+    java_version: "1.7",
+    visibility: library_visibility
+}
+
+android_library_import {
     name: "androidx.media3.media3-exoplayer-nodeps",
     aars: ["androidx/media3/media3-exoplayer/1.0.2/media3-exoplayer-1.0.2.aar"],
     sdk_version: "current",
@@ -260,6 +294,42 @@ android_library {
         "androidx.collection_collection",
         "androidx.media3.media3-common",
         "androidx.media_media",
+    ],
+    java_version: "1.7",
+    visibility: library_visibility
+}
+
+android_library_import {
+    name: "androidx.media3.media3-transformer-nodeps",
+    aars: ["androidx/media3/media3-transformer/1.0.2/media3-transformer-1.0.2.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "21",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.media3.media3-effect",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-transformer",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "21",
+    manifest: "manifests/androidx.media3.media3-transformer/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-transformer-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.media3.media3-effect",
     ],
     java_version: "1.7",
     visibility: library_visibility
