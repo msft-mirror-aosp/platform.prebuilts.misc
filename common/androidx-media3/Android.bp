@@ -1,0 +1,78 @@
+// This is a generated file. Do not modify directly.
+// Automatically generated with:
+// pom2bp -rewrite 'androidx.media3:=androidx.media3.' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental' -rewrite 'androidx.collection:collection=androidx.collection_collection' -rewrite 'androidx.media:media=androidx.media_media' -rewrite 'com.google.guava:guava=guava' -sdk-version current -static-deps -prepend prepend-license.txt .
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_library_import {
+    name: "androidx.media3.media3-common-nodeps",
+    aars: ["androidx/media3/media3-common/1.0.0-beta03/media3-common-1.0.0-beta03.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    static_libs: [
+        "guava",
+        "androidx.annotation_annotation",
+        "androidx.annotation_annotation-experimental",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-common",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    manifest: "manifests/androidx.media3.media3-common/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-common-nodeps",
+        "guava",
+        "androidx.annotation_annotation",
+        "androidx.annotation_annotation-experimental",
+    ],
+    java_version: "1.7",
+    visibility: ["//visibility:private"]
+}
+
+android_library_import {
+    name: "androidx.media3.media3-session-nodeps",
+    aars: ["androidx/media3/media3-session/1.0.0-beta03/media3-session-1.0.0-beta03.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    static_libs: [
+        "androidx.collection_collection",
+        "androidx.media3.media3-common",
+        "androidx.media_media",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-session",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    manifest: "manifests/androidx.media3.media3-session/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-session-nodeps",
+        "androidx.collection_collection",
+        "androidx.media3.media3-common",
+        "androidx.media_media",
+    ],
+    java_version: "1.7",
+    visibility: ["//visibility:private"]
+}
