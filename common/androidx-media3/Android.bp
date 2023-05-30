@@ -5,7 +5,9 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-library_visibility = ["//visibility:private"]
+library_visibility = [
+    "//vendor:__subpackages__",
+]
 
 android_library_import {
     name: "androidx.media3.media3-common-nodeps",
