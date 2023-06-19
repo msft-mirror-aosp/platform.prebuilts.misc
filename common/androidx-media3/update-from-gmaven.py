@@ -23,7 +23,7 @@
 # Manual verification steps:
 #   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
 #      on *everything* transitively), e.g.
-#      $ m androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-transformer androidx.media3.media3-ui
+#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-transformer androidx.media3.media3-ui
 
 import os
 import subprocess
@@ -108,6 +108,7 @@ downloadArtifact("androidx.media3", "media3-datasource", media3Version)
 downloadArtifact("androidx.media3", "media3-decoder", media3Version)
 downloadArtifact("androidx.media3", "media3-effect", media3Version)
 downloadArtifact("androidx.media3", "media3-exoplayer", media3Version)
+downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
 downloadArtifact("androidx.media3", "media3-extractor", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
 downloadArtifact("androidx.media3", "media3-transformer", media3Version)
