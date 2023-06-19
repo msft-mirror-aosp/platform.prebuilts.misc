@@ -184,6 +184,40 @@ android_library {
 }
 
 android_library_import {
+    name: "androidx.media3.media3-exoplayer-dash-nodeps",
+    aars: ["androidx/media3/media3-exoplayer-dash/1.0.2/media3-exoplayer-dash-1.0.2.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-exoplayer-dash",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    manifest: "manifests/androidx.media3.media3-exoplayer-dash/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-exoplayer-dash-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+    ],
+    java_version: "1.7",
+    visibility: library_visibility
+}
+
+android_library_import {
     name: "androidx.media3.media3-exoplayer-nodeps",
     aars: ["androidx/media3/media3-exoplayer/1.0.2/media3-exoplayer-1.0.2.aar"],
     sdk_version: "current",
