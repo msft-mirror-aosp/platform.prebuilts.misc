@@ -94,7 +94,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.accessibility-nodeps",
-    aars: ["androidx/test/espresso/espresso-accessibility/3.5.0-alpha07/espresso-accessibility-3.5.0-alpha07.aar"],
+    aars: ["androidx/test/espresso/espresso-accessibility/3.6.0-alpha01/espresso-accessibility-3.6.0-alpha01.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -103,6 +103,8 @@ android_library_import {
     min_sdk_version: "14",
     static_libs: [
         "accessibility-test-framework",
+        "hamcrest",
+        "hamcrest-library",
         "androidx.test.espresso.core",
     ],
 }
@@ -119,6 +121,8 @@ android_library {
     static_libs: [
         "androidx.test.espresso.accessibility-nodeps",
         "accessibility-test-framework",
+        "hamcrest",
+        "hamcrest-library",
         "androidx.test.espresso.core",
     ],
     java_version: "1.7",

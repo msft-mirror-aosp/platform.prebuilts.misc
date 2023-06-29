@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test.espresso</groupId>
   <artifactId>espresso-accessibility</artifactId>
-  <version>3.5.0-alpha07</version>
+  <version>3.6.0-alpha01</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -27,13 +27,25 @@
     <dependency>
       <groupId>androidx.test.espresso</groupId>
       <artifactId>espresso-core</artifactId>
-      <version>3.5.0-alpha07</version>
+      <version>3.6.0-alpha01</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.google.android.apps.common.testing.accessibility.framework</groupId>
       <artifactId>accessibility-test-framework</artifactId>
-      <version>3.1.2</version>
+      <version>3.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>1.3</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
