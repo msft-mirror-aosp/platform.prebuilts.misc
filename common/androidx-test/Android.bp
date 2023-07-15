@@ -635,6 +635,7 @@ android_app_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    preprocessed: true,
     presigned: true,
-
+    skip_preprocessed_apk_checks: true, // TODO: remove this, the apk currently has compressed dex files
 }
