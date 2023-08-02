@@ -547,6 +547,6 @@ android_app_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    preprocessed: true,
     presigned: true,
-
 }
