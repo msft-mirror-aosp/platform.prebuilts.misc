@@ -20,7 +20,7 @@ import sys
 
 annotationVersion="1.1.0-alpha01"
 monitorVersion="1.7.0-alpha01"
-runnerVersion="1.6.0-alpha03"
+runnerVersion="1.6.0-alpha04"
 rulesVersion="1.6.0-alpha01"
 espressoVersion="3.6.0-alpha01"
 coreVersion="1.6.0-alpha01"

@@ -556,7 +556,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.runner-nodeps",
-    aars: ["androidx/test/runner/1.6.0-alpha03/runner-1.6.0-alpha03.aar"],
+    aars: ["androidx/test/runner/1.6.0-alpha04/runner-1.6.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -637,4 +637,5 @@ android_app_import {
     ],
     preprocessed: true,
     presigned: true,
+
 }
