@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test</groupId>
   <artifactId>runner</artifactId>
-  <version>1.6.0-alpha03</version>
+  <version>1.6.0-alpha04</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>androidx.annotation</groupId>
       <artifactId>annotation</artifactId>
-      <version>1.2.0</version>
+      <version>1.7.0-beta01</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
