@@ -4,12 +4,10 @@ The objects in this prebuilt directory can be built from
 Both are built using the aosp_arm64 variant.
 
 platformprotos-prebuilt.jar:
-Built from commit d01036ee5893357db577c961119fb85825247f03.
-First AOSP build containing the change is aosp-master@8347157.
+Built from commit fe3deb07dcddef7fa0c1ea85fdb6709906260862.
 
 platformtestprotos-prebuilt.jar:
-Built from commit d01036ee5893357db577c961119fb85825247f03.
-First AOSP build containing the change is aosp-master@8347157.
+Built from commit fe3deb07dcddef7fa0c1ea85fdb6709906260862.
 
 Note: Before dropping the jars, please run the following command to strip the
 jar manifest file, which causes hidden dependency on jars in the Class-Path.
