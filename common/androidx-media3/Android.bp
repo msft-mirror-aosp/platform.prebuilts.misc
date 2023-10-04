@@ -7,6 +7,8 @@ package {
 
 library_visibility = [
     "//vendor:__subpackages__",
+    "//cts/tests/tests/mediacujtest:__subpackages__",
+    "//cts/tests/tests/mediaediting",
 ]
 
 android_library_import {
@@ -328,6 +330,56 @@ android_library {
         "androidx.collection_collection",
         "androidx.media3.media3-common",
         "androidx.media_media",
+    ],
+    java_version: "1.7",
+    visibility: library_visibility
+}
+
+android_library_import {
+    name: "androidx.media3.media3-test-utils-nodeps",
+    aars: ["androidx/media3/media3-test-utils/1.0.2/media3-test-utils-1.0.2.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.test.core",
+        "androidx.test.ext.junit",
+        "androidx.test.ext.truth",
+        "junit",
+        "mockito-core",
+        "mockwebserver",
+        "truth",
+        "truth-java8-extension",
+    ],
+    visibility: ["//visibility:private"]
+}
+
+android_library {
+    name: "androidx.media3.media3-test-utils",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "16",
+    manifest: "manifests/androidx.media3.media3-test-utils/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-test-utils-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.test.core",
+        "androidx.test.ext.junit",
+        "androidx.test.ext.truth",
+        "junit",
+        "mockito-core",
+        "mockwebserver",
+        "truth",
+        "truth-java8-extension",
     ],
     java_version: "1.7",
     visibility: library_visibility
