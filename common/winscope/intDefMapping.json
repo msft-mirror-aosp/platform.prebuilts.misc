@@ -12380,31 +12380,6 @@
       "5": "ISIDE_UNKNOWN"
     }
   },
-  "android.view.InsetsState.InternalInsetsType": {
-    "flag": false,
-    "values": {
-      "0": "ITYPE_STATUS_BAR",
-      "1": "ITYPE_NAVIGATION_BAR",
-      "2": "ITYPE_CAPTION_BAR",
-      "3": "ITYPE_TOP_GESTURES",
-      "4": "ITYPE_BOTTOM_GESTURES",
-      "5": "ITYPE_LEFT_GESTURES",
-      "6": "ITYPE_RIGHT_GESTURES",
-      "7": "ITYPE_TOP_MANDATORY_GESTURES",
-      "8": "ITYPE_BOTTOM_MANDATORY_GESTURES",
-      "9": "ITYPE_LEFT_MANDATORY_GESTURES",
-      "10": "ITYPE_RIGHT_MANDATORY_GESTURES",
-      "16": "ITYPE_TOP_TAPPABLE_ELEMENT",
-      "18": "ITYPE_BOTTOM_TAPPABLE_ELEMENT",
-      "11": "ITYPE_LEFT_DISPLAY_CUTOUT",
-      "12": "ITYPE_TOP_DISPLAY_CUTOUT",
-      "13": "ITYPE_RIGHT_DISPLAY_CUTOUT",
-      "14": "ITYPE_BOTTOM_DISPLAY_CUTOUT",
-      "19": "ITYPE_IME",
-      "20": "ITYPE_CLIMATE_BAR",
-      "21": "ITYPE_EXTRA_NAVIGATION_BAR"
-    }
-  },
   "android.view.MotionEvent.Classification": {
     "flag": false,
     "values": {
