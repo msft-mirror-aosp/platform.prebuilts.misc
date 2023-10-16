@@ -29,7 +29,7 @@ import os
 import subprocess
 import sys
 
-media3Version="1.0.2"
+media3Version="1.1.1"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -103,6 +103,7 @@ cmd("rm -rf androidx/media3")
 cmd("rm -rf manifests")
 
 downloadArtifact("androidx.media3", "media3-common", media3Version)
+downloadArtifact("androidx.media3", "media3-container", media3Version)
 downloadArtifact("androidx.media3", "media3-database", media3Version)
 downloadArtifact("androidx.media3", "media3-datasource", media3Version)
 downloadArtifact("androidx.media3", "media3-decoder", media3Version)
@@ -110,6 +111,7 @@ downloadArtifact("androidx.media3", "media3-effect", media3Version)
 downloadArtifact("androidx.media3", "media3-exoplayer", media3Version)
 downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
 downloadArtifact("androidx.media3", "media3-extractor", media3Version)
+downloadArtifact("androidx.media3", "media3-muxer", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
 downloadArtifact("androidx.media3", "media3-transformer", media3Version)
 downloadArtifact("androidx.media3", "media3-ui", media3Version)
