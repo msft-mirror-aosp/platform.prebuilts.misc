@@ -85,7 +85,7 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
- 
+
    # download sources.jar
    cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
@@ -140,7 +140,7 @@ for name in extraLibs:
 
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
-    "-rewrite com.google.truth:truth=truth-prebuilt " +
+    "-rewrite com.google.truth:truth=truth " +
     "-rewrite net.sf.kxml:kxml2=kxml2-android " +
     "-rewrite androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common " +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
