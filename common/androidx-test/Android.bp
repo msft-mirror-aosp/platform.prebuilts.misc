@@ -48,13 +48,13 @@ android_library {
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.6.0-alpha01/core-1.6.0-alpha01.aar"],
+    aars: ["androidx/test/core/1.6.0-alpha02/core-1.6.0-alpha02.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.concurrent_concurrent-futures",
@@ -75,7 +75,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.core/AndroidManifest.xml",
     static_libs: [
         "androidx.test.core-nodeps",
@@ -478,13 +478,13 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.7.0-alpha01/monitor-1.7.0-alpha01.aar"],
+    aars: ["androidx/test/monitor/1.7.0-alpha02/monitor-1.7.0-alpha02.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
@@ -500,7 +500,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.monitor/AndroidManifest.xml",
     static_libs: [
         "androidx.test.monitor-nodeps",
