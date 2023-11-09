@@ -32,3 +32,27 @@ cc_prebuilt_library_shared {
         "libz",
     ],
 }
+
+// Workaround for Qualcomm prebuilts used by partners.
+cc_prebuilt_library_shared {
+    name: "libprotobuf-cpp-lite-3.9.1-vendorcompat",
+    stem: "libprotobuf-cpp-lite-3.9.1",
+    vendor: true,
+    target: {
+        android_arm64: {
+            srcs: ["arm64/libprotobuf-cpp-lite-3.9.1.so"],
+        },
+        android_arm: {
+            srcs: ["arm/libprotobuf-cpp-lite-3.9.1.so"],
+        },
+    },
+
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libdl",
+        "liblog",
+        "libm",
+        "libz",
+    ],
+}
