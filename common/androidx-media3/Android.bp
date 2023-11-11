@@ -19,7 +19,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "guava",
         "androidx.annotation_annotation",
@@ -35,7 +35,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-common/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-common-nodeps",
@@ -55,7 +55,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -70,7 +70,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-container/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-container-nodeps",
@@ -89,7 +89,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -104,7 +104,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-database/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-database-nodeps",
@@ -123,7 +123,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -139,7 +139,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-datasource/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-datasource-nodeps",
@@ -159,7 +159,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -174,7 +174,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-decoder/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-decoder-nodeps",
@@ -193,7 +193,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "18",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -209,7 +209,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "18",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-effect/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-effect-nodeps",
@@ -229,7 +229,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-exoplayer",
@@ -244,7 +244,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-exoplayer-dash/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-exoplayer-dash-nodeps",
@@ -263,7 +263,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -284,7 +284,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-exoplayer/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-exoplayer-nodeps",
@@ -309,7 +309,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -326,7 +326,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-extractor/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-extractor-nodeps",
@@ -347,7 +347,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -363,7 +363,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-muxer/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-muxer-nodeps",
@@ -383,7 +383,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.collection_collection",
         "androidx.media3.media3-common",
@@ -399,7 +399,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-session/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-session-nodeps",
@@ -461,7 +461,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
@@ -478,7 +478,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "16",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.media3.media3-ui/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-ui-nodeps",
