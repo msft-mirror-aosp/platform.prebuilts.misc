@@ -9,6 +9,7 @@ library_visibility = [
     "//vendor:__subpackages__",
     "//cts/tests/tests/mediacujtest:__subpackages__",
     "//cts/tests/tests/mediaediting",
+    "//packages/modules/AdServices/sdksandbox/tests/manual-test-apps:__subpackages__",
 ]
 
 android_library_import {
