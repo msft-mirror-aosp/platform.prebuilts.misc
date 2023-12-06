@@ -8,7 +8,8 @@
 #       * If this fails with 'fatal error: thread exhaustion'
 #         (and then an *enormous* thread dump), retry the command.
 #   b. Update the version numbers in this file (and ensure any new modules are added below)
-#   c. $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
+#   c. Run the script from the Android source root:
+#      $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
 #
 # The script will then:
 #   1. Remove the previous artifacts
@@ -20,14 +21,15 @@
 # The visibility restrictions in Android.bp must be manually restored.
 #
 # Manual verification steps:
-#   1. Build the imported modules, e.g.
-#      $ m androidx.media3.media3-common androidx.media3.media3-session
+#   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
+#      on *everything* transitively), e.g.
+#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-transformer androidx.media3.media3-ui
 
 import os
 import subprocess
 import sys
 
-media3Version="1.0.0-beta03"
+media3Version="1.1.1"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -101,7 +103,18 @@ cmd("rm -rf androidx/media3")
 cmd("rm -rf manifests")
 
 downloadArtifact("androidx.media3", "media3-common", media3Version)
+downloadArtifact("androidx.media3", "media3-container", media3Version)
+downloadArtifact("androidx.media3", "media3-database", media3Version)
+downloadArtifact("androidx.media3", "media3-datasource", media3Version)
+downloadArtifact("androidx.media3", "media3-decoder", media3Version)
+downloadArtifact("androidx.media3", "media3-effect", media3Version)
+downloadArtifact("androidx.media3", "media3-exoplayer", media3Version)
+downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
+downloadArtifact("androidx.media3", "media3-extractor", media3Version)
+downloadArtifact("androidx.media3", "media3-muxer", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
+downloadArtifact("androidx.media3", "media3-transformer", media3Version)
+downloadArtifact("androidx.media3", "media3-ui", media3Version)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
@@ -112,7 +125,9 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
     "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
+    "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.media:media=androidx.media_media " +
+    "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
     "-rewrite com.google.guava:guava=guava " +
     "-sdk-version current " +
     "-static-deps " +
