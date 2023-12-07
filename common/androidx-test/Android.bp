@@ -48,7 +48,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.6.0-alpha03/core-1.6.0-alpha03.aar"],
+    aars: ["androidx/test/core/1.6.0-alpha04/core-1.6.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
