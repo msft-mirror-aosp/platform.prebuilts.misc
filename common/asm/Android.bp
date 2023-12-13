@@ -89,6 +89,14 @@ java_defaults {
     ],
 }
 
+filegroup {
+    name: "asm-9.2-filegroup",
+    srcs: ["asm-9.2.jar"],
+    visibility: [
+        "//art/test:__subpackages__",
+    ],
+}
+
 java_import {
     name: "asm-9.2",
     host_supported: true,
