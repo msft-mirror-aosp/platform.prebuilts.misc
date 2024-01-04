@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.media3</groupId>
   <artifactId>media3-common</artifactId>
-  <version>1.0.0-beta03</version>
+  <version>1.1.1</version>
   <packaging>aar</packaging>
   <name>Media3 common module</name>
   <description>Media3 common module</description>
@@ -33,112 +33,122 @@
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-cast</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>androidx.media3</groupId>
+        <artifactId>media3-container</artifactId>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-database</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-datasource</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-datasource-cronet</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-datasource-okhttp</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-datasource-rtmp</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-decoder</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-effect</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-dash</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-hls</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-ima</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-rtsp</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-smoothstreaming</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-exoplayer-workmanager</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-extractor</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>androidx.media3</groupId>
+        <artifactId>media3-muxer</artifactId>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-session</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-transformer</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-ui</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-ui-leanback</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-test-utils</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>androidx.media3</groupId>
         <artifactId>media3-test-utils-robolectric</artifactId>
-        <version>1.0.0-beta03</version>
+        <version>1.1.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -146,7 +156,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>31.0.1-android</version>
+      <version>31.1-android</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
