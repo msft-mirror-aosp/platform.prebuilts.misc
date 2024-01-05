@@ -22,7 +22,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.annotation_annotation-experimental",
@@ -36,7 +36,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.annotation/AndroidManifest.xml",
     static_libs: [
         "androidx.test.annotation-nodeps",
@@ -98,7 +98,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "accessibility-test-framework",
         "androidx.test.espresso.core",
@@ -112,7 +112,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.accessibility/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.accessibility-nodeps",
@@ -130,7 +130,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "com.google.android.material_material",
         "androidx.recyclerview_recyclerview",
@@ -151,7 +151,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.contrib/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.contrib-nodeps",
@@ -176,7 +176,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "javawriter",
@@ -199,7 +199,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.core/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.core-nodeps",
@@ -226,7 +226,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
     ],
 }
@@ -238,7 +238,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.idling-resource/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.idling-resource-nodeps",
@@ -254,7 +254,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "kotlin-stdlib",
         "androidx.test.espresso.core",
@@ -271,7 +271,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.intents/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.intents-nodeps",
@@ -292,7 +292,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "tagsoup",
@@ -307,7 +307,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.espresso.web/AndroidManifest.xml",
     static_libs: [
         "androidx.test.espresso.web-nodeps",
@@ -326,7 +326,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "junit",
         "androidx.annotation_annotation",
@@ -342,7 +342,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.ext.junit/AndroidManifest.xml",
     static_libs: [
         "androidx.test.ext.junit-nodeps",
@@ -362,7 +362,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "guava",
         "truth-prebuilt",
@@ -379,7 +379,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.ext.truth/AndroidManifest.xml",
     static_libs: [
         "androidx.test.ext.truth-nodeps",
@@ -466,7 +466,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.test.runner",
         "androidx.test.annotation",
@@ -483,7 +483,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.rules/AndroidManifest.xml",
     static_libs: [
         "androidx.test.rules-nodeps",
@@ -504,7 +504,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.tracing_tracing",
@@ -522,7 +522,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.runner/AndroidManifest.xml",
     static_libs: [
         "androidx.test.runner-nodeps",
@@ -544,7 +544,7 @@ android_library_import {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
         "jsr305",
@@ -560,7 +560,7 @@ android_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
-    min_sdk_version: "14",
+    min_sdk_version: "19",
     manifest: "manifests/androidx.test.services.storage/AndroidManifest.xml",
     static_libs: [
         "androidx.test.services.storage-nodeps",
