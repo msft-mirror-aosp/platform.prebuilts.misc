@@ -7,8 +7,8 @@ package {
 
 filegroup {
     name: "test-services.apk",
-    srcs: ["androidx/test/services/test-services/1.5.0-alpha02/test-services-1.5.0-alpha02.apk"],
-    path: "androidx/test/services/test-services/1.5.0-alpha02",
+    srcs: ["androidx/test/services/test-services/1.5.0-alpha03/test-services-1.5.0-alpha03.apk"],
+    path: "androidx/test/services/test-services/1.5.0-alpha03",
     visibility: [
         "//tools/tradefederation/core:__pkg__",
     ],
@@ -16,7 +16,7 @@ filegroup {
 
 android_library_import {
     name: "androidx.test.annotation-nodeps",
-    aars: ["androidx/test/annotation/1.1.0-alpha02/annotation-1.1.0-alpha02.aar"],
+    aars: ["androidx/test/annotation/1.1.0-alpha03/annotation-1.1.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -48,7 +48,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.core-nodeps",
-    aars: ["androidx/test/core/1.6.0-alpha04/core-1.6.0-alpha04.aar"],
+    aars: ["androidx/test/core/1.6.0-alpha05/core-1.6.0-alpha05.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -94,7 +94,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.accessibility-nodeps",
-    aars: ["androidx/test/espresso/espresso-accessibility/3.6.0-alpha02/espresso-accessibility-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-accessibility/3.6.0-alpha03/espresso-accessibility-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -130,7 +130,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.6.0-alpha02/espresso-contrib-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.6.0-alpha03/espresso-contrib-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -180,7 +180,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.6.0-alpha02/espresso-core-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.6.0-alpha03/espresso-core-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -240,7 +240,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.6.0-alpha02/espresso-idling-resource-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.6.0-alpha03/espresso-idling-resource-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -268,7 +268,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.6.0-alpha02/espresso-intents-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.6.0-alpha03/espresso-intents-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -318,7 +318,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.6.0-alpha02/espresso-web-3.6.0-alpha02.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.6.0-alpha03/espresso-web-3.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -370,7 +370,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.junit-nodeps",
-    aars: ["androidx/test/ext/junit/1.2.0-alpha02/junit-1.2.0-alpha02.aar"],
+    aars: ["androidx/test/ext/junit/1.2.0-alpha03/junit-1.2.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -410,7 +410,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.ext.truth-nodeps",
-    aars: ["androidx/test/ext/truth/1.6.0-alpha02/truth-1.6.0-alpha02.aar"],
+    aars: ["androidx/test/ext/truth/1.6.0-alpha03/truth-1.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -480,7 +480,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.monitor-nodeps",
-    aars: ["androidx/test/monitor/1.7.0-alpha03/monitor-1.7.0-alpha03.aar"],
+    aars: ["androidx/test/monitor/1.7.0-alpha04/monitor-1.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -516,7 +516,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.rules-nodeps",
-    aars: ["androidx/test/rules/1.6.0-alpha02/rules-1.6.0-alpha02.aar"],
+    aars: ["androidx/test/rules/1.6.0-alpha03/rules-1.6.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -558,7 +558,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.runner-nodeps",
-    aars: ["androidx/test/runner/1.6.0-alpha05/runner-1.6.0-alpha05.aar"],
+    aars: ["androidx/test/runner/1.6.0-alpha06/runner-1.6.0-alpha06.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -598,7 +598,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.services.storage-nodeps",
-    aars: ["androidx/test/services/storage/1.5.0-alpha02/storage-1.5.0-alpha02.aar"],
+    aars: ["androidx/test/services/storage/1.5.0-alpha03/storage-1.5.0-alpha03.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -632,7 +632,7 @@ android_library {
 
 android_app_import {
     name: "androidx.test.services.test-services",
-    apk: "androidx/test/services/test-services/1.5.0-alpha02/test-services-1.5.0-alpha02.apk",
+    apk: "androidx/test/services/test-services/1.5.0-alpha03/test-services-1.5.0-alpha03.apk",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
