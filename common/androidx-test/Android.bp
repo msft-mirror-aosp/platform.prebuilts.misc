@@ -43,7 +43,7 @@ android_library {
         "androidx.annotation_annotation-experimental",
         "androidx.annotation_annotation",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -89,7 +89,7 @@ android_library {
         "androidx.test.annotation",
         "androidx.test.monitor",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -125,7 +125,7 @@ android_library {
         "hamcrest-library",
         "androidx.test.espresso.core",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -175,7 +175,7 @@ android_library {
         "androidx.test.espresso.core",
         "androidx.test.monitor",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -235,7 +235,7 @@ android_library {
         "androidx.test.monitor",
         "androidx.test.runner",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -263,7 +263,7 @@ android_library {
     static_libs: [
         "androidx.test.espresso.idling-resource-nodeps",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -313,7 +313,7 @@ android_library {
         "androidx.test.rules",
         "androidx.test.runner",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -365,7 +365,7 @@ android_library {
         "androidx.test.monitor",
         "androidx.test.runner",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -405,7 +405,7 @@ android_library {
         "androidx.test.core",
         "androidx.test.monitor",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -443,7 +443,7 @@ android_library {
         "androidx.test.annotation",
         "androidx.test.core",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -475,7 +475,7 @@ android_library {
         "androidx.test.runner",
         "androidx.test.rules",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -511,7 +511,19 @@ android_library {
         "kotlin-stdlib",
         "androidx.test.annotation",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
+}
+
+android_app_import {
+    name: "androidx.test.orchestrator",
+    apk: "androidx/test/orchestrator/1.5.0-alpha03/orchestrator-1.5.0-alpha03.apk",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    preprocessed: true,
+    presigned: true,
+
 }
 
 android_library_import {
@@ -553,7 +565,7 @@ android_library {
     libs: [
         "android.test.base",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -593,7 +605,7 @@ android_library {
         "androidx.test.annotation",
         "androidx.test.monitor",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_library_import {
@@ -627,7 +639,7 @@ android_library {
         "androidx.test.annotation",
         "androidx.test.monitor",
     ],
-    java_version: "1.7",
+    java_version: "1.8",
 }
 
 android_app_import {
