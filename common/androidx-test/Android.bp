@@ -514,6 +514,18 @@ android_library {
     java_version: "1.8",
 }
 
+android_app_import {
+    name: "androidx.test.orchestrator",
+    apk: "androidx/test/orchestrator/1.5.0-alpha03/orchestrator-1.5.0-alpha03.apk",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    preprocessed: true,
+    presigned: true,
+
+}
+
 android_library_import {
     name: "androidx.test.rules-nodeps",
     aars: ["androidx/test/rules/1.6.0-alpha02/rules-1.6.0-alpha02.aar"],
