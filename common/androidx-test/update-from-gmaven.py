@@ -26,6 +26,7 @@ espressoVersion="3.6.0-alpha02"
 coreVersion="1.6.0-alpha04"
 extJUnitVersion="1.2.0-alpha02"
 extTruthVersion="1.6.0-alpha02"
+orchestratorVersion="1.5.0-alpha03"
 servicesVersion="1.5.0-alpha02"
 jankTestHelperVersion="1.0.1"
 
@@ -130,6 +131,7 @@ downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
 downloadArtifact("androidx.test.services", "storage", servicesVersion)
 downloadApk("androidx.test.services", "test-services", servicesVersion)
+downloadApk("androidx.test", "orchestrator", orchestratorVersion)
 
 
 atxRewriteStr = ""
