@@ -33,7 +33,7 @@ java_import_host {
 java_import_host {
     name: "jvm-jacoco-report",
     jars: [
-        "lib/org.jacoco.core-0.8.0.201801022044.jar",
-        "lib/org.jacoco.report-0.8.0.201801022044.jar",
+        "lib/org.jacoco.core-0.8.8.202204050719.jar",
+        "lib/org.jacoco.report-0.8.8.202204050719.jar",
     ],
 }
