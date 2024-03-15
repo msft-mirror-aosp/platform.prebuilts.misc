@@ -3,9 +3,18 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
-def jacocoVersion = "0.7.2.201409121644"
+def jacocoVersion = "0.8.8.202204050719"
+def asmVersion = "9.2"
+
 dependencies {
-    compile files("lib/asm-debug-all-5.0.1.jar")
-    compile files("lib/org.jacoco.core-${jacocoVersion}.jar", "lib/org.jacoco.report-${jacocoVersion}.jar")
-    compile files("../commons-cli/commons-cli-1.2.jar")
+    implementation files("../asm/asm-analysis-${asmVersion}.jar")
+    implementation files("../asm/asm-common-${asmVersion}.jar")
+    implementation files("../asm/asm-${asmVersion}.jar")
+    implementation files("../asm/asm-tree-${asmVersion}.jar")
+    implementation files("../asm/asm-util-${asmVersion}.jar")
+
+    implementation files("lib/org.jacoco.core-${jacocoVersion}.jar")
+    implementation files("lib/org.jacoco.report-${jacocoVersion}.jar")
+
+    implementation files("../commons-cli/commons-cli-1.2.jar")
 }
