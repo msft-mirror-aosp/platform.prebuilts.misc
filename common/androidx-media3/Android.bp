@@ -14,7 +14,7 @@ library_visibility = [
 
 android_library_import {
     name: "androidx.media3.media3-common-nodeps",
-    aars: ["androidx/media3/media3-common/1.1.1/media3-common-1.1.1.aar"],
+    aars: ["androidx/media3/media3-common/1.3.0/media3-common-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -26,7 +26,7 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.annotation_annotation-experimental",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -45,12 +45,12 @@ android_library {
         "androidx.annotation_annotation-experimental",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-container-nodeps",
-    aars: ["androidx/media3/media3-container/1.1.1/media3-container-1.1.1.aar"],
+    aars: ["androidx/media3/media3-container/1.3.0/media3-container-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -61,7 +61,7 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -79,12 +79,12 @@ android_library {
         "androidx.media3.media3-common",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-database-nodeps",
-    aars: ["androidx/media3/media3-database/1.1.1/media3-database-1.1.1.aar"],
+    aars: ["androidx/media3/media3-database/1.3.0/media3-database-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -95,7 +95,7 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -113,12 +113,12 @@ android_library {
         "androidx.media3.media3-common",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-datasource-nodeps",
-    aars: ["androidx/media3/media3-datasource/1.1.1/media3-datasource-1.1.1.aar"],
+    aars: ["androidx/media3/media3-datasource/1.3.0/media3-datasource-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -127,10 +127,11 @@ android_library_import {
     min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
+        "androidx.exifinterface_exifinterface",
         "androidx.media3.media3-common",
         "androidx.media3.media3-database",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -149,12 +150,12 @@ android_library {
         "androidx.media3.media3-database",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-decoder-nodeps",
-    aars: ["androidx/media3/media3-decoder/1.1.1/media3-decoder-1.1.1.aar"],
+    aars: ["androidx/media3/media3-decoder/1.3.0/media3-decoder-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -165,7 +166,7 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -183,12 +184,12 @@ android_library {
         "androidx.media3.media3-common",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-effect-nodeps",
-    aars: ["androidx/media3/media3-effect/1.1.1/media3-effect-1.1.1.aar"],
+    aars: ["androidx/media3/media3-effect/1.3.0/media3-effect-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -200,7 +201,7 @@ android_library_import {
         "androidx.media3.media3-common",
         "androidx.media3.media3-datasource",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -219,12 +220,12 @@ android_library {
         "androidx.media3.media3-datasource",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-exoplayer-dash-nodeps",
-    aars: ["androidx/media3/media3-exoplayer-dash/1.1.1/media3-exoplayer-dash-1.1.1.aar"],
+    aars: ["androidx/media3/media3-exoplayer-dash/1.3.0/media3-exoplayer-dash-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -235,7 +236,7 @@ android_library_import {
         "androidx.annotation_annotation",
         "androidx.media3.media3-exoplayer",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -253,12 +254,12 @@ android_library {
         "androidx.media3.media3-exoplayer",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-exoplayer-nodeps",
-    aars: ["androidx/media3/media3-exoplayer/1.1.1/media3-exoplayer-1.1.1.aar"],
+    aars: ["androidx/media3/media3-exoplayer/1.3.0/media3-exoplayer-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -267,6 +268,8 @@ android_library_import {
     min_sdk_version: "19",
     static_libs: [
         "androidx.annotation_annotation",
+        "androidx.collection_collection",
+        "androidx.exifinterface_exifinterface",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
         "androidx.media3.media3-datasource",
@@ -275,7 +278,7 @@ android_library_import {
         "androidx.media3.media3-database",
         "androidx.core_core",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -299,12 +302,12 @@ android_library {
         "androidx.core_core",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-extractor-nodeps",
-    aars: ["androidx/media3/media3-extractor/1.1.1/media3-extractor-1.1.1.aar"],
+    aars: ["androidx/media3/media3-extractor/1.3.0/media3-extractor-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -317,7 +320,7 @@ android_library_import {
         "androidx.media3.media3-container",
         "androidx.media3.media3-decoder",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -337,12 +340,12 @@ android_library {
         "androidx.media3.media3-decoder",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-muxer-nodeps",
-    aars: ["androidx/media3/media3-muxer/1.1.1/media3-muxer-1.1.1.aar"],
+    aars: ["androidx/media3/media3-muxer/1.3.0/media3-muxer-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -354,7 +357,7 @@ android_library_import {
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -373,12 +376,12 @@ android_library {
         "androidx.media3.media3-container",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-session-nodeps",
-    aars: ["androidx/media3/media3-session/1.1.1/media3-session-1.1.1.aar"],
+    aars: ["androidx/media3/media3-session/1.3.0/media3-session-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -390,7 +393,7 @@ android_library_import {
         "androidx.media3.media3-common",
         "androidx.media_media",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -409,12 +412,66 @@ android_library {
         "androidx.media_media",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
+}
+
+android_library_import {
+    name: "androidx.media3.media3-test-utils-nodeps",
+    aars: ["androidx/media3/media3-test-utils/1.3.0/media3-test-utils-1.3.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "19",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.test.core",
+        "androidx.test.ext.junit",
+        "androidx.test.ext.truth",
+        "junit",
+        "mockito-core",
+        // Missing a dependency on okhttp3.mockwebserver because this package is not currently
+        // available in /external/. This means the parts of this library that require this
+        // dependency are not usable.
+        "truth",
+        "truth-java8-extension",
+    ],
+    visibility: ["//visibility:private"],
+}
+
+android_library {
+    name: "androidx.media3.media3-test-utils",
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "19",
+    manifest: "manifests/androidx.media3.media3-test-utils/AndroidManifest.xml",
+    static_libs: [
+        "androidx.media3.media3-test-utils-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.media3.media3-exoplayer",
+        "androidx.test.core",
+        "androidx.test.ext.junit",
+        "androidx.test.ext.truth",
+        "junit",
+        "mockito-core",
+        // Missing a dependency on okhttp3.mockwebserver because this package is not currently
+        // available in /external/. This means the parts of this library that require this
+        // dependency are not usable.
+        "truth",
+        "truth-java8-extension",
+    ],
+    java_version: "1.7",
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-transformer-nodeps",
-    aars: ["androidx/media3/media3-transformer/1.1.1/media3-transformer-1.1.1.aar"],
+    aars: ["androidx/media3/media3-transformer/1.3.0/media3-transformer-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -429,7 +486,7 @@ android_library_import {
         "androidx.media3.media3-effect",
         "androidx.media3.media3-muxer",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -451,12 +508,12 @@ android_library {
         "androidx.media3.media3-muxer",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
 
 android_library_import {
     name: "androidx.media3.media3-ui-nodeps",
-    aars: ["androidx/media3/media3-ui/1.1.1/media3-ui-1.1.1.aar"],
+    aars: ["androidx/media3/media3-ui/1.3.0/media3-ui-1.3.0.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -469,7 +526,7 @@ android_library_import {
         "androidx.media_media",
         "androidx.recyclerview_recyclerview",
     ],
-    visibility: ["//visibility:private"]
+    visibility: ["//visibility:private"],
 }
 
 android_library {
@@ -489,5 +546,5 @@ android_library {
         "androidx.recyclerview_recyclerview",
     ],
     java_version: "1.7",
-    visibility: library_visibility
+    visibility: library_visibility,
 }
