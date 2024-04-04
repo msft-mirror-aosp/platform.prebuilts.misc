@@ -23,13 +23,13 @@
 # Manual verification steps:
 #   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
 #      on *everything* transitively), e.g.
-#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-transformer androidx.media3.media3-ui
+#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-test-utils androidx.media3.media3-transformer androidx.media3.media3-ui
 
 import os
 import subprocess
 import sys
 
-media3Version="1.1.1"
+media3Version="1.3.0"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -113,6 +113,7 @@ downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
 downloadArtifact("androidx.media3", "media3-extractor", media3Version)
 downloadArtifact("androidx.media3", "media3-muxer", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
+downloadArtifact("androidx.media3", "media3-test-utils", media3Version)
 downloadArtifact("androidx.media3", "media3-transformer", media3Version)
 downloadArtifact("androidx.media3", "media3-ui", media3Version)
 
