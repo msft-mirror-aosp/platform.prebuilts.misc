@@ -18,7 +18,13 @@
 #   3. Extract the AndroidManifest from the aars into the manifests folder
 #   4. Run pom2bp to generate the Android.bp
 #
-# The visibility restrictions in Android.bp must be manually restored.
+# Manual edit steps:
+#   1. In Android.bp, manually restore the visibility restrictions.
+#   2. In Android.bp, replace "mockwebserver" in androidx.media3.media3-test-utils-nodeps
+#      with the following issue comment:
+#      // Missing a dependency on okhttp3.mockwebserver because this package is not currently
+#      // available in /external/. This means the parts of this library that require this
+#      // dependency are not usable.
 #
 # Manual verification steps:
 #   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
@@ -29,7 +35,7 @@ import os
 import subprocess
 import sys
 
-media3Version="1.3.0"
+media3Version="1.4.0-alpha01"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -127,9 +133,16 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
     "-rewrite androidx.core:core=androidx.core_core " +
+    "-rewrite androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface " +
     "-rewrite androidx.media:media=androidx.media_media " +
     "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
+    "-rewrite androidx.test:core=androidx.test.core " +
+    "-rewrite androidx.test.ext:junit=androidx.test.ext.junit " +
+    "-rewrite androidx.test.ext:truth=androidx.test.ext.truth " +
     "-rewrite com.google.guava:guava=guava " +
+    "-rewrite com.google.truth:truth=truth " +
+    "-rewrite com.google.truth.extensions:truth-java8-extension=truth-java8-extension " +
+    "-rewrite org.mockito:mockito-core=mockito-core " +
     "-sdk-version current " +
     "-static-deps " +
     "-prepend prepend-license.txt " +
