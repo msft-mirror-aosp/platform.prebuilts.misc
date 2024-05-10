@@ -32,12 +32,12 @@ import org.jacoco.report.MultiReportVisitor;
 import org.jacoco.report.MultiSourceFileLocator;
 import org.jacoco.report.html.HTMLFormatter;
 import org.jacoco.report.xml.XMLFormatter;
-import org.objectweb.asm.ClassReader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.jar.JarFile;
@@ -80,11 +80,16 @@ public class ReportGenerator {
         CoverageBuilder coverageBuilder = new CoverageBuilder();
         Analyzer analyzer = new Analyzer(dataStore, coverageBuilder) {
             @Override
-            public void analyzeClass(ClassReader reader) {
-                if (weHaveSourceFor(reader.getClassName(), "java")
-                        || weHaveSourceFor(reader.getClassName(), "kt")) {
-                    super.analyzeClass(reader);
+            public void analyzeClass(InputStream input, String location) throws IOException {
+                String className = parseClassName(location);
+                if (weHaveSourceFor(className, "java")
+                        || weHaveSourceFor(className, "kt")) {
+                    super.analyzeClass(input, location);
                 }
+            }
+
+            private String parseClassName(String location) {
+                return location.substring(location.indexOf('@') + 1, location.lastIndexOf('.'));
             }
 
             private boolean weHaveSourceFor(String asmClassName, String fileExtension) {

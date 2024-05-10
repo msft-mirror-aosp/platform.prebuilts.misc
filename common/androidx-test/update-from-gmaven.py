@@ -18,15 +18,16 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.1"
-monitorVersion="1.6.1"
-runnerVersion="1.5.3-alpha01"
-rulesVersion="1.5.0"
-espressoVersion="3.5.1"
-coreVersion="1.5.0"
-extJUnitVersion="1.1.5"
-extTruthVersion="1.5.0"
-servicesVersion="1.4.2"
+annotationVersion="1.1.0-alpha02"
+monitorVersion="1.7.0-alpha03"
+runnerVersion="1.6.0-alpha05"
+rulesVersion="1.6.0-alpha02"
+espressoVersion="3.6.0-alpha02"
+coreVersion="1.6.0-alpha04"
+extJUnitVersion="1.2.0-alpha02"
+extTruthVersion="1.6.0-alpha02"
+orchestratorVersion="1.5.0-alpha03"
+servicesVersion="1.5.0-alpha02"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
@@ -85,7 +86,7 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
- 
+
    # download sources.jar
    cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
@@ -115,6 +116,7 @@ cmd("rm -rf manifests")
 
 downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
+downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-contrib", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-idling-resource", espressoVersion)
@@ -129,6 +131,7 @@ downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
 downloadArtifact("androidx.test.services", "storage", servicesVersion)
 downloadApk("androidx.test.services", "test-services", servicesVersion)
+downloadApk("androidx.test", "orchestrator", orchestratorVersion)
 
 
 atxRewriteStr = ""
@@ -139,11 +142,12 @@ for name in extraLibs:
 
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
-    "-rewrite com.google.truth:truth=truth-prebuilt " +
+    "-rewrite com.google.truth:truth=truth " +
     "-rewrite net.sf.kxml:kxml2=kxml2-android " +
     "-rewrite androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common " +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
     "-rewrite org.hamcrest:hamcrest-integration=hamcrest " +
+    "-rewrite org.hamcrest:hamcrest-core=hamcrest " +
     "-rewrite javax.inject:javax.inject=jsr330 " +
     "-rewrite com.google.android.material:material=com.google.android.material_material " +
     "-rewrite androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout " +
@@ -151,6 +155,7 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
+    "-rewrite androidx.appcompat:appcompat=androidx.appcompat_appcompat " +
     "-sdk-version current " +
     "-static-deps " +
     "-prepend prepend-license.txt " +
