@@ -8,7 +8,8 @@
 #       * If this fails with 'fatal error: thread exhaustion'
 #         (and then an *enormous* thread dump), retry the command.
 #   b. Update the version numbers in this file (and ensure any new modules are added below)
-#   c. $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
+#   c. Run the script from the Android source root:
+#      $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
 #
 # The script will then:
 #   1. Remove the previous artifacts
@@ -17,17 +18,24 @@
 #   3. Extract the AndroidManifest from the aars into the manifests folder
 #   4. Run pom2bp to generate the Android.bp
 #
-# The visibility restrictions in Android.bp must be manually restored.
+# Manual edit steps:
+#   1. In Android.bp, manually restore the visibility restrictions.
+#   2. In Android.bp, replace "mockwebserver" in androidx.media3.media3-test-utils-nodeps
+#      with the following issue comment:
+#      // Missing a dependency on okhttp3.mockwebserver because this package is not currently
+#      // available in /external/. This means the parts of this library that require this
+#      // dependency are not usable.
 #
 # Manual verification steps:
-#   1. Build the imported modules, e.g.
-#      $ m androidx.media3.media3-common androidx.media3.media3-session
+#   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
+#      on *everything* transitively), e.g.
+#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-test-utils androidx.media3.media3-transformer androidx.media3.media3-ui
 
 import os
 import subprocess
 import sys
 
-media3Version="1.0.0-beta03"
+media3Version="1.4.0-alpha01"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -101,7 +109,19 @@ cmd("rm -rf androidx/media3")
 cmd("rm -rf manifests")
 
 downloadArtifact("androidx.media3", "media3-common", media3Version)
+downloadArtifact("androidx.media3", "media3-container", media3Version)
+downloadArtifact("androidx.media3", "media3-database", media3Version)
+downloadArtifact("androidx.media3", "media3-datasource", media3Version)
+downloadArtifact("androidx.media3", "media3-decoder", media3Version)
+downloadArtifact("androidx.media3", "media3-effect", media3Version)
+downloadArtifact("androidx.media3", "media3-exoplayer", media3Version)
+downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
+downloadArtifact("androidx.media3", "media3-extractor", media3Version)
+downloadArtifact("androidx.media3", "media3-muxer", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
+downloadArtifact("androidx.media3", "media3-test-utils", media3Version)
+downloadArtifact("androidx.media3", "media3-transformer", media3Version)
+downloadArtifact("androidx.media3", "media3-ui", media3Version)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
@@ -112,8 +132,17 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
     "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
+    "-rewrite androidx.core:core=androidx.core_core " +
+    "-rewrite androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface " +
     "-rewrite androidx.media:media=androidx.media_media " +
+    "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
+    "-rewrite androidx.test:core=androidx.test.core " +
+    "-rewrite androidx.test.ext:junit=androidx.test.ext.junit " +
+    "-rewrite androidx.test.ext:truth=androidx.test.ext.truth " +
     "-rewrite com.google.guava:guava=guava " +
+    "-rewrite com.google.truth:truth=truth " +
+    "-rewrite com.google.truth.extensions:truth-java8-extension=truth-java8-extension " +
+    "-rewrite org.mockito:mockito-core=mockito-core " +
     "-sdk-version current " +
     "-static-deps " +
     "-prepend prepend-license.txt " +
