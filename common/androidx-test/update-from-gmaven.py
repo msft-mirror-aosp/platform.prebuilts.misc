@@ -18,21 +18,19 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.1.0-alpha04"
-monitorVersion="1.7.0-alpha05"
-runnerVersion="1.6.0-alpha07"
-rulesVersion="1.6.0-alpha04"
-espressoVersion="3.6.0-alpha04"
-coreVersion="1.6.0-alpha06"
-extJUnitVersion="1.2.0-alpha04"
-extTruthVersion="1.6.0-alpha04"
-orchestratorVersion="1.5.0-alpha04"
-servicesVersion="1.5.0-alpha04"
+monitorVersion="1.7.0-beta01"
+runnerVersion="1.6.0-beta01"
+rulesVersion="1.6.0-beta01"
+espressoVersion="3.6.0-beta01"
+coreVersion="1.6.0-beta01"
+extJUnitVersion="1.2.0-beta01"
+extTruthVersion="1.6.0-beta01"
+orchestratorVersion="1.5.0-beta01"
+servicesVersion="1.5.0-beta01"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
@@ -114,7 +112,6 @@ chdir(prebuiltDir)
 cmd("rm -rf androidx/test")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
 downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
