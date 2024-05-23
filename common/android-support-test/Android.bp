@@ -37,6 +37,7 @@ java_library_static {
         "android-support-annotations",
         "android-support-test-monitor-nodep",
     ],
+    visibility: ["//visibility:public"],
 }
 
 java_library_static {
