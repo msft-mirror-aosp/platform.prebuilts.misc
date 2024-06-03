@@ -18,21 +18,19 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.1.0-alpha03"
-monitorVersion="1.7.0-alpha04"
-runnerVersion="1.6.0-alpha06"
-rulesVersion="1.6.0-alpha03"
-espressoVersion="3.6.0-alpha03"
-coreVersion="1.6.0-alpha05"
-extJUnitVersion="1.2.0-alpha03"
-extTruthVersion="1.6.0-alpha03"
-orchestratorVersion="1.5.0-alpha03"
-servicesVersion="1.5.0-alpha03"
+monitorVersion="1.7.0-rc01"
+runnerVersion="1.6.0-rc01"
+rulesVersion="1.6.0-rc01"
+espressoVersion="3.6.0-rc01"
+coreVersion="1.6.0-rc01"
+extJUnitVersion="1.2.0-rc01"
+extTruthVersion="1.6.0-rc01"
+orchestratorVersion="1.5.0-rc01"
+servicesVersion="1.5.0-rc01"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
@@ -46,6 +44,22 @@ mavenToBpPatternMap = {
 extraLibs = {
     "androidx.test.rules" : "android.test.base",
     }
+
+prependLicenseTemplate = """
+package {{
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}}
+
+filegroup {{
+    name: "test-services.apk",
+    srcs:
+    ["androidx/test/services/test-services/{servicesVersion}/test-services-{servicesVersion}.apk",],
+    path: "androidx/test/services/test-services/{servicesVersion}",
+    visibility: [
+        "//tools/tradefederation/core:__pkg__",
+    ],
+}}
+"""
 
 def cmd(args):
    print(args)
@@ -108,13 +122,17 @@ def getManifestPath(mavenArtifactName):
     manifestPath = manifestPath.replace(searchPattern, mavenToBpPatternMap[searchPattern])
   return "manifests/%s" % manifestPath
 
+def updatePrependLicense():
+  with open("prepend-license.txt", "w") as f:
+    f.write(prependLicenseTemplate.format(servicesVersion = servicesVersion))
+
+
 prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
 chdir(prebuiltDir)
 
 cmd("rm -rf androidx/test")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
 downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
@@ -140,6 +158,8 @@ for name in mavenToBpPatternMap:
 for name in extraLibs:
   atxRewriteStr += "-extra-libs %s=%s " % (name, extraLibs[name])
 
+updatePrependLicense()
+
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
     "-rewrite com.google.truth:truth=truth " +
@@ -160,3 +180,4 @@ cmd("pom2bp " + atxRewriteStr +
     "-static-deps " +
     "-prepend prepend-license.txt " +
     ". > Android.bp")
+
