@@ -18,20 +18,19 @@ import os
 import subprocess
 import sys
 
-annotationVersion="1.0.1"
-monitorVersion="1.6.1"
-runnerVersion="1.5.3-alpha01"
-rulesVersion="1.5.0"
-espressoVersion="3.5.1"
-coreVersion="1.5.0"
-extJUnitVersion="1.1.5"
-extTruthVersion="1.5.0"
-servicesVersion="1.4.2"
+monitorVersion="1.7.0-rc01"
+runnerVersion="1.6.0-rc01"
+rulesVersion="1.6.0-rc01"
+espressoVersion="3.6.0-rc01"
+coreVersion="1.6.0-rc01"
+extJUnitVersion="1.2.0-rc01"
+extTruthVersion="1.6.0-rc01"
+orchestratorVersion="1.5.0-rc01"
+servicesVersion="1.5.0-rc01"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
     "androidx.test:" : "androidx.test.",
-    "androidx.test.annotation:annotation" : "androidx.test.annotation",
     "androidx.test.ext:": "androidx.test.ext.",
     "androidx.test.espresso:espresso-":"androidx.test.espresso.",
     "androidx.test.janktesthelper:janktesthelper":"androidx.test.janktesthelper",
@@ -45,6 +44,22 @@ mavenToBpPatternMap = {
 extraLibs = {
     "androidx.test.rules" : "android.test.base",
     }
+
+prependLicenseTemplate = """
+package {{
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}}
+
+filegroup {{
+    name: "test-services.apk",
+    srcs:
+    ["androidx/test/services/test-services/{servicesVersion}/test-services-{servicesVersion}.apk",],
+    path: "androidx/test/services/test-services/{servicesVersion}",
+    visibility: [
+        "//tools/tradefederation/core:__pkg__",
+    ],
+}}
+"""
 
 def cmd(args):
    print(args)
@@ -85,7 +100,7 @@ def downloadArtifact(groupId, artifactId, version):
 
    # download pom
    cmd("wget -O %s.pom https://dl.google.com/dl/android/maven2/%s.pom" % (artifactPath, artifactPath))
- 
+
    # download sources.jar
    cmd("wget -O %s-sources.jar https://dl.google.com/dl/android/maven2/%s-sources.jar" % (artifactPath, artifactPath))
 
@@ -107,13 +122,17 @@ def getManifestPath(mavenArtifactName):
     manifestPath = manifestPath.replace(searchPattern, mavenToBpPatternMap[searchPattern])
   return "manifests/%s" % manifestPath
 
+def updatePrependLicense():
+  with open("prepend-license.txt", "w") as f:
+    f.write(prependLicenseTemplate.format(servicesVersion = servicesVersion))
+
+
 prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
 chdir(prebuiltDir)
 
 cmd("rm -rf androidx/test")
 cmd("rm -rf manifests")
 
-downloadArtifact("androidx.test", "annotation", annotationVersion)
 downloadArtifact("androidx.test", "core", coreVersion)
 downloadArtifact("androidx.test.espresso", "espresso-accessibility", espressoVersion)
 downloadArtifact("androidx.test.espresso", "espresso-core", espressoVersion)
@@ -130,6 +149,7 @@ downloadArtifact("androidx.test.ext", "truth", extTruthVersion)
 downloadArtifact("androidx.test.janktesthelper", "janktesthelper", jankTestHelperVersion)
 downloadArtifact("androidx.test.services", "storage", servicesVersion)
 downloadApk("androidx.test.services", "test-services", servicesVersion)
+downloadApk("androidx.test", "orchestrator", orchestratorVersion)
 
 
 atxRewriteStr = ""
@@ -138,13 +158,16 @@ for name in mavenToBpPatternMap:
 for name in extraLibs:
   atxRewriteStr += "-extra-libs %s=%s " % (name, extraLibs[name])
 
+updatePrependLicense()
+
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
-    "-rewrite com.google.truth:truth=truth-prebuilt " +
+    "-rewrite com.google.truth:truth=truth " +
     "-rewrite net.sf.kxml:kxml2=kxml2-android " +
     "-rewrite androidx.lifecycle:lifecycle-common=androidx.lifecycle_lifecycle-common " +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
     "-rewrite org.hamcrest:hamcrest-integration=hamcrest " +
+    "-rewrite org.hamcrest:hamcrest-core=hamcrest " +
     "-rewrite javax.inject:javax.inject=jsr330 " +
     "-rewrite com.google.android.material:material=com.google.android.material_material " +
     "-rewrite androidx.drawerlayout:drawerlayout=androidx.drawerlayout_drawerlayout " +
@@ -152,7 +175,9 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.legacy:legacy-support-core-utils=androidx.legacy_legacy-support-core-utils " +
+    "-rewrite androidx.appcompat:appcompat=androidx.appcompat_appcompat " +
     "-sdk-version current " +
     "-static-deps " +
     "-prepend prepend-license.txt " +
     ". > Android.bp")
+
