@@ -13,6 +13,7 @@ license {
 cc_prebuilt_library_shared {
     name: "libprotobuf-cpp-full-3.9.1-vendorcompat",
     stem: "libprotobuf-cpp-full-3.9.1",
+    ignore_max_page_size: true,
     vendor: true,
     target: {
         android_arm64: {
@@ -37,6 +38,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libprotobuf-cpp-lite-3.9.1-vendorcompat",
     stem: "libprotobuf-cpp-lite-3.9.1",
+    ignore_max_page_size: true,
     vendor: true,
     target: {
         android_arm64: {
