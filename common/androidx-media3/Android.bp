@@ -9,8 +9,12 @@ library_visibility = [
     "//vendor:__subpackages__",
     "//cts/tests/tests/mediacujtest:__subpackages__",
     "//cts/tests/tests/mediaediting",
+    "//packages/apps/Car/libs/car-media-common:__subpackages__",
+    "//packages/apps/Car/Media:__subpackages__",
+    "//packages/apps/Car/tests/TestMediaApp:__subpackages__",
     "//packages/modules/AdServices/sdksandbox/tests/manual-test-apps:__subpackages__",
     "//test/wvts:__subpackages__",
+    "//prebuilts/sdk/current/aaos-libs",
 ]
 
 android_library_import {
