@@ -12,6 +12,7 @@ library_visibility = [
     "//packages/apps/Car/libs/car-media-common:__subpackages__",
     "//packages/apps/Car/Media:__subpackages__",
     "//packages/apps/Car/tests/TestMediaApp:__subpackages__",
+    "//prebuilts/sdk/current/aaos-libs",
 ]
 
 android_library_import {
