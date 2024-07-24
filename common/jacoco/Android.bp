@@ -15,11 +15,11 @@ java_library_host {
     srcs: ["src/main/java/**/*.java"],
 
     static_libs: [
-        "asm-analysis-9.2",
-        "asm-commons-9.2",
-        "asm-9.2",
-        "asm-tree-9.2",
-        "asm-util-9.2",
+        "asm-analysis-9.6",
+        "asm-commons-9.6",
+        "asm-9.6",
+        "asm-tree-9.6",
+        "asm-util-9.6",
         "jvm-jacoco-report",
         "commons-cli-1.2",
     ],
@@ -33,7 +33,7 @@ java_import_host {
 java_import_host {
     name: "jvm-jacoco-report",
     jars: [
-        "lib/org.jacoco.core-0.8.0.201801022044.jar",
-        "lib/org.jacoco.report-0.8.0.201801022044.jar",
+        "lib/org.jacoco.core-0.8.8.202204050719.jar",
+        "lib/org.jacoco.report-0.8.8.202204050719.jar",
     ],
 }
