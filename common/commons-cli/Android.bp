@@ -41,3 +41,10 @@ java_import {
     sdk_version: "core_current",
     jars: ["commons-cli-1.2.jar"],
 }
+
+java_import {
+    name: "commons-cli-1.8.0",
+    host_supported: true,
+    sdk_version: "core_current",
+    jars: ["commons-cli-1.8.0.jar"],
+}
