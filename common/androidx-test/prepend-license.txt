@@ -1,3 +1,4 @@
+
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
@@ -5,8 +6,8 @@ package {
 filegroup {
     name: "test-services.apk",
     srcs:
-    ["androidx/test/services/test-services/1.5.0-beta01/test-services-1.5.0-beta01.apk",],
-    path: "androidx/test/services/test-services/1.5.0-beta01",
+    ["androidx/test/services/test-services/1.5.0/test-services-1.5.0.apk",],
+    path: "androidx/test/services/test-services/1.5.0",
     visibility: [
         "//tools/tradefederation/core:__pkg__",
     ],

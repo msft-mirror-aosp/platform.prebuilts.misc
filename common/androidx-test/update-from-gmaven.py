@@ -18,15 +18,15 @@ import os
 import subprocess
 import sys
 
-monitorVersion="1.7.0-beta01"
-runnerVersion="1.6.0-beta01"
-rulesVersion="1.6.0-beta01"
-espressoVersion="3.6.0-beta01"
-coreVersion="1.6.0-beta01"
-extJUnitVersion="1.2.0-beta01"
-extTruthVersion="1.6.0-beta01"
-orchestratorVersion="1.5.0-beta01"
-servicesVersion="1.5.0-beta01"
+monitorVersion="1.7.0"
+runnerVersion="1.6.0"
+rulesVersion="1.6.0"
+espressoVersion="3.6.0"
+coreVersion="1.6.0"
+extJUnitVersion="1.2.0"
+extTruthVersion="1.6.0"
+orchestratorVersion="1.5.0"
+servicesVersion="1.5.0"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
@@ -44,6 +44,22 @@ mavenToBpPatternMap = {
 extraLibs = {
     "androidx.test.rules" : "android.test.base",
     }
+
+prependLicenseTemplate = """
+package {{
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}}
+
+filegroup {{
+    name: "test-services.apk",
+    srcs:
+    ["androidx/test/services/test-services/{servicesVersion}/test-services-{servicesVersion}.apk",],
+    path: "androidx/test/services/test-services/{servicesVersion}",
+    visibility: [
+        "//tools/tradefederation/core:__pkg__",
+    ],
+}}
+"""
 
 def cmd(args):
    print(args)
@@ -106,6 +122,11 @@ def getManifestPath(mavenArtifactName):
     manifestPath = manifestPath.replace(searchPattern, mavenToBpPatternMap[searchPattern])
   return "manifests/%s" % manifestPath
 
+def updatePrependLicense():
+  with open("prepend-license.txt", "w") as f:
+    f.write(prependLicenseTemplate.format(servicesVersion = servicesVersion))
+
+
 prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
 chdir(prebuiltDir)
 
@@ -137,6 +158,8 @@ for name in mavenToBpPatternMap:
 for name in extraLibs:
   atxRewriteStr += "-extra-libs %s=%s " % (name, extraLibs[name])
 
+updatePrependLicense()
+
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
     "-rewrite com.google.truth:truth=truth " +
@@ -157,3 +180,4 @@ cmd("pom2bp " + atxRewriteStr +
     "-static-deps " +
     "-prepend prepend-license.txt " +
     ". > Android.bp")
+
