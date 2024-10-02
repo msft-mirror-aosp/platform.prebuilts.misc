@@ -502,7 +502,7 @@ android_library_import {
         "androidx.test.runner",
     ],
     libs: [
-        "android.test.base",
+        "android.test.base.stubs",
     ],
 }
 
