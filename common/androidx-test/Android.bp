@@ -502,7 +502,7 @@ android_library_import {
         "androidx.test.runner",
     ],
     libs: [
-        "android.test.base",
+        "android.test.base.stubs",
     ],
 }
 
@@ -522,7 +522,7 @@ android_library {
         "androidx.test.runner",
     ],
     libs: [
-        "android.test.base",
+        "android.test.base.stubs",
     ],
     java_version: "1.8",
 }
