@@ -36,3 +36,9 @@ license {
         "linux-x86/yasm/COPYING",
     ],
 }
+
+dirgroup {
+    name: "trusty_dirgroup_prebuilts_misc",
+    dirs: ["."],
+    visibility: ["//trusty/vendor/google/aosp/scripts"],
+}
