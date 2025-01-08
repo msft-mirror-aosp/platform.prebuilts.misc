@@ -35,7 +35,7 @@ import re
 import subprocess
 import sys
 
-media3Version="1.5.0-rc01"
+media3Version="1.6.0-alpha01"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -193,6 +193,7 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
     "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
+    "-rewrite androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface " +
     "-rewrite androidx.media:media=androidx.media_media " +
