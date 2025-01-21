@@ -1,0 +1,2 @@
+# If you own an existing component in this prebuilt, add a OWNER file in that subdirectory
+include platform/system/core:/janitors/OWNERS #{LAST_RESORT_SUGGESTION}
