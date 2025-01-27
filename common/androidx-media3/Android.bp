@@ -9,6 +9,7 @@ library_visibility = [
     "//vendor:__subpackages__",
     "//cts/tests/tests/mediacujtest:__subpackages__",
     "//cts/tests/tests/mediaediting",
+    "//cts/apps/CtsVerifier:__subpackages__",
     "//packages/apps/Car/libs/car-media-common:__subpackages__",
     "//packages/apps/Car/Media:__subpackages__",
     "//packages/apps/Car/tests/TestMediaApp:__subpackages__",
