@@ -8,9 +8,23 @@ package {
 }
 
 java_library_host {
-    // Robolectric prebuilts of android c++ code targeting mac (amd64/arm64) and linux (amd64)
+    // Robolectric Prebuilts of android c++ code targeting mac (amd64/arm64) and linux (amd64)
     // Sourced from here: https://github.com/robolectric/robolectric/actions/workflows/build_native_runtime.yml
-    // Todo(rexhoffman): build android code for host systems in standard builds (likely with bazel)
+    // This set of prebuilts typically ships as part of robolectric, and allows Robolectric Native Graphics on
+    // versions of android-all (the robolectic SDK version) prior to V.
+    //
+    // Releases including and since VanillaIceCream ships with a libandroid_runtime.so
+    // equivalent to the librobolectric-nativeruntime.so included in this artifact.
     name: "robolectric_nativeruntime_native_prebuilt",
-    java_resource_dirs: ["resources"],
+    java_resource_dirs: ["resources_robolectric"],
+}
+
+java_library_host {
+    // libandroid_runtime.so (currently from layoutlib branch of android), included in the android-all jar
+    // for VanillaIceCream and later.
+    //
+    // Todo(rexhoffman): build android code for host systems in standard builds in branch for the android-all jar.
+    //
+    name: "robolectric_nativeruntime_native_prebuilt_main",
+    java_resource_dirs: ["resources_android"],
 }
