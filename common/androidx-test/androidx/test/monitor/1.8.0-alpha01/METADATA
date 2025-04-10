@@ -1,0 +1,20 @@
+
+name: "monitor"
+description: "A library for Android testing"
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://github.com/android/android-test"
+  }
+  url {
+    type: ARCHIVE
+    value: "https://dl.google.com/dl/android/maven2/androidx/test/monitor/1.8.0-alpha01/monitor-1.8.0-alpha01-sources.jar"
+  }
+  version: "1.8.0-alpha01"
+  license_type: NOTICE
+  last_upgrade_date {
+    year: 2025
+    month: 4
+    day: 4
+  }
+}
