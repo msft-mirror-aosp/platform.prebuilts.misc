@@ -19,6 +19,7 @@ library_visibility = [
     "//test/wvts:__subpackages__",
     "//prebuilts/sdk/current/aaos-libs",
     "//frameworks/base/packages/SystemUI:__pkg__",
+    "//platform_testing/libraries/flicker:__subpackages__",
 ]
 
 android_library_import {
