@@ -1,0 +1,35 @@
+This directory contains prebuilt binaries for `trace_processor_shell`.
+These are used by FlickerLib to parse and analyze perfetto traces.
+They replace the binaries provided in the AndroidX library at build time.
+
+### How to update the binaries?
+
+Update x86_64 and x86 binaries:
+
+```
+. build/envsetup.sh && lunch aosp_cf_x86_64_phone-trunk_staging-userdebug
+
+m trace_processor_shell
+
+cp out/target/product/vsoc_x86_64/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_x86_64
+
+cp out/host/linux-x86/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_x86
+```
+
+Update aarch64 binary:
+```
+. build/envsetup.sh && lunch husky-trunk_staging-userdebug
+
+m trace_processor_shell
+
+cp out/target/product/husky/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_aarch64
+```
+
+Update arm binary:
+```
+. build/envsetup.sh && aosp_arm64-trunk_staging-userdebug
+
+m trace_processor_shell
+
+cp out/target/product/generic_arm64/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_arm
+```
