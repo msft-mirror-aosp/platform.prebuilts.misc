@@ -24,7 +24,7 @@ library_visibility = [
 
 android_library_import {
     name: "androidx.media3.media3-common-nodeps",
-    aars: ["androidx/media3/media3-common/1.6.0/media3-common-1.6.0.aar"],
+    aars: ["androidx/media3/media3-common/1.6.1/media3-common-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -60,7 +60,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-container-nodeps",
-    aars: ["androidx/media3/media3-container/1.6.0/media3-container-1.6.0.aar"],
+    aars: ["androidx/media3/media3-container/1.6.1/media3-container-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -94,7 +94,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-database-nodeps",
-    aars: ["androidx/media3/media3-database/1.6.0/media3-database-1.6.0.aar"],
+    aars: ["androidx/media3/media3-database/1.6.1/media3-database-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -128,7 +128,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-datasource-nodeps",
-    aars: ["androidx/media3/media3-datasource/1.6.0/media3-datasource-1.6.0.aar"],
+    aars: ["androidx/media3/media3-datasource/1.6.1/media3-datasource-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -166,7 +166,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-decoder-nodeps",
-    aars: ["androidx/media3/media3-decoder/1.6.0/media3-decoder-1.6.0.aar"],
+    aars: ["androidx/media3/media3-decoder/1.6.1/media3-decoder-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -200,7 +200,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-effect-nodeps",
-    aars: ["androidx/media3/media3-effect/1.6.0/media3-effect-1.6.0.aar"],
+    aars: ["androidx/media3/media3-effect/1.6.1/media3-effect-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -236,7 +236,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-exoplayer-dash-nodeps",
-    aars: ["androidx/media3/media3-exoplayer-dash/1.6.0/media3-exoplayer-dash-1.6.0.aar"],
+    aars: ["androidx/media3/media3-exoplayer-dash/1.6.1/media3-exoplayer-dash-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -270,7 +270,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-exoplayer-nodeps",
-    aars: ["androidx/media3/media3-exoplayer/1.6.0/media3-exoplayer-1.6.0.aar"],
+    aars: ["androidx/media3/media3-exoplayer/1.6.1/media3-exoplayer-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -320,7 +320,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-extractor-nodeps",
-    aars: ["androidx/media3/media3-extractor/1.6.0/media3-extractor-1.6.0.aar"],
+    aars: ["androidx/media3/media3-extractor/1.6.1/media3-extractor-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -358,7 +358,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-muxer-nodeps",
-    aars: ["androidx/media3/media3-muxer/1.6.0/media3-muxer-1.6.0.aar"],
+    aars: ["androidx/media3/media3-muxer/1.6.1/media3-muxer-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -394,7 +394,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-session-nodeps",
-    aars: ["androidx/media3/media3-session/1.6.0/media3-session-1.6.0.aar"],
+    aars: ["androidx/media3/media3-session/1.6.1/media3-session-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -434,7 +434,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-test-utils-nodeps",
-    aars: ["androidx/media3/media3-test-utils/1.6.0/media3-test-utils-1.6.0.aar"],
+    aars: ["androidx/media3/media3-test-utils/1.6.1/media3-test-utils-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -488,7 +488,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-transformer-nodeps",
-    aars: ["androidx/media3/media3-transformer/1.6.0/media3-transformer-1.6.0.aar"],
+    aars: ["androidx/media3/media3-transformer/1.6.1/media3-transformer-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -532,7 +532,7 @@ android_library {
 
 android_library_import {
     name: "androidx.media3.media3-ui-nodeps",
-    aars: ["androidx/media3/media3-ui/1.6.0/media3-ui-1.6.0.aar"],
+    aars: ["androidx/media3/media3-ui/1.6.1/media3-ui-1.6.1.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
