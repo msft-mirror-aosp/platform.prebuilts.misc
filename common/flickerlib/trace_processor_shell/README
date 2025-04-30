@@ -4,32 +4,20 @@ They replace the binaries provided in the AndroidX library at build time.
 
 ### How to update the binaries?
 
-Update x86_64 and x86 binaries:
+Download the prebuilt binaries from the Perfetto CI/CD infrastructure:
+[https://chrome-infra-packages.appspot.com/p/perfetto/trace_processor_shell/](https://chrome-infra-packages.appspot.com/p/perfetto/trace_processor_shell/)
 
-```
-. build/envsetup.sh && lunch aosp_cf_x86_64_phone-trunk_staging-userdebug
+Download the latest `.zip` archives for the required architectures, unzip them, and place the `trace_processor_shell` binary into this directory with the corresponding name:
 
-m trace_processor_shell
+*   `android-arm` package -> `trace_processor_shell_arm`
+*   `android-arm64` package -> `trace_processor_shell_aarch64`
+*   `android-x86` package -> `trace_processor_shell_x86`
+*   `android-x64` package -> `trace_processor_shell_x86_64`
 
-cp out/target/product/vsoc_x86_64/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_x86_64
+For example, to update the `arm` binary:
+1.  Download the latest `android-arm` zip file from the link above.
+2.  Unzip the downloaded file (e.g., `unzip <downloaded_zip_file>.zip`).
+3.  Copy the extracted `trace_processor_shell` binary to this directory:
+    `cp trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_arm`
 
-cp out/host/linux-x86/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_x86
-```
-
-Update aarch64 binary:
-```
-. build/envsetup.sh && lunch husky-trunk_staging-userdebug
-
-m trace_processor_shell
-
-cp out/target/product/husky/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_aarch64
-```
-
-Update arm binary:
-```
-. build/envsetup.sh && aosp_arm64-trunk_staging-userdebug
-
-m trace_processor_shell
-
-cp out/target/product/generic_arm64/system/bin/trace_processor_shell prebuilts/misc/common/flickerlib/trace_processor_shell/trace_processor_shell_arm
-```
+Repeat this process for the other required architectures (`android-arm64`, `android-x86`, `android-x64`).
