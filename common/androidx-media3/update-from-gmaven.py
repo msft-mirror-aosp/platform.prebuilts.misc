@@ -28,7 +28,7 @@
 # Manual verification steps:
 #   1. Build the 'leaf' imported modules (i.e. the set that ends up depending
 #      on *everything* transitively), e.g.
-#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-exoplayer androidx.media3.media3-session androidx.media3.media3-test-utils androidx.media3.media3-transformer androidx.media3.media3-ui
+#      $ m androidx.media3.media3-exoplayer-dash androidx.media3.media3-session androidx.media3.media3-test-utils androidx.media3.media3-transformer androidx.media3.media3-ui androidx.media3.media3-ui-compose
 
 import os
 import re
@@ -170,6 +170,7 @@ cmd("rm -rf androidx/media3")
 cmd("rm -rf manifests")
 
 downloadArtifact("androidx.media3", "media3-common", media3Version)
+downloadArtifact("androidx.media3", "media3-common-ktx", media3Version)
 downloadArtifact("androidx.media3", "media3-container", media3Version)
 downloadArtifact("androidx.media3", "media3-database", media3Version)
 downloadArtifact("androidx.media3", "media3-datasource", media3Version)
@@ -183,6 +184,7 @@ downloadArtifact("androidx.media3", "media3-session", media3Version)
 downloadArtifact("androidx.media3", "media3-test-utils", media3Version)
 downloadArtifact("androidx.media3", "media3-transformer", media3Version)
 downloadArtifact("androidx.media3", "media3-ui", media3Version)
+downloadArtifact("androidx.media3", "media3-ui-compose", media3Version)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
@@ -194,6 +196,7 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
     "-rewrite androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures " +
+    "-rewrite androidx.compose.foundation:foundation=androidx.compose.foundation_foundation " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface " +
     "-rewrite androidx.media:media=androidx.media_media " +
@@ -204,6 +207,9 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite com.google.guava:guava=guava " +
     "-rewrite com.google.truth:truth=truth " +
     "-rewrite com.google.truth.extensions:truth-java8-extension=truth-java8-extension " +
+    "-rewrite org.jetbrains.kotlin:kotlin-stdlib=kotlin-stdlib " +
+    "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-core=kotlinx_coroutines " +
+    "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-android=kotlinx_coroutines_android " +
     "-rewrite org.mockito:mockito-core=mockito-core " +
     "-sdk-version current " +
     "-static-deps " +
