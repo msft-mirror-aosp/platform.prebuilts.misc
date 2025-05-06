@@ -1,0 +1,4 @@
+
+name: "androidx-test"
+description: "libraries for Android testing"
+third_party {
