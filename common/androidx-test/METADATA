@@ -1,0 +1,17 @@
+
+name: "androidx-test"
+description: "libraries for Android testing"
+third_party {
+
+  identifier {
+    type: "PrebuiltByAlphabet"
+    value: "common/androidx-test/androidx/test/services/test-services/1.6.0-alpha04/test-services-1.6.0-alpha04.apk"
+    version: "1.6.0-alpha04"
+  }
+
+  identifier {
+    type: "PrebuiltByAlphabet"
+    value: "common/androidx-test/androidx/test/orchestrator/1.6.0-alpha04/orchestrator-1.6.0-alpha04.apk"
+    version: "1.6.0-alpha04"
+  }
+}
