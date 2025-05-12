@@ -28,7 +28,7 @@ espressoVersion="3.7.0-alpha03"
 coreVersion="1.7.0-alpha03"
 extJUnitVersion="1.3.0-alpha03"
 extTruthVersion="1.7.0-alpha03"
-orchestratorVersion="1.6.0-alpha04"
+orchestratorVersion="1.5.0"
 servicesVersion="1.6.0-alpha04"
 jankTestHelperVersion="1.0.1"
 
