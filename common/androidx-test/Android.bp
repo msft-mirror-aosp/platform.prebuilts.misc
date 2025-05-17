@@ -477,7 +477,7 @@ android_library {
 
 android_app_import {
     name: "androidx.test.orchestrator",
-    apk: "androidx/test/orchestrator/1.6.0-alpha04/orchestrator-1.6.0-alpha04.apk",
+    apk: "androidx/test/orchestrator/1.5.0/orchestrator-1.5.0.apk",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",

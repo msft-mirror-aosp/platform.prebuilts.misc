@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test</groupId>
   <artifactId>orchestrator</artifactId>
-  <version>1.6.0-alpha04</version>
+  <version>1.5.0</version>
   <packaging>apk</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>androidx.test.services</groupId>
       <artifactId>test-services</artifactId>
-      <version>1.6.0-alpha04</version>
+      <version>1.5.0</version>
       <scope>compile</scope>
 
     </dependency>
