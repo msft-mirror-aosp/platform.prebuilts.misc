@@ -23,6 +23,8 @@ library_visibility = [
     "//prebuilts/sdk/current/aaos-libs",
     "//frameworks/base/packages/SystemUI:__pkg__",
     "//platform_testing/libraries/flicker:__subpackages__",
+    "//packages/apps/DocumentsUI",
+    "//packages/services/Car/packages/CarDocumentsUI",
 ]
 
 android_library_import {
