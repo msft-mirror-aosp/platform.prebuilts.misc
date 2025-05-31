@@ -7,6 +7,7 @@ package {
 
 library_visibility = [
     "//vendor:__subpackages__",
+    "//cts/tests/media/common",
     "//cts/tests/tests/mediacujtest:__subpackages__",
     "//cts/tests/tests/mediaediting",
     "//cts/apps/CtsVerifier:__subpackages__",
