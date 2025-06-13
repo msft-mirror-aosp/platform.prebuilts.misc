@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test.espresso</groupId>
-  <artifactId>espresso-intents</artifactId>
-  <version>3.7.0-alpha03</version>
+  <artifactId>espresso-core</artifactId>
+  <version>3.7.0-alpha04</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -32,9 +32,23 @@
 
     </dependency>
     <dependency>
+      <groupId>androidx.concurrent</groupId>
+      <artifactId>concurrent-futures</artifactId>
+      <version>1.2.0</version>
+      <scope>compile</scope>
+
+    </dependency>
+    <dependency>
       <groupId>androidx.test.espresso</groupId>
-      <artifactId>espresso-core</artifactId>
-      <version>3.7.0-alpha03</version>
+      <artifactId>espresso-idling-resource</artifactId>
+      <version>3.7.0-alpha04</version>
+      <scope>compile</scope>
+
+    </dependency>
+    <dependency>
+      <groupId>androidx.test.services</groupId>
+      <artifactId>storage</artifactId>
+      <version>1.6.0-alpha04</version>
       <scope>compile</scope>
 
     </dependency>
@@ -47,8 +61,8 @@
     </dependency>
     <dependency>
       <groupId>androidx.test</groupId>
-      <artifactId>rules</artifactId>
-      <version>1.7.0-alpha03</version>
+      <artifactId>monitor</artifactId>
+      <version>1.8.0-alpha03</version>
       <scope>compile</scope>
 
     </dependency>
@@ -60,9 +74,30 @@
 
     </dependency>
     <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+      <scope>compile</scope>
+
+    </dependency>
+    <dependency>
       <groupId>com.google.errorprone</groupId>
       <artifactId>error_prone_annotations</artifactId>
       <version>2.30.0</version>
+      <scope>compile</scope>
+
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>listenablefuture</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
       <scope>compile</scope>
 
     </dependency>
