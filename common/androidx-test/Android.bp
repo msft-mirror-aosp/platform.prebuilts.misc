@@ -61,7 +61,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.accessibility-nodeps",
-    aars: ["androidx/test/espresso/espresso-accessibility/3.7.0-alpha03/espresso-accessibility-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-accessibility/3.7.0-alpha04/espresso-accessibility-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -97,7 +97,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.contrib-nodeps",
-    aars: ["androidx/test/espresso/espresso-contrib/3.7.0-alpha03/espresso-contrib-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-contrib/3.7.0-alpha04/espresso-contrib-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -149,7 +149,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.core-nodeps",
-    aars: ["androidx/test/espresso/espresso-core/3.7.0-alpha03/espresso-core-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-core/3.7.0-alpha04/espresso-core-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -207,7 +207,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.idling-resource-nodeps",
-    aars: ["androidx/test/espresso/espresso-idling-resource/3.7.0-alpha03/espresso-idling-resource-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-idling-resource/3.7.0-alpha04/espresso-idling-resource-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -235,7 +235,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.intents-nodeps",
-    aars: ["androidx/test/espresso/espresso-intents/3.7.0-alpha03/espresso-intents-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-intents/3.7.0-alpha04/espresso-intents-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",
@@ -283,7 +283,7 @@ android_library {
 
 android_library_import {
     name: "androidx.test.espresso.web-nodeps",
-    aars: ["androidx/test/espresso/espresso-web/3.7.0-alpha03/espresso-web-3.7.0-alpha03.aar"],
+    aars: ["androidx/test/espresso/espresso-web/3.7.0-alpha04/espresso-web-3.7.0-alpha04.aar"],
     sdk_version: "current",
     apex_available: [
         "//apex_available:platform",

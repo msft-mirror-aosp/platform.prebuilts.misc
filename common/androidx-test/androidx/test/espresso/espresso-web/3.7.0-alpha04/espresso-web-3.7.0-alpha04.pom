@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>androidx.test.espresso</groupId>
-  <artifactId>espresso-core</artifactId>
-  <version>3.7.0-alpha03</version>
+  <artifactId>espresso-web</artifactId>
+  <version>3.7.0-alpha04</version>
   <packaging>aar</packaging>
   <name>AndroidX Test Library</name>
   <description>The AndroidX Test Library provides an extensive framework for testing Android apps</description>
@@ -40,22 +40,8 @@
     </dependency>
     <dependency>
       <groupId>androidx.test.espresso</groupId>
-      <artifactId>espresso-idling-resource</artifactId>
-      <version>3.7.0-alpha03</version>
-      <scope>compile</scope>
-
-    </dependency>
-    <dependency>
-      <groupId>androidx.test.services</groupId>
-      <artifactId>storage</artifactId>
-      <version>1.6.0-alpha04</version>
-      <scope>compile</scope>
-
-    </dependency>
-    <dependency>
-      <groupId>androidx.test</groupId>
-      <artifactId>core</artifactId>
-      <version>1.7.0-alpha03</version>
+      <artifactId>espresso-core</artifactId>
+      <version>3.7.0-alpha04</version>
       <scope>compile</scope>
 
     </dependency>
@@ -95,16 +81,9 @@
 
     </dependency>
     <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-      <version>1</version>
-      <scope>compile</scope>
-
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <groupId>org.ccil.cowan.tagsoup</groupId>
+      <artifactId>tagsoup</artifactId>
+      <version>1.2.1</version>
       <scope>compile</scope>
 
     </dependency>

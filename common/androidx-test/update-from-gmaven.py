@@ -24,7 +24,7 @@ import sys
 monitorVersion="1.8.0-alpha03"
 runnerVersion="1.7.0-alpha03"
 rulesVersion="1.7.0-alpha03"
-espressoVersion="3.7.0-alpha03"
+espressoVersion="3.7.0-alpha04"
 coreVersion="1.7.0-alpha03"
 extJUnitVersion="1.3.0-alpha03"
 extTruthVersion="1.7.0-alpha03"
@@ -152,11 +152,14 @@ def completeMetadata():
     f.write("}")
 
 def addProvenanceFile(artifactPath):
-  # TODO: make this a command line arg
-  origProvenanceFile = "/tmp/release_0d4b0e4f-35e8-4756-ba10-37e5060db187.intoto.jsonl"
   destProvenanceFile = artifactPath + ".intoto.jsonl"
   shutil.copy(origProvenanceFile, destProvenanceFile)
 
+if len(sys.argv) != 2:
+    print("Expected usage: update-gmaven-prebuilts.py <path_to_intoto.jsonl>.")
+    exit(-1)
+
+origProvenanceFile = sys.argv[1]
 prebuiltDir = os.path.join(getAndroidRoot(), "prebuilts/misc/common/androidx-test")
 chdir(prebuiltDir)
 
