@@ -5,13 +5,13 @@ third_party {
 
   identifier {
     type: "PrebuiltByAlphabet"
-    value: "common/androidx-test/androidx/test/services/test-services/1.6.0-alpha04/test-services-1.6.0-alpha04.apk"
-    version: "1.6.0-alpha04"
+    value: "common/androidx-test/androidx/test/services/test-services/1.6.0-beta01/test-services-1.6.0-beta01.apk"
+    version: "1.6.0-beta01"
   }
 
   identifier {
     type: "PrebuiltByAlphabet"
-    value: "common/androidx-test/androidx/test/orchestrator/1.5.0/orchestrator-1.5.0.apk"
-    version: "1.5.0"
+    value: "common/androidx-test/androidx/test/orchestrator/1.6.0-beta01/orchestrator-1.6.0-beta01.apk"
+    version: "1.6.0-beta01"
   }
 }
