@@ -21,15 +21,15 @@ import shutil
 import subprocess
 import sys
 
-monitorVersion="1.8.0-beta01"
-runnerVersion="1.7.0-beta01"
-rulesVersion="1.7.0-beta01"
-espressoVersion="3.7.0-beta01"
-coreVersion="1.7.0-beta01"
-extJUnitVersion="1.3.0-beta01"
-extTruthVersion="1.7.0-beta01"
-orchestratorVersion="1.6.0-beta01"
-servicesVersion="1.6.0-beta01"
+monitorVersion="1.8.0-rc01"
+runnerVersion="1.7.0-rc01"
+rulesVersion="1.7.0-rc01"
+espressoVersion="3.7.0-rc01"
+coreVersion="1.7.0-rc01"
+extJUnitVersion="1.3.0-rc01"
+extTruthVersion="1.7.0-rc01"
+orchestratorVersion="1.6.0-rc01"
+servicesVersion="1.6.0-rc01"
 jankTestHelperVersion="1.0.1"
 
 mavenToBpPatternMap = {
