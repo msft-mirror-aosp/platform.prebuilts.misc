@@ -25,6 +25,7 @@ library_visibility = [
     "//platform_testing/libraries/flicker:__subpackages__",
     "//packages/apps/DocumentsUI",
     "//packages/services/Car/packages/CarDocumentsUI",
+    "//development/samples/ApiDemos",
 ]
 
 android_library_import {
