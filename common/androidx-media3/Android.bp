@@ -10,6 +10,7 @@ library_visibility = [
     "//cts/tests/media/common",
     "//cts/tests/tests/mediacujtest:__subpackages__",
     "//cts/tests/tests/mediaediting",
+    "//cts/tests/tests/mediaparser:__subpackages__",
     "//cts/apps/CtsVerifier:__subpackages__",
     "//external/jetpack-camera-app:__subpackages__",
     "//packages/apps/Car/libs/car-media-common:__subpackages__",
