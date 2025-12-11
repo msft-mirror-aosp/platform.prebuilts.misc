@@ -62,7 +62,7 @@ def chdir(path):
    os.chdir(path)
 
 def getAndroidRoot():
-   if os.path.isdir(".repo/projects"):
+   if os.path.isdir(".repo/projects") or os.path.isfile(".supermanifest"):
       return os.getcwd()
    elif 'TOP' in os.environ:
       return os.environ['TOP']
