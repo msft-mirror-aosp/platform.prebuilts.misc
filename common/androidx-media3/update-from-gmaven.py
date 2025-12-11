@@ -124,12 +124,14 @@ def getLibraryVisibilityFromAndroidBp():
 
 def fixAndroidBp(library_visibility, java_version):
   """Fixes the Android.bp file by overwriting the visibility and java_version, and removes
-      unavailable mockwebserver dependency"""
+      unavailable mockwebserver dependency, and cleaning up empty dependencies."""
   with open(androidBpPath, 'r') as f:
       build_content = f.read()
   build_content = re.sub(javaVersionPattern, java_version, build_content)
   build_content = build_content.replace(
     r'"mockwebserver",', mockWebServerUnavailableComment)
+  # Clean up empty strings from static_libs
+  build_content = re.sub(r'\s*"",\n', '', build_content)
   # Find the end of the package section (the first closing curly bracket)
   package_end_index = build_content.find('}')
   # Insert the library_visibility section after the package section
@@ -192,8 +194,8 @@ for name in mavenToBpPatternMap:
 
 cmd("pom2bp " + atxRewriteStr +
     # map external maven dependencies to Android module names
-    "-rewrite androidx.annotation:annotation=androidx.annotation_annotation " +
-    "-rewrite androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental " +
+    "-rewrite androidx.annotation:annotation-experimental= " +
+    "-rewrite androidx.annotation:annotation= " +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
     "-rewrite androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures " +
     "-rewrite androidx.compose.foundation:foundation=androidx.compose.foundation_foundation " +

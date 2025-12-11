@@ -1,6 +1,6 @@
 // This is a generated file. Do not modify directly.
 // Automatically generated with:
-// pom2bp -rewrite 'androidx.media3:=androidx.media3.' -rewrite 'androidx.annotation:annotation=androidx.annotation_annotation' -rewrite 'androidx.annotation:annotation-experimental=androidx.annotation_annotation-experimental' -rewrite 'androidx.collection:collection=androidx.collection_collection' -rewrite 'androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures' -rewrite 'androidx.compose.foundation:foundation=androidx.compose.foundation_foundation' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface' -rewrite 'androidx.media:media=androidx.media_media' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.test:core=androidx.test.core' -rewrite 'androidx.test.ext:junit=androidx.test.ext.junit' -rewrite 'androidx.test.ext:truth=androidx.test.ext.truth' -rewrite 'com.google.guava:guava=guava' -rewrite 'com.google.truth:truth=truth' -rewrite 'com.google.truth.extensions:truth-java8-extension=truth-java8-extension' -rewrite 'org.jetbrains.kotlin:kotlin-stdlib=kotlin-stdlib' -rewrite 'org.jetbrains.kotlinx:kotlinx-coroutines-core=kotlinx_coroutines' -rewrite 'org.jetbrains.kotlinx:kotlinx-coroutines-android=kotlinx_coroutines_android' -rewrite 'org.mockito:mockito-core=mockito-core' -sdk-version current -static-deps -prepend prepend-license.txt .
+// pom2bp -rewrite 'androidx.media3:=androidx.media3.' -rewrite 'androidx.annotation:annotation-experimental=' -rewrite 'androidx.annotation:annotation=' -rewrite 'androidx.collection:collection=androidx.collection_collection' -rewrite 'androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures' -rewrite 'androidx.compose.foundation:foundation=androidx.compose.foundation_foundation' -rewrite 'androidx.core:core=androidx.core_core' -rewrite 'androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface' -rewrite 'androidx.media:media=androidx.media_media' -rewrite 'androidx.recyclerview:recyclerview=androidx.recyclerview_recyclerview' -rewrite 'androidx.test:core=androidx.test.core' -rewrite 'androidx.test.ext:junit=androidx.test.ext.junit' -rewrite 'androidx.test.ext:truth=androidx.test.ext.truth' -rewrite 'com.google.guava:guava=guava' -rewrite 'com.google.truth:truth=truth' -rewrite 'com.google.truth.extensions:truth-java8-extension=truth-java8-extension' -rewrite 'org.jetbrains.kotlin:kotlin-stdlib=kotlin-stdlib' -rewrite 'org.jetbrains.kotlinx:kotlinx-coroutines-core=kotlinx_coroutines' -rewrite 'org.jetbrains.kotlinx:kotlinx-coroutines-android=kotlinx_coroutines_android' -rewrite 'org.mockito:mockito-core=mockito-core' -sdk-version current -static-deps -prepend prepend-license.txt .
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
@@ -80,8 +80,6 @@ android_library_import {
     min_sdk_version: "23",
     static_libs: [
         "guava",
-        "androidx.annotation_annotation",
-        "androidx.annotation_annotation-experimental",
     ],
     visibility: ["//visibility:private"],
 }
@@ -98,8 +96,6 @@ android_library {
     static_libs: [
         "androidx.media3.media3-common-nodeps",
         "guava",
-        "androidx.annotation_annotation",
-        "androidx.annotation_annotation-experimental",
     ],
     java_version: "1.8",
     visibility: library_visibility,
@@ -115,7 +111,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     visibility: ["//visibility:private"],
@@ -132,7 +127,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-container/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-container-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     java_version: "1.8",
@@ -149,7 +143,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     visibility: ["//visibility:private"],
@@ -166,7 +159,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-database/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-database-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     java_version: "1.8",
@@ -183,7 +175,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-database",
         "androidx.exifinterface_exifinterface",
@@ -202,7 +193,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-datasource/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-datasource-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-database",
         "androidx.exifinterface_exifinterface",
@@ -221,7 +211,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     visibility: ["//visibility:private"],
@@ -238,7 +227,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-decoder/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-decoder-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
     ],
     java_version: "1.8",
@@ -255,7 +243,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-datasource",
     ],
@@ -273,7 +260,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-effect/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-effect-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-datasource",
     ],
@@ -291,7 +277,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-exoplayer",
     ],
     visibility: ["//visibility:private"],
@@ -308,7 +293,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-exoplayer-dash/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-exoplayer-dash-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-exoplayer",
     ],
     java_version: "1.8",
@@ -325,7 +309,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.collection_collection",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
@@ -350,7 +333,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-exoplayer/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-exoplayer-nodeps",
-        "androidx.annotation_annotation",
         "androidx.collection_collection",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
@@ -375,7 +357,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
         "androidx.media3.media3-decoder",
@@ -394,7 +375,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-extractor/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-extractor-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
         "androidx.media3.media3-decoder",
@@ -413,7 +393,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
     ],
@@ -431,7 +410,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-muxer/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-muxer-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.media3.media3-container",
     ],
@@ -496,7 +474,6 @@ android_library_import {
         // Missing a dependency on okhttp3.mockwebserver because this package is not currently
         // available in /external/. This means the parts of this library that require this
         // dependency are not usable.
-        "androidx.annotation_annotation",
         "androidx.test.core",
         "androidx.test.ext.junit",
         "androidx.test.ext.truth",
@@ -524,7 +501,6 @@ android_library {
         // Missing a dependency on okhttp3.mockwebserver because this package is not currently
         // available in /external/. This means the parts of this library that require this
         // dependency are not usable.
-        "androidx.annotation_annotation",
         "androidx.test.core",
         "androidx.test.ext.junit",
         "androidx.test.ext.truth",
@@ -545,7 +521,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.concurrent_concurrent-futures",
         "androidx.media3.media3-exoplayer",
         "androidx.media3.media3-effect",
@@ -567,7 +542,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-transformer/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-transformer-nodeps",
-        "androidx.annotation_annotation",
         "androidx.concurrent_concurrent-futures",
         "androidx.media3.media3-exoplayer",
         "androidx.media3.media3-effect",
@@ -627,7 +601,6 @@ android_library_import {
     ],
     min_sdk_version: "23",
     static_libs: [
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.recyclerview_recyclerview",
     ],
@@ -645,7 +618,6 @@ android_library {
     manifest: "manifests/androidx.media3.media3-ui/AndroidManifest.xml",
     static_libs: [
         "androidx.media3.media3-ui-nodeps",
-        "androidx.annotation_annotation",
         "androidx.media3.media3-common",
         "androidx.recyclerview_recyclerview",
     ],
