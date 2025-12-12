@@ -27,6 +27,8 @@ library_visibility = [
     "//packages/apps/DocumentsUI",
     "//packages/services/Car/packages/CarDocumentsUI",
     "//development/samples/ApiDemos",
+    "//frameworks/base:__subpackages__",
+    "//packages/modules/Media/apex/framework",
 ]
 
 android_library_import {
