@@ -12,7 +12,8 @@
 #        * Set `media3Version` to the target version
 #        * Extend `downloadArtifact` calls to include new modules if needed.
 #        * Extend external dependency rewrite for any new external dependencies
-#          of the imported Media3 modules.
+#          of the imported Media3 modules (do a codesearch for Android.bp files
+#          to find the corresponding java_library name).
 #   e. Run the script from the Android source root:
 #      $ ./prebuilts/misc/common/androidx-media3/update-from-gmaven.py
 #
@@ -35,7 +36,7 @@ import re
 import subprocess
 import sys
 
-media3Version="1.8.0"
+media3Version="1.9.0"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
@@ -181,12 +182,14 @@ downloadArtifact("androidx.media3", "media3-effect", media3Version)
 downloadArtifact("androidx.media3", "media3-exoplayer", media3Version)
 downloadArtifact("androidx.media3", "media3-exoplayer-dash", media3Version)
 downloadArtifact("androidx.media3", "media3-extractor", media3Version)
+downloadArtifact("androidx.media3", "media3-inspector", media3Version)
 downloadArtifact("androidx.media3", "media3-muxer", media3Version)
 downloadArtifact("androidx.media3", "media3-session", media3Version)
 downloadArtifact("androidx.media3", "media3-test-utils", media3Version)
 downloadArtifact("androidx.media3", "media3-transformer", media3Version)
 downloadArtifact("androidx.media3", "media3-ui", media3Version)
 downloadArtifact("androidx.media3", "media3-ui-compose", media3Version)
+downloadArtifact("androidx.media3", "media3-ui-compose-material3", media3Version)
 
 atxRewriteStr = ""
 for name in mavenToBpPatternMap:
@@ -199,6 +202,7 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.collection:collection=androidx.collection_collection " +
     "-rewrite androidx.concurrent:concurrent-futures=androidx.concurrent_concurrent-futures " +
     "-rewrite androidx.compose.foundation:foundation=androidx.compose.foundation_foundation " +
+    "-rewrite androidx.compose.material3:material3=androidx.compose.material3_material3 " +
     "-rewrite androidx.core:core=androidx.core_core " +
     "-rewrite androidx.exifinterface:exifinterface=androidx.exifinterface_exifinterface " +
     "-rewrite androidx.media:media=androidx.media_media " +
@@ -206,12 +210,16 @@ cmd("pom2bp " + atxRewriteStr +
     "-rewrite androidx.test:core=androidx.test.core " +
     "-rewrite androidx.test.ext:junit=androidx.test.ext.junit " +
     "-rewrite androidx.test.ext:truth=androidx.test.ext.truth " +
+    "-rewrite com.google.android.material:material=com.google.android.material_material " +
     "-rewrite com.google.guava:guava=guava " +
+    "-rewrite com.google.testparameterinjector:test-parameter-injector=TestParameterInjector " +
     "-rewrite com.google.truth:truth=truth " +
     "-rewrite com.google.truth.extensions:truth-java8-extension=truth-java8-extension " +
     "-rewrite org.jetbrains.kotlin:kotlin-stdlib=kotlin-stdlib " +
     "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-core=kotlinx_coroutines " +
     "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-android=kotlinx_coroutines_android " +
+    "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-guava=kotlinx_coroutines_guava " +
+    "-rewrite org.jetbrains.kotlinx:kotlinx-coroutines-test=kotlinx_coroutines_test " +
     "-rewrite org.mockito:mockito-core=mockito-core " +
     "-sdk-version current " +
     "-static-deps " +
