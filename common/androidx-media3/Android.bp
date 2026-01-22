@@ -15,6 +15,7 @@ library_visibility = [
     "//cts/tests/tests/media/muxer:__subpackages__",
     "//cts/apps/CtsVerifier:__subpackages__",
     "//external/jetpack-camera-app:__subpackages__",
+    "//frameworks/av/media:__subpackages__",
     "//packages/apps/Car/libs/car-media-common:__subpackages__",
     "//packages/apps/Car/libs/car-media-extensions:__subpackages__",
     "//packages/apps/Car/Media:__subpackages__",
