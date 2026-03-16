@@ -36,7 +36,7 @@ import re
 import subprocess
 import sys
 
-media3Version="1.9.2"
+media3Version="1.9.3"
 
 mavenToBpPatternMap = {
     "androidx.media3:" : "androidx.media3.",
